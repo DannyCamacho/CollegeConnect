@@ -26,6 +26,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     resources/CC_logo.png \
     resources/down-arrow-icon.png \
+    resources/plan_route_logo.png \
+    resources/school_store_logo.png \
     resources/up-arrow-icon.png
 
 RESOURCES += \
