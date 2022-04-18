@@ -1,12 +1,5 @@
 #include "database.h"
 
-#include <fstream>
-#include <string>
-#include <QSqlDatabase>
-#include <QSqlDriver>
-#include <QSqlError>
-#include <QSqlQuery>
-
 bool Database::isInitialized = false;
 
 Database::Database() {

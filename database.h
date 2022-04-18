@@ -2,6 +2,12 @@
 #define DATABASE_H
 
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <QSqlDatabase>
+#include <QSqlDriver>
+#include <QSqlError>
+#include <QSqlQuery>
 
 class Database {
 public:
