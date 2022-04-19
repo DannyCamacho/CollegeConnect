@@ -10,10 +10,12 @@ CONFIG += c++11
 
 SOURCES += \
     database.cpp \
+    database.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    database.h \
     database.h \
     mainwindow.h
 
@@ -30,6 +32,8 @@ DISTFILES += \
     Distances.csv \
     New Distances.csv \
     New Distances.csv \
+    New Distances.csv \
+    New Souvenirs.csv \
     New Souvenirs.csv \
     New Souvenirs.csv \
     Souvenirs.csv
