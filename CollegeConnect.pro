@@ -35,4 +35,12 @@ DISTFILES += \
     New Distances.csv \
     New Souvenirs.csv \
     New Souvenirs.csv \
-    Souvenirs.csv
+    Souvenirs.csv \
+    resources/CC_logo.png \
+    resources/down-arrow-icon.png \
+    resources/plan_route_logo.png \
+    resources/school_store_logo.png \
+    resources/up-arrow-icon.png
+
+RESOURCES += \
+    resources/resources.qrc
