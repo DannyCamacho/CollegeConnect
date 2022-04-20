@@ -12,14 +12,6 @@ struct Pair {
     std::string collegeName;
     std::string state;
     int numsOfGrad;
-
-    /*Pair(int id, std::string collegeName, std::string state, int numsOfGrad)
-    {
-        key = id;
-        this->collegeName = collegeName;
-        this->state = state;
-        this->numsOfGrad = numsOfGrad;
-    }*/
 };
 
 /* ==== Map Class ===================================================

@@ -3,6 +3,7 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), collegeMap(20) {
     ui->setupUi(this);
+    order = "collegeName ASC";
     schoolModel = new QSqlQueryModel;
     schoolDetailModel = new QSqlQueryModel;
     database.populateColleges("../CollegeConnect/Distances.csv");
@@ -34,8 +35,6 @@ void MainWindow::populateWindow() {
 
 void  MainWindow::schoolTableUpdate() {
     QString state = ui->select_state->currentText() == "All States" ? "" : "WHERE state=\"" +  ui->select_state->currentText() + "\"";
-    QString order = "collegeName ASC";
-
     schoolModel->setQuery("SELECT collegeName, state FROM college " + state + " ORDER BY " + order);
     ui->school_list_tableView->setModel(schoolModel);
 }

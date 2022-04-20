@@ -19,7 +19,6 @@ public:
     void schoolTableUpdate();
 private slots:
     void on_select_state_currentTextChanged(const QString &arg1);
-
     void on_school_list_tableView_clicked(const QModelIndex &index);
 
 private:
@@ -27,6 +26,7 @@ private:
     QSqlQueryModel* schoolModel;
     QSqlQueryModel* schoolDetailModel;
     Database database;
+    QString order;
     DoubleHashMap collegeMap;
 };
 #endif // MAINWINDOW_H
