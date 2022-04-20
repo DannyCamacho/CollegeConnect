@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     database.populateColleges("../CollegeConnect/Distances.csv");
     database.populateSouvenirs("../CollegeConnect/Souvenirs.csv");
     populateWindow();
-    schoolTableUpdate();
     //database.populateColleges("C:/csv/Distances.csv");
     //database.populateSouvenirs("C:/csv/Souvenirs.csv");
 }
@@ -31,6 +30,9 @@ void MainWindow::populateWindow() {
     ui->select_state->addItem("All States");
     query.exec("SELECT DISTINCT state FROM college ORDER BY state ASC");
     while (query.next()) ui->select_state->addItem(query.value(0).toString());
+
+    schoolModel->setQuery("SELECT collegeName, state FROM college ORDER BY " + order);
+    ui->school_list_tableView->setModel(schoolModel);
 }
 
 void  MainWindow::schoolTableUpdate() {
