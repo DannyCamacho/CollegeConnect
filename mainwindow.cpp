@@ -32,7 +32,9 @@ void MainWindow::populateWindow() {
 }
 
 void  MainWindow::schoolTableUpdate() {
-    QString state = ui->select_state->currentText() == "All States" ? "" : "WHERE state=\"" +  ui->select_state->currentText() + "\"";
+    //QString state = ui->select_state->currentText() == "All States" ? "" : "WHERE state=\"" +  ui->select_state->currentText() + "\"";
+    QString state = "";
     QString order = "collegeName ASC";
     schoolModel->setQuery("SELECT collegeName, state FROM college " + state + " ORDER BY " + order);
+    ui->school_list_tableView->setModel(schoolModel);
 }
