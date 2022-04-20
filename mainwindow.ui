@@ -23,6 +23,9 @@
    <iconset resource="resources/resources.qrc">
     <normaloff>:/CC_logo_mini-removebg.png</normaloff>:/CC_logo_mini-removebg.png</iconset>
   </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
   <property name="styleSheet">
    <string notr="true">color: rgb(49, 49, 49);
 background-color: rgb(255, 255, 255);
@@ -106,12 +109,12 @@ selection-background-color: rgb(118, 158, 81);</string>
       <number>0</number>
      </property>
     </widget>
-    <widget class="QPushButton" name="toggle_name_order">
+    <widget class="QPushButton" name="toggle_name_order_ascending">
      <property name="geometry">
       <rect>
        <x>1</x>
        <y>30</y>
-       <width>240</width>
+       <width>260</width>
        <height>21</height>
       </rect>
      </property>
@@ -126,8 +129,7 @@ selection-background-color: rgb(118, 158, 81);</string>
      </property>
      <property name="icon">
       <iconset resource="resources/resources.qrc">
-       <normaloff>:/down-arrow-icon.png</normaloff>
-       <selectedon>:/up-arrow-icon.png</selectedon>:/down-arrow-icon.png</iconset>
+       <normaloff>:/up-arrow-icon.png</normaloff>:/up-arrow-icon.png</iconset>
      </property>
      <property name="autoDefault">
       <bool>true</bool>
@@ -139,12 +141,12 @@ selection-background-color: rgb(118, 158, 81);</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="toggle_state_order">
+    <widget class="QPushButton" name="toggle_state_order_ascending">
      <property name="geometry">
       <rect>
-       <x>240</x>
+       <x>260</x>
        <y>30</y>
-       <width>191</width>
+       <width>171</width>
        <height>21</height>
       </rect>
      </property>
@@ -180,6 +182,12 @@ selection-background-color: rgb(118, 158, 81);</string>
        <width>431</width>
        <height>411</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);
@@ -219,7 +227,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <number>50</number>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>240</number>
+      <number>260</number>
      </attribute>
      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
       <bool>false</bool>
@@ -234,10 +242,77 @@ selection-background-color: rgb(118, 158, 81);</string>
       <bool>false</bool>
      </attribute>
     </widget>
-    <zorder>toggle_name_order</zorder>
-    <zorder>toggle_state_order</zorder>
+    <widget class="QPushButton" name="toggle_state_order_descending">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>30</y>
+       <width>171</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources/resources.qrc">
+       <normaloff>:/down-arrow-icon.png</normaloff>:/down-arrow-icon.png</iconset>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="toggle_name_order_descending">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>30</y>
+       <width>260</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources/resources.qrc">
+       <normaloff>:/down-arrow-icon.png</normaloff>
+       <selectedon>:/up-arrow-icon.png</selectedon>:/down-arrow-icon.png</iconset>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <zorder>toggle_name_order_ascending</zorder>
+    <zorder>toggle_state_order_ascending</zorder>
     <zorder>select_state</zorder>
     <zorder>school_list_tableView</zorder>
+    <zorder>toggle_state_order_descending</zorder>
+    <zorder>toggle_name_order_descending</zorder>
    </widget>
    <widget class="QFrame" name="info_right_frame">
     <property name="geometry">
@@ -376,6 +451,15 @@ QPushButton#visit_store_button: pressed {
        <height>181</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(49, 49, 49);
@@ -383,6 +467,39 @@ alternate-background-color: rgb(240, 240, 240);
 selection-color: rgb(49, 49, 49);
 selection-background-color: rgb(118, 158, 81);</string>
      </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="autoScroll">
+      <bool>false</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="textElideMode">
+      <enum>Qt::ElideRight</enum>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>50</number>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
     </widget>
    </widget>
    <widget class="QFrame" name="undergrad_frame">
