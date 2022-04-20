@@ -47,12 +47,12 @@ void Map::insert(Pair pair) {
 void Map::erase(int key) {
     int k = h1(key);
     if (map[k].key == key) {
-        map[k] = { -1, "" };
+        map[k] = { -1, "" , "" , 0};
     } else {
         for (int j = 1; ; ++j) {
             int i = h2(j, key);
             if (map[i].key == key) {
-                map[i] = { -1, "" };
+                map[i] = { -1, "" , "" , 0};
                 return;
             }
         }
@@ -64,10 +64,17 @@ void Map::erase(int key) {
     each populated element of map.
 ================================================================== */
 void Map::printMap() {
-    for (int i = 0; i < size; ++i)
-        if (map[i].value != "")
-            std::cout << "Element: [" << i << "]\t\tKey: " << map[i].key
-                      << " \t  Value: " << map[i].value << std::endl;
+    for (int i = 0; i < size; ++i) {
+        if (map[i].collegeName != "") {
+
+           // std::cout << "Element: [" << i << "]\t\tKey: " << map[i].key
+           //           << " \t  Value: " << map[i].collegeName << std::endl;
+            std::cout << "ID: " << map[i].key
+                      << "\tCollege name: " << map[i].collegeName
+                      << "\tState: " << map[i].state
+                      << "\tNo. of undergrats: " << map[i].numsOfGrad << std::endl;
+        }
+    }
 }
 
 /* ==== Map Destructor ==============================================
