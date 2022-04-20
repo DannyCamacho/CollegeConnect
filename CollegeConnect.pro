@@ -10,17 +10,18 @@ CONFIG += c++11
 
 SOURCES += \
     database.cpp \
-    database.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    map.cpp
 
 HEADERS += \
     database.h \
-    database.h \
-    mainwindow.h
+    mainwindow.h \
+    map.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    schoolStore.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -32,8 +33,14 @@ DISTFILES += \
     Distances.csv \
     New Distances.csv \
     New Distances.csv \
-    New Distances.csv \
     New Souvenirs.csv \
     New Souvenirs.csv \
-    New Souvenirs.csv \
-    Souvenirs.csv
+    Souvenirs.csv \
+    resources/CC_logo.png \
+    resources/down-arrow-icon.png \
+    resources/plan_route_logo.png \
+    resources/school_store_logo.png \
+    resources/up-arrow-icon.png
+
+RESOURCES += \
+    resources/resources.qrc
