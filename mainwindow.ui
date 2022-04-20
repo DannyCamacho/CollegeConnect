@@ -100,7 +100,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <enum>QComboBox::InsertAtBottom</enum>
      </property>
      <property name="placeholderText">
-      <string>All States</string>
+      <string>Select State</string>
      </property>
      <property name="frame">
       <bool>false</bool>
