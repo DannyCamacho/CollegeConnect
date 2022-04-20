@@ -7,8 +7,19 @@
     Struct consisting of a key and a data value.
 ================================================================== */
 struct Pair {
-    int key = -1;
-    std::string value;
+    int key = -1;  // college num is key
+    //std::string value;
+    std::string collegeName;
+    std::string state;
+    int numsOfGrad;
+
+    /*Pair(int id, std::string collegeName, std::string state, int numsOfGrad)
+    {
+        key = id;
+        this->collegeName = collegeName;
+        this->state = state;
+        this->numsOfGrad = numsOfGrad;
+    }*/
 };
 
 /* ==== Map Class ===================================================
