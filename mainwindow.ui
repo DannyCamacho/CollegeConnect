@@ -100,7 +100,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <enum>QComboBox::InsertAtBottom</enum>
      </property>
      <property name="placeholderText">
-      <string>All States</string>
+      <string>Select State</string>
      </property>
      <property name="frame">
       <bool>false</bool>
@@ -162,7 +162,7 @@ selection-background-color: rgb(118, 158, 81);</string>
      <property name="icon">
       <iconset resource="resources/resources.qrc">
        <normaloff>:/up-arrow-icon.png</normaloff>
-       <selectedon>:/down-arrow-icon.png</selectedon>:/up-arrow-icon.png</iconset>
+       <selectedon>:/up-arrow-icon.png</selectedon>:/up-arrow-icon.png</iconset>
      </property>
      <property name="autoDefault">
       <bool>true</bool>
@@ -295,7 +295,7 @@ selection-background-color: rgb(118, 158, 81);</string>
      <property name="icon">
       <iconset resource="resources/resources.qrc">
        <normaloff>:/down-arrow-icon.png</normaloff>
-       <selectedon>:/up-arrow-icon.png</selectedon>:/down-arrow-icon.png</iconset>
+       <selectedon>:/down-arrow-icon.png</selectedon>:/down-arrow-icon.png</iconset>
      </property>
      <property name="autoDefault">
       <bool>true</bool>
