@@ -17,6 +17,9 @@ public:
     ~MainWindow();
     void populateWindow();
     void schoolTableUpdate();
+private slots:
+    void on_select_state_currentTextChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     QSqlQueryModel* schoolModel;
