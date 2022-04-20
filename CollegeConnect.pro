@@ -37,6 +37,7 @@ DISTFILES += \
     New Souvenirs.csv \
     Souvenirs.csv \
     resources/CC_logo.png \
+    resources/CC_logo_mini-removebg.png \
     resources/down-arrow-icon.png \
     resources/plan_route_logo.png \
     resources/school_store_logo.png \

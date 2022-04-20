@@ -17,7 +17,11 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>College Connect</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources/resources.qrc">
+    <normaloff>:/CC_logo_mini-removebg.png</normaloff>:/CC_logo_mini-removebg.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">color: rgb(49, 49, 49);
@@ -25,6 +29,12 @@ background-color: rgb(255, 255, 255);
 alternate-background-color: rgb(225, 225, 225);
 selection-color: rgb(49, 49, 49);
 selection-background-color: rgb(118, 158, 81);</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>60</width>
+    <height>60</height>
+   </size>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -343,7 +353,7 @@ color: rgb(49, 49, 49);</string>
       <rect>
        <x>1</x>
        <y>1</y>
-       <width>151</width>
+       <width>171</width>
        <height>81</height>
       </rect>
      </property>
@@ -367,9 +377,9 @@ color: rgb(49, 49, 49);</string>
     <widget class="QLabel" name="undergrad_total_display">
      <property name="geometry">
       <rect>
-       <x>158</x>
+       <x>178</x>
        <y>1</y>
-       <width>131</width>
+       <width>111</width>
        <height>81</height>
       </rect>
      </property>
