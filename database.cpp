@@ -159,16 +159,11 @@ void Database::importColleges(std::string fileName) {
 void Database::importSouvenirs(std::string fileName) {
 }
 
-Horizontal_proxy_model::Horizontal_proxy_model(QObject *parent) :
-  QAbstractProxyModel(parent) {
-}
+Horizontal_proxy_model::Horizontal_proxy_model(QObject *parent) : QAbstractProxyModel(parent) {}
 
 QModelIndex Horizontal_proxy_model::mapToSource(const QModelIndex &proxyIndex) const {
-  if (sourceModel()) {
-    return sourceModel()->index(proxyIndex.column(), proxyIndex.row());
-  } else {
-    return QModelIndex();
-  }
+  if (sourceModel()) return sourceModel()->index(proxyIndex.column(), proxyIndex.row());
+  else return QModelIndex();
 }
 
 QModelIndex Horizontal_proxy_model::mapFromSource(const QModelIndex &sourceIndex) const {
@@ -191,10 +186,8 @@ int Horizontal_proxy_model::columnCount(const QModelIndex &) const {
   return sourceModel() ? sourceModel()->rowCount() : 0;
 }
 
-QVariant Horizontal_proxy_model::headerData(
-           int section, Qt::Orientation orientation, int role) const {
-  if (!sourceModel()) { return QVariant(); }
-  Qt::Orientation new_orientation = orientation == Qt::Horizontal ?
-      Qt::Vertical : Qt::Horizontal;
+QVariant Horizontal_proxy_model::headerData(int section, Qt::Orientation orientation, int role) const {
+  if (!sourceModel()) return QVariant();
+  Qt::Orientation new_orientation = orientation == Qt::Horizontal ? Qt::Vertical : Qt::Horizontal;
   return sourceModel()->headerData(section, new_orientation, role);
 }
