@@ -96,8 +96,6 @@ DoubleHashMap::DoubleHashMap(int N) : Map(N) {}
 ================================================================== */
 int DoubleHashMap::h2(int j, int key) { return (h1(key) + (j * (13 - (key % 13)))) % size; }
 
-// ==== QuadraticMap Class Methods ==================================
-
 /* ==== QuadraticMap Constructor with parameters ====================
     Constructor used to initialize map to size N and size to N. Uses
     the base class constructor.
