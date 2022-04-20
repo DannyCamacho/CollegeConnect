@@ -21,6 +21,14 @@ private slots:
     void on_select_state_currentTextChanged(const QString &arg1);
     void on_school_list_tableView_clicked(const QModelIndex &index);
 
+    void on_toggle_name_order_ascending_clicked();
+
+    void on_toggle_name_order_descending_clicked();
+
+    void on_toggle_state_order_ascending_clicked();
+
+    void on_toggle_state_order_descending_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlQueryModel* schoolModel;

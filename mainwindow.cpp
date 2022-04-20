@@ -49,3 +49,31 @@ void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
     proxy_model->setSourceModel(schoolDetailModel);
     ui->school_info_tableView->setModel(proxy_model);
 }
+
+void MainWindow::on_toggle_name_order_ascending_clicked() {
+    order = "collegeName ASC";
+    ui->toggle_name_order_ascending->setVisible(false);
+    ui->toggle_name_order_descending->setVisible(true);
+    schoolTableUpdate();
+}
+
+void MainWindow::on_toggle_name_order_descending_clicked() {
+    order = "collegeName DESC";
+    ui->toggle_name_order_descending->setVisible(false);
+    ui->toggle_name_order_ascending->setVisible(true);
+    schoolTableUpdate();
+}
+
+void MainWindow::on_toggle_state_order_ascending_clicked() {
+    order = "state ASC";
+    ui->toggle_state_order_ascending->setVisible(false);
+    ui->toggle_state_order_descending->setVisible(true);
+    schoolTableUpdate();
+}
+
+void MainWindow::on_toggle_state_order_descending_clicked() {
+    order = "state DESC";
+    ui->toggle_state_order_descending->setVisible(false);
+    ui->toggle_state_order_ascending->setVisible(true);
+    schoolTableUpdate();
+}
