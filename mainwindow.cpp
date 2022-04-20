@@ -4,6 +4,7 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), collegeMap(20) {
     ui->setupUi(this);
     schoolModel = new QSqlQueryModel;
+    schoolDetailModel = new QSqlQueryModel;
     database.populateColleges("../CollegeConnect/Distances.csv");
     database.populateSouvenirs("../CollegeConnect/Souvenirs.csv");
     populateWindow();
@@ -32,9 +33,20 @@ void MainWindow::populateWindow() {
 }
 
 void  MainWindow::schoolTableUpdate() {
-    //QString state = ui->select_state->currentText() == "All States" ? "" : "WHERE state=\"" +  ui->select_state->currentText() + "\"";
-    QString state = "";
+    QString state = ui->select_state->currentText() == "All States" ? "" : "WHERE state=\"" +  ui->select_state->currentText() + "\"";
     QString order = "collegeName ASC";
+
     schoolModel->setQuery("SELECT collegeName, state FROM college " + state + " ORDER BY " + order);
     ui->school_list_tableView->setModel(schoolModel);
+}
+
+void MainWindow::on_select_state_currentTextChanged(const QString &arg1) {
+    schoolTableUpdate();
+}
+
+void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
+    Horizontal_proxy_model* proxy_model = new Horizontal_proxy_model();
+    schoolDetailModel->setQuery("SELECT collegeName, state, undergrads FROM college WHERE collegeName=\"" +  index.siblingAtColumn(0).data().toString() + "\"");
+    proxy_model->setSourceModel(schoolDetailModel);
+    ui->school_info_tableView->setModel(proxy_model);
 }

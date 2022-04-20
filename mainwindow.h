@@ -17,9 +17,15 @@ public:
     ~MainWindow();
     void populateWindow();
     void schoolTableUpdate();
+private slots:
+    void on_select_state_currentTextChanged(const QString &arg1);
+
+    void on_school_list_tableView_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     QSqlQueryModel* schoolModel;
+    QSqlQueryModel* schoolDetailModel;
     Database database;
     DoubleHashMap collegeMap;
 };
