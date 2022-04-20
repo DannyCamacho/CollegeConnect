@@ -61,28 +61,6 @@ selection-background-color: rgb(118, 158, 81);</string>
     <property name="frameShadow">
      <enum>QFrame::Plain</enum>
     </property>
-    <widget class="QTableWidget" name="school_list_tableWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>50</y>
-       <width>431</width>
-       <height>411</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Mongolian Baiti</family>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="autoScroll">
-      <bool>false</bool>
-     </property>
-    </widget>
     <widget class="QComboBox" name="select_state">
      <property name="geometry">
       <rect>
@@ -184,10 +162,23 @@ selection-background-color: rgb(118, 158, 81);</string>
       <bool>true</bool>
      </property>
     </widget>
-    <zorder>school_list_tableWidget</zorder>
+    <widget class="QTableView" name="school_list_tableView">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>50</y>
+       <width>431</width>
+       <height>411</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
     <zorder>toggle_name_order</zorder>
     <zorder>toggle_state_order</zorder>
     <zorder>select_state</zorder>
+    <zorder>school_list_tableView</zorder>
    </widget>
    <widget class="QFrame" name="info_right_frame">
     <property name="geometry">
@@ -204,34 +195,6 @@ selection-background-color: rgb(118, 158, 81);</string>
     <property name="frameShadow">
      <enum>QFrame::Plain</enum>
     </property>
-    <widget class="QTableWidget" name="school_info_tableWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>371</width>
-       <height>181</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Mongolian Baiti</family>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
-     </property>
-     <property name="autoScroll">
-      <bool>false</bool>
-     </property>
-    </widget>
     <widget class="QPushButton" name="visit_store_button">
      <property name="geometry">
       <rect>
@@ -343,6 +306,16 @@ QPushButton#visit_store_button: pressed {
      </property>
      <property name="flat">
       <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QTableView" name="school_info_tableView">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>371</width>
+       <height>181</height>
+      </rect>
      </property>
     </widget>
    </widget>
