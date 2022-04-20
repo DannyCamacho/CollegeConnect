@@ -97,7 +97,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <enum>QComboBox::InsertAtBottom</enum>
      </property>
      <property name="placeholderText">
-      <string>Select State</string>
+      <string>All States</string>
      </property>
      <property name="frame">
       <bool>false</bool>
@@ -109,9 +109,9 @@ selection-background-color: rgb(118, 158, 81);</string>
     <widget class="QPushButton" name="toggle_name_order">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>1</x>
        <y>30</y>
-       <width>221</width>
+       <width>240</width>
        <height>21</height>
       </rect>
      </property>
@@ -142,9 +142,9 @@ selection-background-color: rgb(118, 158, 81);</string>
     <widget class="QPushButton" name="toggle_state_order">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>240</x>
        <y>30</y>
-       <width>211</width>
+       <width>191</width>
        <height>21</height>
       </rect>
      </property>
@@ -182,8 +182,57 @@ selection-background-color: rgb(118, 158, 81);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(49, 49, 49);
+alternate-background-color: rgb(240, 240, 240);
+selection-color: rgb(49, 49, 49);
+selection-background-color: rgb(118, 158, 81);</string>
      </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="autoScroll">
+      <bool>false</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::SolidLine</enum>
+     </property>
+     <property name="sortingEnabled">
+      <bool>false</bool>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>50</number>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>240</number>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
     </widget>
     <zorder>toggle_name_order</zorder>
     <zorder>toggle_state_order</zorder>
@@ -326,6 +375,9 @@ QPushButton#visit_store_button: pressed {
        <width>371</width>
        <height>181</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
     </widget>
    </widget>
