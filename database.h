@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <QSqlDatabase>
+#include <QSqlQueryModel>
 #include <QSqlDriver>
 #include <QSqlError>
 #include <QSqlQuery>

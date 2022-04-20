@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "map.h"
+#include "database.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -13,8 +15,12 @@ class MainWindow : public QMainWindow {
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    void populateWindow();
+    void schoolTableUpdate();
 private:
     Ui::MainWindow *ui;
+    QSqlQueryModel* schoolModel;
+    Database database;
+    DoubleHashMap collegeMap;
 };
 #endif // MAINWINDOW_H
