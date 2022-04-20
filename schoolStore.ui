@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>270</y>
+      <y>119</y>
       <width>241</width>
-      <height>80</height>
+      <height>231</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -36,8 +36,8 @@ color: rgb(0, 0, 0);</string>
     <widget class="QSpinBox" name="spinBox">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>20</y>
+       <x>20</x>
+       <y>50</y>
        <width>61</width>
        <height>41</height>
       </rect>
@@ -92,9 +92,9 @@ selection-background-color: rgb(225, 225, 225);
     <widget class="QPushButton" name="pushButton_4">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>20</y>
-       <width>61</width>
+       <x>20</x>
+       <y>110</y>
+       <width>201</width>
        <height>41</height>
       </rect>
      </property>
@@ -107,7 +107,7 @@ color: rgb(0, 0, 0);
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../SaddlebackEats/UIGraphics.qrc">
+      <iconset>
        <normaloff>:/rec/resources/addToCart-removebg-.png</normaloff>:/rec/resources/addToCart-removebg-.png</iconset>
      </property>
      <property name="iconSize">
@@ -126,9 +126,9 @@ color: rgb(0, 0, 0);
     <widget class="QPushButton" name="cartButton">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>20</y>
-       <width>51</width>
+       <x>20</x>
+       <y>170</y>
+       <width>201</width>
        <height>41</height>
       </rect>
      </property>
@@ -370,53 +370,10 @@ selection-color: rgb(0, 0, 0);</string>
      </attribute>
     </widget>
    </widget>
-   <widget class="QFrame" name="frame_3">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>60</y>
-      <width>491</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>10</y>
-       <width>491</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bahnschrift</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string>Restaurants</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </widget>
   </widget>
  </widget>
  <resources>
   <include location="resources/resources.qrc"/>
-  <include location="../SaddlebackEats/UIGraphics.qrc"/>
  </resources>
  <connections/>
 </ui>
