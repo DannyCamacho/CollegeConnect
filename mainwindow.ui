@@ -89,7 +89,7 @@ selection-background-color: rgb(118, 158, 81);</string>
      <property name="styleSheet">
       <string notr="true">color: rgb(49, 49, 49);
 background-color: rgb(118, 158, 81);
-alternate-background-color: rgb(225, 225, 225);
+alternate-background-color: rgb(240, 240, 240);
 selection-color: rgb(49, 49, 49);
 selection-background-color: rgb(118, 158, 81);</string>
      </property>
@@ -377,7 +377,11 @@ QPushButton#visit_store_button: pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(49, 49, 49);
+alternate-background-color: rgb(240, 240, 240);
+selection-color: rgb(49, 49, 49);
+selection-background-color: rgb(118, 158, 81);</string>
      </property>
     </widget>
    </widget>
