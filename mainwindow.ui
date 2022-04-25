@@ -442,7 +442,7 @@ QPushButton#visit_store_button: pressed {
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QTableView" name="school_info_tableView">
+    <widget class="QFrame" name="college_info_display_frame">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -451,55 +451,89 @@ QPushButton#visit_store_button: pressed {
        <height>181</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <family>Mongolian Baiti</family>
-       <pointsize>12</pointsize>
-      </font>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
      </property>
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
      </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(49, 49, 49);
-alternate-background-color: rgb(240, 240, 240);
-selection-color: rgb(49, 49, 49);
-selection-background-color: rgb(118, 158, 81);</string>
-     </property>
-     <property name="horizontalScrollBarPolicy">
-      <enum>Qt::ScrollBarAlwaysOff</enum>
-     </property>
-     <property name="autoScroll">
-      <bool>false</bool>
-     </property>
-     <property name="alternatingRowColors">
-      <bool>true</bool>
-     </property>
-     <property name="selectionMode">
-      <enum>QAbstractItemView::SingleSelection</enum>
-     </property>
-     <property name="selectionBehavior">
-      <enum>QAbstractItemView::SelectRows</enum>
-     </property>
-     <property name="textElideMode">
-      <enum>Qt::ElideRight</enum>
-     </property>
-     <property name="showGrid">
-      <bool>false</bool>
-     </property>
-     <attribute name="horizontalHeaderVisible">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="horizontalHeaderMinimumSectionSize">
-      <number>50</number>
-     </attribute>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>true</bool>
-     </attribute>
-     <attribute name="verticalHeaderVisible">
-      <bool>false</bool>
-     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="college_name_label">
+        <property name="font">
+         <font>
+          <family>Mongolian Baiti</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+</string>
+        </property>
+        <property name="text">
+         <string>College Name</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="state_label">
+        <property name="font">
+         <font>
+          <family>Mongolian Baiti</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+</string>
+        </property>
+        <property name="text">
+         <string>State</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="undergrad_label">
+        <property name="font">
+         <font>
+          <family>Mongolian Baiti</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+</string>
+        </property>
+        <property name="text">
+         <string>Number of Undergraduates</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QFrame" name="undergrad_frame">
