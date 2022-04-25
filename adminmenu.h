@@ -3,12 +3,8 @@
 
 #include <QMainWindow>
 
-namespace Ui {
-class AdminMenu;
-}
-
-class AdminMenu : public QMainWindow
-{
+namespace Ui { class AdminMenu; }
+class AdminMenu : public QMainWindow {
     Q_OBJECT
 
 public:

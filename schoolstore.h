@@ -3,13 +3,10 @@
 
 #include <QMainWindow>
 
-namespace Ui {
-class SchoolStore;
-}
-
-class SchoolStore : public QMainWindow
-{
+namespace Ui { class SchoolStore; }
+class SchoolStore : public QMainWindow {
     Q_OBJECT
+
 public:
     explicit SchoolStore(QWidget *parent = nullptr);
     ~SchoolStore();
