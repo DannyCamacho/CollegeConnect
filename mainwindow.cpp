@@ -44,10 +44,9 @@ void MainWindow::on_select_state_currentTextChanged(const QString &arg1) {
 }
 
 void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
-    Horizontal_proxy_model* proxy_model = new Horizontal_proxy_model();
-    schoolDetailModel->setQuery("SELECT collegeName, state, undergrads FROM college WHERE collegeName=\"" +  index.siblingAtColumn(0).data().toString() + "\"");
-    proxy_model->setSourceModel(schoolDetailModel);
-    ui->school_info_tableView->setModel(proxy_model);
+    QSqlQuery query("SELECT collegeNum FROM college WHERE collegeName=\"" +  index.siblingAtColumn(0).data().toString() + "\"");
+    ui->college_name_label->setText(collegeMap[query.value(0).toInt()]);
+
 }
 
 void MainWindow::on_toggle_name_order_ascending_clicked() {
