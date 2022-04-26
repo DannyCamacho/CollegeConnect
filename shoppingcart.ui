@@ -40,6 +40,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Mongolian Baiti</family>
        <pointsize>16</pointsize>
       </font>
      </property>
@@ -141,13 +142,16 @@ QPushButton#visit_store_button: clicked {
      </property>
      <property name="font">
       <font>
-       <family>Bahnschrift</family>
-       <pointsize>16</pointsize>
+       <family>Mongolian Baiti</family>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(49, 49, 49);
-background: none;</string>
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(49, 49, 49);
+alternate-background-color: rgb(240, 240, 240);
+selection-color: rgb(49, 49, 49);
+selection-background-color: rgb(118, 158, 81);</string>
      </property>
      <property name="text">
       <string>0.00</string>
@@ -170,15 +174,18 @@ background: none;</string>
      </property>
      <property name="font">
       <font>
-       <family>Bahnschrift</family>
-       <pointsize>16</pointsize>
+       <family>Mongolian Baiti</family>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(49, 49, 49);
-background: none;</string>
+      <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(49, 49, 49);
+alternate-background-color: rgb(240, 240, 240);
+selection-color: rgb(49, 49, 49);
+selection-background-color: rgb(118, 158, 81);</string>
      </property>
      <property name="text">
       <string>Total:   $</string>
@@ -213,7 +220,7 @@ background: none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Bahnschrift</family>
+        <family>Mongolian Baiti</family>
         <pointsize>11</pointsize>
        </font>
       </property>
@@ -504,7 +511,7 @@ QPushButton#visit_store_button: clicked {
      </property>
      <property name="font">
       <font>
-       <family>Bahnschrift</family>
+       <family>Mongolian Baiti</family>
        <pointsize>11</pointsize>
       </font>
      </property>
