@@ -46,8 +46,12 @@ DISTFILES += \
     Souvenirs.csv \
     resources/CC_logo.png \
     resources/CC_logo_mini-removebg.png \
+    resources/bubble-removebg.png \
+    resources/bubble.png \
     resources/down-arrow-icon.png \
+    resources/plan_route_logo-removebg.png \
     resources/plan_route_logo.png \
+    resources/school_store_logo-removebg.png \
     resources/school_store_logo.png \
     resources/up-arrow-icon.png
 

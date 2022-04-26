@@ -6,5 +6,9 @@
         <file>plan_route_logo.png</file>
         <file>school_store_logo.png</file>
         <file>CC_logo_mini-removebg.png</file>
+        <file>bubble.png</file>
+        <file>bubble-removebg.png</file>
+        <file>plan_route_logo-removebg.png</file>
+        <file>school_store_logo-removebg.png</file>
     </qresource>
 </RCC>
