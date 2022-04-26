@@ -107,7 +107,7 @@ border-color:rgb(118, 158, 81);
 min-width: 10em;
 padding: 6px;
 
-QPushButton#visit_store_button: clicked {
+QPushButton#route_pushButton: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>
@@ -333,10 +333,9 @@ border-style: outset;
 border-width: 2px;
 border-radius: 10px;
 border-color:rgb(118, 158, 81);
-min-width: 10em;
 padding: 6px;
 
-QPushButton#visit_store_button: clicked {
+QPushButton#empty_cart_pushButton: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>
@@ -381,10 +380,9 @@ border-style: outset;
 border-width: 2px;
 border-radius: 10px;
 border-color:rgb(118, 158, 81);
-min-width: 10em;
 padding: 6px;
 
-QPushButton#visit_store_button: clicked {
+QPushButton#remove_item_pushButton: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>
@@ -432,7 +430,6 @@ QPushButton#visit_store_button: clicked {
        <string notr="true">color: rgb(49, 49, 49);
 background-color:  rgb(255, 255, 255);
 border-color:rgb(118, 158, 81);
-min-width: 10em;
 padding: 6px;</string>
       </property>
       <property name="alignment">
@@ -475,10 +472,9 @@ border-style: outset;
 border-width: 2px;
 border-radius: 10px;
 border-color:rgb(118, 158, 81);
-min-width: 10em;
 padding: 6px;
 
-QPushButton#visit_store_button: clicked {
+QPushButton#update_pushButton: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>

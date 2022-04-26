@@ -120,7 +120,7 @@ border-color:rgb(118, 158, 81);
 min-width: 10em;
 padding: 6px;
 
-QPushButton#visit_store_button: clicked {
+QPushButton#add_to_cart_pushButton: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>
@@ -129,7 +129,7 @@ QPushButton#visit_store_button: clicked {
       <string>Add to Cart</string>
      </property>
      <property name="icon">
-      <iconset resource="../SaddlebackEats/UIGraphics.qrc">
+      <iconset>
        <normaloff>:/rec/resources/addToCart-removebg-.png</normaloff>:/rec/resources/addToCart-removebg-.png</iconset>
      </property>
      <property name="iconSize">
@@ -172,7 +172,7 @@ border-color:rgb(118, 158, 81);
 min-width: 10em;
 padding: 6px;
 
-QPushButton#visit_store_button: clicked {
+QPushButton#shopping_cart_pushButton: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>
@@ -321,7 +321,7 @@ border-color:rgb(118, 158, 81);
 min-width: 10em;
 padding: 6px;
 
-QPushButton#visit_store_button: clicked {
+QPushButton#initial_list_pushButton: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>
