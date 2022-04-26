@@ -24,8 +24,8 @@ selection-background-color: rgb(118, 158, 81);</string>
    <widget class="QFrame" name="shop_functions_frame">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>150</y>
+      <x>590</x>
+      <y>110</y>
       <width>271</width>
       <height>161</height>
      </rect>
@@ -129,7 +129,7 @@ QPushButton#visit_store_button: clicked {
       <string>Add to Cart</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="../SaddlebackEats/UIGraphics.qrc">
        <normaloff>:/rec/resources/addToCart-removebg-.png</normaloff>:/rec/resources/addToCart-removebg-.png</iconset>
      </property>
      <property name="iconSize">
@@ -267,8 +267,8 @@ image: url(:/rec/resources/bubble-icon-removebg.png);</string>
    <widget class="QFrame" name="bottom_right_frame">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>400</y>
+      <x>590</x>
+      <y>290</y>
       <width>271</width>
       <height>90</height>
      </rect>
@@ -294,7 +294,7 @@ color: rgb(0, 0, 0);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>0</width>
+       <width>146</width>
        <height>0</height>
       </size>
      </property>
@@ -343,7 +343,7 @@ QPushButton#visit_store_button: clicked {
    <widget class="QFrame" name="store_frame">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>110</y>
       <width>491</width>
       <height>381</height>
@@ -435,6 +435,22 @@ selection-background-color: rgb(118, 158, 81);</string>
       <bool>true</bool>
      </attribute>
     </widget>
+   </widget>
+   <widget class="QLabel" name="cc_logo_icon">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>0</y>
+      <width>361</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/CC_logo.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
  </widget>
