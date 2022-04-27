@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>School Store</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources/resources.qrc">
+    <normaloff>:/CC_logo_mini-removebg.png</normaloff>:/CC_logo_mini-removebg.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">color: rgb(49, 49, 49);
@@ -101,7 +105,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <rect>
        <x>90</x>
        <y>20</y>
-       <width>161</width>
+       <width>176</width>
        <height>51</height>
       </rect>
      </property>
@@ -294,7 +298,7 @@ color: rgb(0, 0, 0);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>146</width>
+       <width>176</width>
        <height>0</height>
       </size>
      </property>
@@ -308,7 +312,6 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>

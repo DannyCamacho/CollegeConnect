@@ -11,13 +11,17 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Admin</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources/resources.qrc">
+    <normaloff>:/CC_logo_mini-removebg.png</normaloff>:/CC_logo_mini-removebg.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="frame_3">
+   <widget class="QFrame" name="title_frame">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -32,7 +36,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="university_label">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -57,7 +61,7 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="items_label">
      <property name="geometry">
       <rect>
        <x>246</x>
@@ -83,7 +87,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QFrame" name="frame_4">
+   <widget class="QFrame" name="utility_frame">
     <property name="geometry">
      <rect>
       <x>610</x>
@@ -113,7 +117,7 @@ color: rgb(0, 0, 0);</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="shop_item_label">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -138,7 +142,7 @@ color: rgb(0, 0, 0);</string>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEditItemName">
+       <widget class="QLineEdit" name="shop_item_lineEdit">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -166,7 +170,7 @@ padding: 6px;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="price_label">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -191,7 +195,7 @@ padding: 6px;
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEditItemPrice">
+       <widget class="QLineEdit" name="price_lineEdit">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -220,7 +224,7 @@ padding: 6px;
       </item>
      </layout>
     </widget>
-    <widget class="QFrame" name="frame_2">
+    <widget class="QFrame" name="utility_buttons_frame">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -237,7 +241,7 @@ padding: 6px;
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QPushButton" name="addButton">
+       <widget class="QPushButton" name="add_button">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -248,7 +252,6 @@ padding: 6px;
          <font>
           <family>Mongolian Baiti</family>
           <pointsize>11</pointsize>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -284,7 +287,7 @@ QPushButton#plan_route_button: pressed {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="removeButton">
+       <widget class="QPushButton" name="remove_button">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -295,7 +298,6 @@ QPushButton#plan_route_button: pressed {
          <font>
           <family>Mongolian Baiti</family>
           <pointsize>11</pointsize>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -325,7 +327,7 @@ QPushButton#plan_route_button: pressed {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="editButton">
+       <widget class="QPushButton" name="save_changes_button">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -336,7 +338,6 @@ QPushButton#plan_route_button: pressed {
          <font>
           <family>Mongolian Baiti</family>
           <pointsize>11</pointsize>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -362,7 +363,7 @@ QPushButton#plan_route_button: pressed {
      </layout>
     </widget>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QFrame" name="shop_frame">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -377,7 +378,7 @@ QPushButton#plan_route_button: pressed {
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QTableView" name="rest_tableView">
+    <widget class="QTableView" name="university_tableView">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -457,7 +458,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <bool>true</bool>
      </attribute>
     </widget>
-    <widget class="QTableView" name="menu_tableView">
+    <widget class="QTableView" name="items_tableView">
      <property name="geometry">
       <rect>
        <x>250</x>
