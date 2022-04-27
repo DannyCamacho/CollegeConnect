@@ -15,7 +15,8 @@ public:
     void souvenirTableViewUpdate();
 
 private slots:
-    void on_rest_tableView_clicked(const QModelIndex &index);
+
+    void on_university_tableView_clicked(const QModelIndex &index);
 
 private:
     Ui::AdminMenu *ui;

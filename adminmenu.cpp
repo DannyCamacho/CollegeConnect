@@ -13,7 +13,7 @@ AdminMenu::~AdminMenu() {
 }
 
 void AdminMenu::schoolTableViewUpdate() {
-    schoolModel->setQuery("SELECT collegeName FROM college ORDER BY collgeName");
+    schoolModel->setQuery("SELECT collegeName FROM college ORDER BY collegeName");
     ui->university_tableView->setModel(schoolModel);
 }
 
@@ -22,12 +22,11 @@ void AdminMenu::souvenirTableViewUpdate() {
     ui->items_tableView->setModel(souvenirModel);
 }
 
-void AdminMenu::on_rest_tableView_clicked(const QModelIndex &index) {
-        collegeName = index.siblingAtColumn(0).data().toString();
-        souvenirModel->setQuery("SELECT item, price FROM souvenir WHERE collegeName =\"" + collegeName + "\"");
-        ui->items_tableView->setModel(souvenirModel);
-        ui->shop_item_lineEdit->setText("");
-        ui->price_lineEdit->setText("");
-        item = "";
+void AdminMenu::on_university_tableView_clicked(const QModelIndex &index) {
+            collegeName = index.siblingAtColumn(0).data().toString();
+            souvenirModel->setQuery("SELECT item, price FROM souvenir WHERE collegeName =\"" + collegeName + "\"");
+            ui->items_tableView->setModel(souvenirModel);
+            ui->shop_item_lineEdit->setText("");
+            ui->price_lineEdit->setText("");
+            item = "";
 }
-
