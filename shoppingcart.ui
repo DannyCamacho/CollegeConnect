@@ -13,6 +13,13 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">color: rgb(49, 49, 49);
+background-color: rgb(255, 255, 255);
+alternate-background-color: rgb(225, 225, 225);
+selection-color: rgb(49, 49, 49);
+selection-background-color: rgb(118, 158, 81);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="cart_title_frame">
     <property name="geometry">
@@ -93,7 +100,6 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -176,7 +182,6 @@ selection-background-color: rgb(118, 158, 81);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -322,7 +327,6 @@ selection-background-color: rgb(118, 158, 81);</string>
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -369,7 +373,6 @@ QPushButton#empty_cart_pushButton: clicked {
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -422,7 +425,6 @@ QPushButton#remove_item_pushButton: clicked {
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -461,7 +463,6 @@ padding: 6px;</string>
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
