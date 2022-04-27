@@ -14,20 +14,20 @@ AdminMenu::~AdminMenu() {
 
 void AdminMenu::schoolTableViewUpdate() {
     schoolModel->setQuery("SELECT collegeName FROM college ORDER BY collgeName");
-    ui->rest_tableView->setModel(schoolModel);
+    ui->university_tableView->setModel(schoolModel);
 }
 
 void AdminMenu::souvenirTableViewUpdate() {
     souvenirModel->setQuery("SELECT item, price FROM souvenir WHERE collegeName =\"" + collegeName + "\"");
-    ui->menu_tableView->setModel(souvenirModel);
+    ui->items_tableView->setModel(souvenirModel);
 }
 
 void AdminMenu::on_rest_tableView_clicked(const QModelIndex &index) {
         collegeName = index.siblingAtColumn(0).data().toString();
         souvenirModel->setQuery("SELECT item, price FROM souvenir WHERE collegeName =\"" + collegeName + "\"");
-        ui->menu_tableView->setModel(souvenirModel);
-        ui->lineEditItemName->setText("");
-        ui->lineEditItemPrice->setText("");
+        ui->items_tableView->setModel(souvenirModel);
+        ui->shop_item_lineEdit->setText("");
+        ui->price_lineEdit->setText("");
         item = "";
 }
 
