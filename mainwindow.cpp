@@ -45,8 +45,10 @@ void MainWindow::on_select_state_currentTextChanged(const QString &arg1) {
 
 void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
     QSqlQuery query("SELECT collegeNum FROM college WHERE collegeName=\"" +  index.siblingAtColumn(0).data().toString() + "\"");
-    ui->college_name_label->setText(collegeMap[query.value(0).toInt()]);
-
+    query.next();
+    ui->college_name_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).collegeName));
+    ui->state_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).state));
+    ui->undergrad_label->setText(QString::number(collegeMap.at(query.value(0).toInt()).numsOfGrad));
 }
 
 void MainWindow::on_toggle_name_order_ascending_clicked() {

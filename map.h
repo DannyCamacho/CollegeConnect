@@ -27,6 +27,7 @@ public:
     void insert(Pair pair);
     void erase(int key);
     void printMap();
+    Pair at(int i);
     ~Map();
 protected:
     Pair* map;
