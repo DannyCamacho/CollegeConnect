@@ -81,3 +81,8 @@ void MainWindow::on_toggle_state_order_descending_clicked() {
     ui->toggle_state_order_ascending->setVisible(true);
     schoolTableUpdate();
 }
+
+void MainWindow::on_actionLogin_triggered() {
+
+}
+
