@@ -31,6 +31,9 @@ void MainWindow::populateWindow() {
 
     schoolModel->setQuery("SELECT collegeName, state FROM college ORDER BY " + order);
     ui->school_list_tableView->setModel(schoolModel);
+    ui->toggle_name_order_descending->setVisible(false);
+    ui->toggle_state_order_descending->setVisible(false);
+    ui->select_state->setCurrentText("All States");
 }
 
 void  MainWindow::schoolTableUpdate() {
