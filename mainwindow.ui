@@ -461,7 +461,7 @@ QPushButton#plan_route_button: pressed {
         <property name="font">
          <font>
           <family>Mongolian Baiti</family>
-          <pointsize>10</pointsize>
+          <pointsize>11</pointsize>
          </font>
         </property>
         <property name="styleSheet">
@@ -486,7 +486,7 @@ padding: 6px;
         <property name="font">
          <font>
           <family>Mongolian Baiti</family>
-          <pointsize>10</pointsize>
+          <pointsize>11</pointsize>
          </font>
         </property>
         <property name="styleSheet">
@@ -511,7 +511,7 @@ padding: 6px;
         <property name="font">
          <font>
           <family>Mongolian Baiti</family>
-          <pointsize>10</pointsize>
+          <pointsize>11</pointsize>
          </font>
         </property>
         <property name="styleSheet">
