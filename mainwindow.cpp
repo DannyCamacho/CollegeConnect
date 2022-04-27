@@ -9,8 +9,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     database.populateColleges("../CollegeConnect/Distances.csv");
     database.populateSouvenirs("../CollegeConnect/Souvenirs.csv");
     populateWindow();
-    //database.populateColleges("C:/csv/Distances.csv");
-    //database.populateSouvenirs("C:/csv/Souvenirs.csv");
 }
 
 MainWindow::~MainWindow() {
@@ -33,6 +31,9 @@ void MainWindow::populateWindow() {
 
     schoolModel->setQuery("SELECT collegeName, state FROM college ORDER BY " + order);
     ui->school_list_tableView->setModel(schoolModel);
+    ui->toggle_name_order_descending->setVisible(false);
+    ui->toggle_state_order_descending->setVisible(false);
+    ui->select_state->setCurrentText("All States");
 }
 
 void  MainWindow::schoolTableUpdate() {
@@ -46,10 +47,11 @@ void MainWindow::on_select_state_currentTextChanged(const QString &arg1) {
 }
 
 void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
-    Horizontal_proxy_model* proxy_model = new Horizontal_proxy_model();
-    schoolDetailModel->setQuery("SELECT collegeName, state, undergrads FROM college WHERE collegeName=\"" +  index.siblingAtColumn(0).data().toString() + "\"");
-    proxy_model->setSourceModel(schoolDetailModel);
-    ui->school_info_tableView->setModel(proxy_model);
+    QSqlQuery query("SELECT collegeNum FROM college WHERE collegeName=\"" +  index.siblingAtColumn(0).data().toString() + "\"");
+    query.next();
+    ui->college_name_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).collegeName));
+    ui->state_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).state));
+    ui->undergrad_label->setText(QString::number(collegeMap.at(query.value(0).toInt()).numsOfGrad));
 }
 
 void MainWindow::on_toggle_name_order_ascending_clicked() {

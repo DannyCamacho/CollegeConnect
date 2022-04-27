@@ -1,14 +1,10 @@
 #include "adminmenu.h"
 #include "ui_adminmenu.h"
 
-AdminMenu::AdminMenu(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::AdminMenu)
-{
+AdminMenu::AdminMenu(QWidget *parent) : QMainWindow(parent), ui(new Ui::AdminMenu) {
     ui->setupUi(this);
 }
 
-AdminMenu::~AdminMenu()
-{
+AdminMenu::~AdminMenu() {
     delete ui;
 }
