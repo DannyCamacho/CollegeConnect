@@ -65,7 +65,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <x>29</x>
       <y>89</y>
       <width>431</width>
-      <height>461</height>
+      <height>451</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -179,7 +179,7 @@ selection-background-color: rgb(118, 158, 81);</string>
        <x>0</x>
        <y>50</y>
        <width>431</width>
-       <height>411</height>
+       <height>401</height>
       </rect>
      </property>
      <property name="font">
@@ -538,7 +538,7 @@ padding: 6px;
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>520</y>
+      <y>500</y>
       <width>291</width>
       <height>80</height>
      </rect>
@@ -604,6 +604,57 @@ color: rgb(49, 49, 49);</string>
     </widget>
    </widget>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Mongolian Baiti</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(49, 49, 49);
+alternate-background-color: rgb(240, 240, 240);
+selection-color: rgb(49, 49, 49);
+selection-background-color: rgb(118, 158, 81);</string>
+   </property>
+   <widget class="QMenu" name="menumenu">
+    <property name="font">
+     <font>
+      <family>Mongolian Baiti</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>menu</string>
+    </property>
+    <property name="icon">
+     <iconset resource="resources/resources.qrc">
+      <normaloff>:/menu-removebg.png</normaloff>:/menu-removebg.png</iconset>
+    </property>
+    <addaction name="actionLogin"/>
+   </widget>
+   <addaction name="menumenu"/>
+  </widget>
+  <action name="actionLogin">
+   <property name="text">
+    <string>Login</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Mongolian Baiti</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="resources/resources.qrc"/>
