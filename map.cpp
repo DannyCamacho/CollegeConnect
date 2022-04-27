@@ -66,15 +66,19 @@ void Map::erase(int key) {
 void Map::printMap() {
     for (int i = 0; i < size; ++i) {
         if (map[i].collegeName != "") {
-
-           // std::cout << "Element: [" << i << "]\t\tKey: " << map[i].key
-           //           << " \t  Value: " << map[i].collegeName << std::endl;
             std::cout << "ID: " << map[i].key
                       << "\tCollege name: " << map[i].collegeName
                       << "\tState: " << map[i].state
                       << "\tNo. of undergrats: " << map[i].numsOfGrad << std::endl;
         }
     }
+}
+
+/* ==== Map at() ====================================================
+    Pair-returning method used get the map value at a specific index.
+================================================================== */
+Pair Map::at(int i) {
+    return map[i];
 }
 
 /* ==== Map Destructor ==============================================

@@ -12,14 +12,6 @@ struct Pair {
     std::string collegeName;
     std::string state;
     int numsOfGrad;
-
-    /*Pair(int id, std::string collegeName, std::string state, int numsOfGrad)
-    {
-        key = id;
-        this->collegeName = collegeName;
-        this->state = state;
-        this->numsOfGrad = numsOfGrad;
-    }*/
 };
 
 /* ==== Map Class ===================================================
@@ -35,6 +27,7 @@ public:
     void insert(Pair pair);
     void erase(int key);
     void printMap();
+    Pair at(int i);
     ~Map();
 protected:
     Pair* map;
