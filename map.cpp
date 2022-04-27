@@ -74,6 +74,13 @@ void Map::printMap() {
     }
 }
 
+/* ==== Map at() ====================================================
+    Pair-returning method used get the map value at a specific index.
+================================================================== */
+Pair Map::at(int i) {
+    return map[i];
+}
+
 /* ==== Map Destructor ==============================================
     Destructor used to delete heap memory allocated for map. Used
     by derived classes as destructor.
