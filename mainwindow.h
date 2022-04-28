@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include "map.h"
-#include "database.h"
 #include "adminmenu.h"
 #include "login.h"
 
@@ -38,9 +37,7 @@ private:
     AdminMenu* adminMenu;
     QSqlQueryModel* schoolModel;
     QSqlQueryModel* schoolDetailModel;
-    Database database;
     QString order;
     DoubleHashMap collegeMap;
-
 };
 #endif // MAINWINDOW_H

@@ -6,8 +6,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     order = "collegeName ASC";
     schoolModel = new QSqlQueryModel;
     schoolDetailModel = new QSqlQueryModel;
-    database.populateColleges("../CollegeConnect/Distances.csv");
-    database.populateSouvenirs("../CollegeConnect/Souvenirs.csv");
     populateWindow();
 }
 
