@@ -47,9 +47,9 @@ selection-background-color: rgb(118, 158, 81);</string>
     <property name="geometry">
      <rect>
       <x>-1</x>
-      <y>-1</y>
+      <y>-21</y>
       <width>901</width>
-      <height>581</height>
+      <height>601</height>
      </rect>
     </property>
     <widget class="QWidget" name="page_1">
@@ -57,7 +57,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <property name="geometry">
        <rect>
         <x>491</x>
-        <y>91</y>
+        <y>111</y>
         <width>371</width>
         <height>391</height>
        </rect>
@@ -279,7 +279,7 @@ padding: 6px;
       <property name="geometry">
        <rect>
         <x>611</x>
-        <y>501</y>
+        <y>521</y>
         <width>291</width>
         <height>80</height>
        </rect>
@@ -348,7 +348,7 @@ color: rgb(49, 49, 49);</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>1</y>
+        <y>21</y>
         <width>361</width>
         <height>81</height>
        </rect>
@@ -364,7 +364,7 @@ color: rgb(49, 49, 49);</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>90</y>
+        <y>110</y>
         <width>431</width>
         <height>451</height>
        </rect>
