@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow() {
     delete ui;
+    delete schoolModel;
+    delete schoolDetailModel;
 }
 
 void MainWindow::populateWindow() {
@@ -47,12 +49,30 @@ void MainWindow::on_select_state_currentTextChanged(const QString &arg1) {
 }
 
 void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
+
     QSqlQuery query("SELECT collegeNum FROM college WHERE collegeName=\"" +  index.siblingAtColumn(0).data().toString() + "\"");
     query.next();
     ui->college_name_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).collegeName));
     ui->state_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).state));
     ui->undergrad_label->setText(QString::number(collegeMap.at(query.value(0).toInt()).numsOfGrad));
+
+
+    query.exec("DROP TABLE IF EXISTS schoolStore;");
+    query.exec("CREATE TABLE schoolStore (item TEXT, price FLOAT);");
+    query.exec("SELECT item, price FROM souvenir WHERE collegeName=\"" + index.siblingAtColumn(0).data().toString() + "\"");
+    while (query.next())
+    {
+        QSqlQuery subQuery;
+        subQuery.prepare("INSERT INTO schoolStore VALUES (:item, :price);");
+        subQuery.bindValue(":item", query.value(0).toString());
+        subQuery.bindValue(":price", QString::number(query.value(1).toFloat()));
+        subQuery.exec();
+    }
 }
+
+//void createSouvenirTableForCollege() {
+//    QSqlQuery query("SELECT ")
+//}
 
 void MainWindow::on_toggle_name_order_ascending_clicked() {
     order = "collegeName ASC";
@@ -81,3 +101,12 @@ void MainWindow::on_toggle_state_order_descending_clicked() {
     ui->toggle_state_order_ascending->setVisible(true);
     schoolTableUpdate();
 }
+
+void MainWindow::on_visit_store_button_clicked()
+{
+    hide();
+    delete ui;
+    schoolStore = new SchoolStore(this);
+    schoolStore->show();
+}
+

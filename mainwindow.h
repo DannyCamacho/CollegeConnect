@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "map.h"
 #include "database.h"
+#include "schoolstore.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,6 +30,8 @@ private slots:
 
     void on_toggle_state_order_descending_clicked();
 
+    void on_visit_store_button_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlQueryModel* schoolModel;
@@ -36,5 +39,6 @@ private:
     Database database;
     QString order;
     DoubleHashMap collegeMap;
+    SchoolStore* schoolStore;
 };
 #endif // MAINWINDOW_H
