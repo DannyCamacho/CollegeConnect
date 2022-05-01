@@ -6,6 +6,8 @@ Database::Database() {
     if (!isInitialized) {
         connect();
         init();
+        populateColleges("../CollegeConnect/Distances.csv");
+        populateSouvenirs("../CollegeConnect/Souvenirs.csv");
         isInitialized = true;
     }
 }

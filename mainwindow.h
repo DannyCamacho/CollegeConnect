@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include "map.h"
-#include "database.h"
 #include "adminmenu.h"
 #include "login.h"
 
@@ -31,6 +30,7 @@ private slots:
     void on_toggle_state_order_ascending_clicked();
     void on_toggle_state_order_descending_clicked();
     void on_actionLogin_triggered();
+    void returnToMainWindow();
 
 private:
     Ui::MainWindow *ui;
@@ -41,6 +41,5 @@ private:
     Database database;
     QString order;
     DoubleHashMap collegeMap;
-
 };
 #endif // MAINWINDOW_H
