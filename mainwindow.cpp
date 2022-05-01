@@ -84,7 +84,7 @@ void MainWindow::on_toggle_state_order_descending_clicked() {
 }
 
 void MainWindow::on_actionLogin_triggered() {
-    login = new Login(this);
+    Login* login = new Login(this);
     login->show();
 }
 

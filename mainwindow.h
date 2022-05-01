@@ -34,7 +34,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Login* login;
     AdminMenu* adminMenu;
     QSqlQueryModel* schoolModel;
     QSqlQueryModel* schoolDetailModel;
