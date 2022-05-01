@@ -140,8 +140,5 @@ void AdminMenu::on_items_tableView_clicked(const QModelIndex &index) {
 }
 
 void AdminMenu::on_actionLogout_triggered(){
-    hide();
-    delete ui;
-    MainWindow* mainWindow = new MainWindow(this);
-    mainWindow->show();
+    emit adminLogout();
 }

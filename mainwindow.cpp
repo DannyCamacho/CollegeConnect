@@ -7,6 +7,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     schoolModel = new QSqlQueryModel;
     schoolDetailModel = new QSqlQueryModel;
     populateWindow();
+    adminMenu = new AdminMenu(this);
+    ui->main_stackedWidget->insertWidget(1, adminMenu);
+    connect(adminMenu, SIGNAL(adminLogout()), this, SLOT(returnToMainWindow()));
 }
 
 MainWindow::~MainWindow() {
@@ -86,9 +89,10 @@ void MainWindow::on_actionLogin_triggered() {
 }
 
 void MainWindow::receiveMessage(const QString &msg) {
-    hide();
-    delete ui;
-    adminMenu = new AdminMenu(this);
-    adminMenu->show();
+    ui->main_stackedWidget->setCurrentIndex(1);
 }
 
+void MainWindow::returnToMainWindow() {
+    ui->main_stackedWidget->setCurrentIndex(0);
+    schoolTableUpdate();
+}

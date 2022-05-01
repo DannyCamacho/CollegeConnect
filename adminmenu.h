@@ -24,6 +24,9 @@ private slots:
     void on_items_tableView_clicked(const QModelIndex &index);
     void on_actionLogout_triggered();
 
+signals:
+    void adminLogout();
+
 private:
     Ui::AdminMenu *ui;
     QSqlQueryModel* schoolModel;
