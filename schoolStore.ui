@@ -29,7 +29,7 @@ selection-background-color: rgb(118, 158, 81);</string>
     <property name="geometry">
      <rect>
       <x>590</x>
-      <y>110</y>
+      <y>160</y>
       <width>271</width>
       <height>161</height>
      </rect>
@@ -272,7 +272,7 @@ image: url(:/rec/resources/bubble-icon-removebg.png);</string>
     <property name="geometry">
      <rect>
       <x>590</x>
-      <y>290</y>
+      <y>340</y>
       <width>271</width>
       <height>90</height>
      </rect>
@@ -298,7 +298,7 @@ color: rgb(0, 0, 0);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>176</width>
+       <width>146</width>
        <height>0</height>
       </size>
      </property>
@@ -312,6 +312,7 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -347,7 +348,7 @@ QPushButton#initial_list_pushButton: clicked {
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>110</y>
+      <y>160</y>
       <width>491</width>
       <height>381</height>
      </rect>
@@ -454,6 +455,47 @@ selection-background-color: rgb(118, 158, 81);</string>
     <property name="text">
      <string/>
     </property>
+   </widget>
+   <widget class="QFrame" name="cart_title_frame">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>110</y>
+      <width>491</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="shopping_cart_logo">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>5</y>
+       <width>491</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(49, 49, 49);</string>
+     </property>
+     <property name="text">
+      <string>University Store</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

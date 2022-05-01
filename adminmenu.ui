@@ -252,6 +252,7 @@ padding: 6px;
          <font>
           <family>Mongolian Baiti</family>
           <pointsize>11</pointsize>
+          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -298,6 +299,7 @@ QPushButton#plan_route_button: pressed {
          <font>
           <family>Mongolian Baiti</family>
           <pointsize>11</pointsize>
+          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -338,6 +340,7 @@ QPushButton#plan_route_button: pressed {
          <font>
           <family>Mongolian Baiti</family>
           <pointsize>11</pointsize>
+          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -577,6 +580,9 @@ selection-background-color: rgb(118, 158, 81);</string>
      <iconset resource="resources/resources.qrc">
       <normaloff>:/menu-removebg.png</normaloff>:/menu-removebg.png</iconset>
     </property>
+    <addaction name="actionImport_University"/>
+    <addaction name="actionImport_Souveners"/>
+    <addaction name="separator"/>
     <addaction name="actionLogout"/>
    </widget>
    <addaction name="menumenu"/>
@@ -591,6 +597,16 @@ selection-background-color: rgb(118, 158, 81);</string>
      <family>Mongolian Baiti</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+  </action>
+  <action name="actionImport_University">
+   <property name="text">
+    <string>Import University</string>
+   </property>
+  </action>
+  <action name="actionImport_Souveners">
+   <property name="text">
+    <string>Import Souvenirs</string>
    </property>
   </action>
  </widget>
