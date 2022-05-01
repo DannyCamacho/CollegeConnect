@@ -89,10 +89,12 @@ void MainWindow::on_actionLogin_triggered() {
 }
 
 void MainWindow::receiveMessage(const QString &msg) {
+    ui->menuBar->setVisible(false);
     ui->main_stackedWidget->setCurrentIndex(1);
 }
 
 void MainWindow::returnToMainWindow() {
+    ui->menuBar->setVisible(true);
     ui->main_stackedWidget->setCurrentIndex(0);
     schoolTableUpdate();
 }
