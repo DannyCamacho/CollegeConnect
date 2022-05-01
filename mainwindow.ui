@@ -47,17 +47,17 @@ selection-background-color: rgb(118, 158, 81);</string>
     <property name="geometry">
      <rect>
       <x>-1</x>
-      <y>-21</y>
+      <y>-1</y>
       <width>901</width>
-      <height>601</height>
+      <height>581</height>
      </rect>
     </property>
     <widget class="QWidget" name="page_1">
      <widget class="QFrame" name="info_right_frame">
       <property name="geometry">
        <rect>
-        <x>491</x>
-        <y>111</y>
+        <x>490</x>
+        <y>90</y>
         <width>371</width>
         <height>391</height>
        </rect>
@@ -278,8 +278,8 @@ padding: 6px;
      <widget class="QFrame" name="undergrad_frame">
       <property name="geometry">
        <rect>
-        <x>611</x>
-        <y>521</y>
+        <x>610</x>
+        <y>500</y>
         <width>291</width>
         <height>80</height>
        </rect>
@@ -348,7 +348,7 @@ color: rgb(49, 49, 49);</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>21</y>
+        <y>0</y>
         <width>361</width>
         <height>81</height>
        </rect>
@@ -364,7 +364,7 @@ color: rgb(49, 49, 49);</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>110</y>
+        <y>89</y>
         <width>431</width>
         <height>451</height>
        </rect>
