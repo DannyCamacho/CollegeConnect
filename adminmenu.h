@@ -23,6 +23,8 @@ private slots:
     void on_save_changes_button_clicked();
     void on_items_tableView_clicked(const QModelIndex &index);
     void on_actionLogout_triggered();
+    void on_actionImport_University_triggered();
+    void on_actionImport_Souveners_triggered();
 
 signals:
     void adminLogout();

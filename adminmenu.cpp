@@ -1,6 +1,5 @@
 #include "adminmenu.h"
 #include "ui_adminmenu.h"
-#include "mainwindow.h"
 
 AdminMenu::AdminMenu(QWidget *parent) : QMainWindow(parent), ui(new Ui::AdminMenu) {
     ui->setupUi(this);
@@ -141,4 +140,33 @@ void AdminMenu::on_items_tableView_clicked(const QModelIndex &index) {
 
 void AdminMenu::on_actionLogout_triggered(){
     emit adminLogout();
+}
+
+void AdminMenu::on_actionImport_University_triggered() {
+    QString filename = QFileDialog::getOpenFileName(this, "Select Import File");
+    fileName = filename.toStdString();
+    QFile file(filename);
+
+    if (!file.open(QIODevice::ReadOnly | QFile::Text)) {
+        QMessageBox::warning(this, "Warning", "Cannot import file: " + file.errorString());
+        return;
+    }
+
+    database.importColleges(fileName);
+    schoolTableViewUpdate();
+}
+
+
+void AdminMenu::on_actionImport_Souveners_triggered() {
+    QString filename = QFileDialog::getOpenFileName(this, "Select Import File");
+    fileName = filename.toStdString();
+    QFile file(filename);
+
+    if (!file.open(QIODevice::ReadOnly | QFile::Text)) {
+        QMessageBox::warning(this, "Warning", "Cannot import file: " + file.errorString());
+        return;
+    }
+
+    database.importSouvenirs(fileName);
+    schoolTableViewUpdate();
 }

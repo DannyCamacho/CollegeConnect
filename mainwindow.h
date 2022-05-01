@@ -31,6 +31,8 @@ private slots:
     void on_toggle_state_order_descending_clicked();
     void on_actionLogin_triggered();
     void returnToMainWindow();
+    void collegeMapUpdate();
+    void on_actionQuit_triggered();
 
 private:
     Ui::MainWindow *ui;
