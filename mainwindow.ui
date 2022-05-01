@@ -654,6 +654,8 @@ selection-background-color: rgb(118, 158, 81);</string>
       <normaloff>:/menu-removebg.png</normaloff>:/menu-removebg.png</iconset>
     </property>
     <addaction name="actionLogin"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
    </widget>
    <addaction name="menumenu"/>
   </widget>
@@ -666,6 +668,11 @@ selection-background-color: rgb(118, 158, 81);</string>
      <family>Mongolian Baiti</family>
      <pointsize>11</pointsize>
     </font>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
    </property>
   </action>
  </widget>
