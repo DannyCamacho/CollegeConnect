@@ -17,10 +17,16 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::populateWindow() {
-    collegeMapUpdate();
-    QSqlQuery query("SELECT SUM(X.TOTAL) FROM (SELECT undergrads as TOTAL FROM college) X;");
+    QSqlQuery query("SELECT * FROM college");
+    while (query.next())
+        if (collegeMap.at(query.value(1).toInt()).collegeName == "")
+            collegeMap.insert({ query.value(1).toInt(), query.value(0).toString().toStdString(),
+                                query.value(2).toString().toStdString(), query.value(3).toInt() });
+
+    query.exec("SELECT SUM(X.TOTAL) FROM (SELECT undergrads as TOTAL FROM college) X;");
     if (query.next()) ui->undergrad_total_display->setText(QString::number(query.value(0).toInt()));
 
+    ui->select_state->clear();
     ui->select_state->addItem("All States");
     query.exec("SELECT DISTINCT state FROM college ORDER BY state ASC");
     while (query.next()) ui->select_state->addItem(query.value(0).toString());
@@ -30,15 +36,6 @@ void MainWindow::populateWindow() {
     ui->toggle_name_order_descending->setVisible(false);
     ui->toggle_state_order_descending->setVisible(false);
     ui->select_state->setCurrentText("All States");
-}
-
-void MainWindow::collegeMapUpdate() {
-    QSqlQuery query("SELECT * FROM college");
-
-    while (query.next())
-        if (collegeMap.at(query.value(1).toInt()).collegeName == "")
-            collegeMap.insert({ query.value(1).toInt(), query.value(0).toString().toStdString(),
-                                query.value(2).toString().toStdString(), query.value(3).toInt() });
 }
 
 void  MainWindow::schoolTableUpdate() {
@@ -100,7 +97,7 @@ void MainWindow::receiveMessage(const QString &msg) {
 void MainWindow::returnToMainWindow() {
     ui->menuBar->setVisible(true);
     ui->main_stackedWidget->setCurrentIndex(0);
-    collegeMapUpdate();
+    populateWindow();
     schoolTableUpdate();
 }
 
