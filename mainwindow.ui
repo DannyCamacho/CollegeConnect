@@ -52,7 +52,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <height>581</height>
      </rect>
     </property>
-    <widget class="QWidget" name="page_3">
+    <widget class="QWidget" name="page_1">
      <widget class="QFrame" name="info_right_frame">
       <property name="geometry">
        <rect>
@@ -395,7 +395,8 @@ color: rgb(49, 49, 49);</string>
 background-color: rgb(118, 158, 81);
 alternate-background-color: rgb(240, 240, 240);
 selection-color: rgb(49, 49, 49);
-selection-background-color: rgb(118, 158, 81);</string>
+selection-background-color: rgb(118, 158, 81);
+</string>
        </property>
        <property name="insertPolicy">
         <enum>QComboBox::InsertAtBottom</enum>
@@ -614,7 +615,6 @@ selection-background-color: rgb(118, 158, 81);</string>
       <zorder>toggle_name_order_descending</zorder>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_4"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
