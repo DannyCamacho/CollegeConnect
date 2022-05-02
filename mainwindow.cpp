@@ -8,8 +8,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     schoolDetailModel = new QSqlQueryModel;
     populateWindow();
     adminMenu = new AdminMenu(this);
+    schoolStore = new SchoolStore(this);
     ui->main_stackedWidget->insertWidget(1, adminMenu);
+    ui->main_stackedWidget->insertWidget(2, schoolStore);
     connect(adminMenu, SIGNAL(adminLogout()), this, SLOT(returnToMainWindow()));
+    connect(schoolStore, SIGNAL(leaveSchoolStore()), this, SLOT(returnToMainWindow()));
+
 }
 
 MainWindow::~MainWindow() {
@@ -54,20 +58,7 @@ void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
     ui->college_name_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).collegeName));
     ui->state_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).state));
     ui->undergrad_label->setText(QString::number(collegeMap.at(query.value(0).toInt()).numsOfGrad));
-
-    query.exec("DROP TABLE IF EXISTS schoolStore;");
-    query.exec("DROP TABLE IF EXISTS cart");
-    query.exec("CREATE TABLE schoolStore (item TEXT, price FLOAT);");
-    query.exec("CREATE TABLE cart (collegeName TEXT, souvenirItem TEXT, souvenirPrice INTEGER, quantity INTEGER);");
-    query.exec("SELECT item, price FROM souvenir WHERE collegeName=\"" + index.siblingAtColumn(0).data().toString() + "\"");
-    while (query.next())
-    {
-      QSqlQuery subQuery;
-      subQuery.prepare("INSERT INTO schoolStore VALUES (:item, :price);");
-      subQuery.bindValue(":item", query.value(0).toString());
-      subQuery.bindValue(":price", QString::number(query.value(1).toFloat()));
-      subQuery.exec();
-    }
+    collegeName = index.siblingAtColumn(0).data().toString();
 }
 
 void MainWindow::on_toggle_name_order_ascending_clicked() {
@@ -119,11 +110,14 @@ void MainWindow::on_actionQuit_triggered() {
     QApplication::quit();
 }
 
-void MainWindow::on_visit_store_button_clicked()
-{
-    hide();
-    delete ui;
-    schoolStore = new SchoolStore(this);
-    schoolStore->show();
+void MainWindow::on_visit_store_button_clicked() {
+    if (collegeName == "") return;
+
+    QSqlQuery query;
+    query.exec("SELECT item, price FROM souvenir WHERE collegeName=\"" + collegeName + "\"");
+
+    ui->menuBar->setVisible(false);
+    ui->main_stackedWidget->setCurrentIndex(2);
+
 }
 

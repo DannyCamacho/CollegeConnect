@@ -20,6 +20,9 @@ private slots:
 
     void on_add_to_cart_pushButton_clicked();
 
+signals:
+    void leaveSchoolStore();
+
 private:
     Ui::SchoolStore *ui;
     QSqlQueryModel* schoolStoreModel;

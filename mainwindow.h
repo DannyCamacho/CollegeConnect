@@ -33,17 +33,17 @@ private slots:
     void on_actionLogin_triggered();
     void returnToMainWindow();
     void on_actionQuit_triggered();
-
     void on_visit_store_button_clicked();
 
 private:
     Ui::MainWindow *ui;
     AdminMenu* adminMenu;
+    SchoolStore* schoolStore;
     QSqlQueryModel* schoolModel;
     QSqlQueryModel* schoolDetailModel;
     Database database;
+    QString collegeName;
     QString order;
     DoubleHashMap collegeMap;
-    SchoolStore* schoolStore;
 };
 #endif // MAINWINDOW_H

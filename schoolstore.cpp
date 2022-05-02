@@ -28,6 +28,7 @@ SchoolStore::~SchoolStore() {
     Updates the school_store tableview.
 ================================================================== */
 void SchoolStore::schoolStoreTableViewUpdate() {
+
     schoolStoreModel->setQuery("SELECT * FROM schoolStore");
     ui->school_store_tableView->setModel(schoolStoreModel);
 }
@@ -37,13 +38,8 @@ void SchoolStore::schoolStoreTableViewUpdate() {
     Proceed back to initial list: hides and deletes SchoolStore UI and
     heads back to main window.
 ================================================================== */
-void SchoolStore::on_initial_list_pushButton_clicked()
-{
-    //QSqlQuery query("DROP TABLE schoolStore");
-    hide();
-    delete ui;
-    MainWindow* mainWindow = new MainWindow(this);
-    mainWindow->show();
+void SchoolStore::on_initial_list_pushButton_clicked() {
+    emit leaveSchoolStore();
 }
 
 
