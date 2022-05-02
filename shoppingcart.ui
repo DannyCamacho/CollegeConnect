@@ -104,6 +104,7 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -186,6 +187,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -331,6 +333,7 @@ selection-background-color: rgb(118, 158, 81);</string>
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -377,6 +380,7 @@ QPushButton#empty_cart_pushButton: clicked {
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -429,6 +433,7 @@ QPushButton#remove_item_pushButton: clicked {
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -467,6 +472,7 @@ padding: 6px;</string>
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -607,10 +613,46 @@ selection-background-color: rgb(118, 158, 81);</string>
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>30</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bahnschrift</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(225, 225, 225);
+color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Return</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../../../../../SaddlebackEats-main/UIGraphics.qrc">
+      <normaloff>:/rec/resources/return-icon-removebg.png</normaloff>:/rec/resources/return-icon-removebg.png</iconset>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources>
   <include location="resources/resources.qrc"/>
+  <include location="../../../../../SaddlebackEats-main/UIGraphics.qrc"/>
  </resources>
  <connections/>
 </ui>
