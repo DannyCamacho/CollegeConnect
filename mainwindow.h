@@ -3,8 +3,13 @@
 
 #include <QMainWindow>
 #include "map.h"
+<<<<<<< HEAD
 #include "database.h"
 #include "schoolstore.h"
+=======
+#include "adminmenu.h"
+#include "login.h"
+>>>>>>> master
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,22 +23,26 @@ public:
     ~MainWindow();
     void populateWindow();
     void schoolTableUpdate();
+
+public slots:
+    void receiveMessage(const QString &msg);
+
 private slots:
     void on_select_state_currentTextChanged(const QString &arg1);
     void on_school_list_tableView_clicked(const QModelIndex &index);
-
     void on_toggle_name_order_ascending_clicked();
-
     void on_toggle_name_order_descending_clicked();
-
     void on_toggle_state_order_ascending_clicked();
-
     void on_toggle_state_order_descending_clicked();
+    void on_actionLogin_triggered();
+    void returnToMainWindow();
+    void on_actionQuit_triggered();
 
     void on_visit_store_button_clicked();
 
 private:
     Ui::MainWindow *ui;
+    AdminMenu* adminMenu;
     QSqlQueryModel* schoolModel;
     QSqlQueryModel* schoolDetailModel;
     Database database;

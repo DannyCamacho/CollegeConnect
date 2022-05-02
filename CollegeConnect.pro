@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     adminmenu.cpp \
     database.cpp \
+    login.cpp \
     main.cpp \
     mainwindow.cpp \
     map.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 HEADERS += \
     adminmenu.h \
     database.h \
+    login.h \
     mainwindow.h \
     map.h \
     schoolstore.h \
@@ -27,6 +29,7 @@ HEADERS += \
 
 FORMS += \
     adminmenu.ui \
+    login.ui \
     mainwindow.ui \
     schoolStore.ui \
     shoppingcart.ui
