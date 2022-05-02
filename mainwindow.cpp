@@ -18,14 +18,15 @@ MainWindow::~MainWindow() {
 
 void MainWindow::populateWindow() {
     QSqlQuery query("SELECT * FROM college");
-
     while (query.next())
-        collegeMap.insert({ query.value(1).toInt(), query.value(0).toString().toStdString(),
-                            query.value(2).toString().toStdString(), query.value(3).toInt() });
+        if (collegeMap.at(query.value(1).toInt()).collegeName == "")
+            collegeMap.insert({ query.value(1).toInt(), query.value(0).toString().toStdString(),
+                                query.value(2).toString().toStdString(), query.value(3).toInt() });
 
     query.exec("SELECT SUM(X.TOTAL) FROM (SELECT undergrads as TOTAL FROM college) X;");
     if (query.next()) ui->undergrad_total_display->setText(QString::number(query.value(0).toInt()));
 
+    ui->select_state->clear();
     ui->select_state->addItem("All States");
     query.exec("SELECT DISTINCT state FROM college ORDER BY state ASC");
     while (query.next()) ui->select_state->addItem(query.value(0).toString());
@@ -84,7 +85,7 @@ void MainWindow::on_toggle_state_order_descending_clicked() {
 }
 
 void MainWindow::on_actionLogin_triggered() {
-    login = new Login(this);
+    Login* login = new Login(this);
     login->show();
 }
 
@@ -96,5 +97,10 @@ void MainWindow::receiveMessage(const QString &msg) {
 void MainWindow::returnToMainWindow() {
     ui->menuBar->setVisible(true);
     ui->main_stackedWidget->setCurrentIndex(0);
+    populateWindow();
     schoolTableUpdate();
+}
+
+void MainWindow::on_actionQuit_triggered() {
+    QApplication::quit();
 }
