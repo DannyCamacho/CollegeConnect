@@ -5,6 +5,7 @@
 #include "map.h"
 #include "adminmenu.h"
 #include "login.h"
+#include "schoolstore.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,6 +34,8 @@ private slots:
     void returnToMainWindow();
     void on_actionQuit_triggered();
 
+    void on_visit_store_button_clicked();
+
 private:
     Ui::MainWindow *ui;
     AdminMenu* adminMenu;
@@ -41,5 +44,6 @@ private:
     Database database;
     QString order;
     DoubleHashMap collegeMap;
+    SchoolStore* schoolStore;
 };
 #endif // MAINWINDOW_H
