@@ -57,6 +57,7 @@ void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
     ui->undergrad_label->setText(QString::number(collegeMap.at(query.value(0).toInt()).numsOfGrad));
 
 
+
     query.exec("DROP TABLE IF EXISTS schoolStore;");
     query.exec("CREATE TABLE schoolStore (item TEXT, price FLOAT);");
     query.exec("SELECT item, price FROM souvenir WHERE collegeName=\"" + index.siblingAtColumn(0).data().toString() + "\"");
