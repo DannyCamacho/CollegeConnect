@@ -43,8 +43,6 @@ DISTFILES += \
     .gitignore \
     Distances.csv \
     NewSouvenirs.csv \
-    NewSouvenirs.csv \
-    NewUniversities.csv \
     NewUniversities.csv \
     Souvenirs.csv \
     resources/CC_logo.png \

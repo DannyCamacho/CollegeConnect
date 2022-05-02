@@ -143,7 +143,7 @@ void AdminMenu::on_actionLogout_triggered(){
 }
 
 void AdminMenu::on_actionImport_University_triggered() {
-    QString filename = QFileDialog::getOpenFileName(this, "Select Import File");
+    QString filename = QFileDialog::getOpenFileName(this, "Select University Import File");
     fileName = filename.toStdString();
     QFile file(filename);
 
@@ -158,7 +158,7 @@ void AdminMenu::on_actionImport_University_triggered() {
 
 
 void AdminMenu::on_actionImport_Souveners_triggered() {
-    QString filename = QFileDialog::getOpenFileName(this, "Select Import File");
+    QString filename = QFileDialog::getOpenFileName(this, "Select Souvenir Import File");
     fileName = filename.toStdString();
     QFile file(filename);
 
