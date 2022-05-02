@@ -3,13 +3,9 @@
 
 #include <QMainWindow>
 #include "map.h"
-<<<<<<< HEAD
-#include "database.h"
-#include "schoolstore.h"
-=======
 #include "adminmenu.h"
 #include "login.h"
->>>>>>> master
+#include "schoolstore.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

@@ -42,7 +42,55 @@ void SchoolStore::on_initial_list_pushButton_clicked()
     //QSqlQuery query("DROP TABLE schoolStore");
     hide();
     delete ui;
-    MainWindow* mainWindow = new MainWindow();
+    MainWindow* mainWindow = new MainWindow(this);
     mainWindow->show();
+}
+
+
+
+/* ==== SchoolStore::on_school_store_tableView_clicked =======================
+    Updates souvenirItem and souvenirPrice when a menu item is selected from
+    school_store tableview. index is the selected row of the tableview, with
+    0 being the name of the item and 1 being the price.
+================================================================== */
+void SchoolStore::on_school_store_tableView_clicked(const QModelIndex &index)
+{
+    souvenirItem = index.siblingAtColumn(0).data().toString();
+    souvenirPrice = index.siblingAtColumn(1).data().toString();
+}
+
+
+/* ==== SchoolStore::on_add_to_cart_pushButton_clicked =========================
+    Add_To_cart Button: Adds selected souvenir item and quantity to cart database.
+    When an item is not selected, the method is returned, the
+    quantity is determined by the spinBox. If the resulting quantity
+    is greater than 100, the method is returned, else the souvenir item
+    with the quantity, price, and college name is added to the cart
+    or updated if an entry already existed.
+================================================================== */
+void SchoolStore::on_add_to_cart_pushButton_clicked()
+{
+    if (souvenirItem == "")
+        return;
+
+    int quantity = ui->quantity_spinBox->text().toInt();
+
+
+    QString collegeName;
+    QSqlQuery query("SELECT collegeName FROM souvenir WHERE item=\"" + souvenirItem + "\" AND price =\"" + souvenirPrice + "\"");
+    if (query.next()) collegeName = query.value(0).toString();
+
+    QString stringQuery = "INSERT INTO cart (collegeName, souvenirItem, souvenirPrice, quantity) VALUES (\"" + collegeName + "\", \"" + souvenirItem + "\", \"" + souvenirPrice + "\", \"" + QString::number(quantity) + "\");";
+    query.exec("SELECT quantity FROM cart where collegeName =\"" + collegeName + "\" AND souvenirItem =\"" + souvenirItem + "\";");
+
+     if (query.next()) {
+         quantity += query.value(0).toInt();
+         if (quantity > 100) return;
+         stringQuery = "UPDATE cart SET collegeName =\"" + collegeName + "\",souvenirItem =\"" + souvenirItem + "\", souvenirPrice =\"" + souvenirPrice + "\", quantity =\"" + QString::number(quantity) + "\" WHERE collegeName =\"" + collegeName + "\" AND souvenirItem =\"" + souvenirItem + "\";";
+     }
+
+     query.exec(stringQuery);
+     query.exec("SELECT SUM(X.TOTAL) FROM (SELECT quantity as TOTAL FROM cart) X;");
+     if (query.next()) ui->cart_quantity_display->setText(query.value(0).toString());
 }
 

@@ -17,8 +17,8 @@ void Database::connect() {
 
     if(QSqlDatabase::isDriverAvailable(DRIVER)) {
         QSqlDatabase db = QSqlDatabase::addDatabase(DRIVER);
-        db.setDatabaseName(":memory:");
-        //db.setDatabaseName("C:\\Users\\vyngu\\OneDrive\\Desktop\\dbCollege.sqlite");
+        //db.setDatabaseName(":memory:");
+        db.setDatabaseName("C:\\Users\\vyngu\\OneDrive\\Desktop\\dbCollege.sqlite");
         if(!db.open()) qWarning() << "MainWindow::DatabaseConnect - ERROR: " << db.lastError().text();
     } else qWarning() << "MainWindow::DatabaseConnect - ERROR: no driver " << DRIVER << " available";
 }
