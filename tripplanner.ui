@@ -18,24 +18,24 @@
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>360</y>
+      <y>390</y>
       <width>241</width>
       <height>61</height>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
+     <enum>QFrame::Box</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+     <enum>QFrame::Plain</enum>
     </property>
     <widget class="QPushButton" name="shopping_cart_pushButton">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>5</y>
-       <width>181</width>
-       <height>51</height>
+       <x>10</x>
+       <y>10</y>
+       <width>171</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
@@ -48,7 +48,8 @@
       <enum>Qt::RightToLeft</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:  rgb(255, 255, 255);
+      <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
 border-style: outset;
 border-width: 2px;
 border-radius: 10px;
@@ -56,7 +57,7 @@ border-color:rgb(118, 158, 81);
 min-width: 10em;
 padding: 6px;
 
-QPushButton#shopping_cart_pushButton: clicked {
+QPushButton#visit_store_button: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>
@@ -117,7 +118,8 @@ QPushButton#shopping_cart_pushButton: clicked {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: none;</string>
+       <string notr="true">background-color: none;
+color: rgb(49, 49, 49);</string>
       </property>
       <property name="text">
        <string>0</string>
@@ -152,10 +154,10 @@ QPushButton#shopping_cart_pushButton: clicked {
    <widget class="QFrame" name="frame_6">
     <property name="geometry">
      <rect>
-      <x>730</x>
-      <y>20</y>
-      <width>121</width>
-      <height>101</height>
+      <x>650</x>
+      <y>70</y>
+      <width>191</width>
+      <height>311</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -164,78 +166,33 @@ QPushButton#shopping_cart_pushButton: clicked {
     <property name="frameShadow">
      <enum>QFrame::Plain</enum>
     </property>
-    <widget class="QFrame" name="frame_9">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>240</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
-     </property>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>-1</x>
-        <y>1</y>
-        <width>241</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="lineWidth">
-       <number>1</number>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QPushButton" name="pushButton_3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>60</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bahnschrift</family>
-       <pointsize>11</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(49, 49, 49);
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="minimumSize">
+        <size>
+         <width>146</width>
+         <height>90</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/uci_logo.png);
+
+color: rgb(49, 49, 49);
 background-color:  rgb(255, 255, 255);
 border-style: outset;
 border-width: 2px;
@@ -248,20 +205,134 @@ QPushButton#visit_store_button: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>
-     </property>
-     <property name="text">
-      <string>Start At UCI</string>
-     </property>
-     <property name="autoDefault">
-      <bool>true</bool>
-     </property>
-     <property name="default">
-      <bool>true</bool>
-     </property>
-     <property name="flat">
-      <bool>false</bool>
-     </property>
-    </widget>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>300</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="minimumSize">
+        <size>
+         <width>146</width>
+         <height>90</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/university_of_arizona_logo.png);
+
+color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+
+QPushButton#visit_store_button: clicked {
+	background-color: rgb(118, 158, 81);
+    border-style: inset;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="minimumSize">
+        <size>
+         <width>146</width>
+         <height>90</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/university_of_michigan_logo.png);
+
+color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+
+QPushButton#visit_store_button: clicked {
+	background-color: rgb(118, 158, 81);
+    border-style: inset;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QFrame" name="frame_8">
     <property name="geometry">
@@ -407,7 +478,7 @@ QPushButton#visit_store_button: clicked {
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>430</y>
+      <y>460</y>
       <width>241</width>
       <height>41</height>
      </rect>
@@ -496,7 +567,7 @@ color: rgb(0, 0, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
+color: rgb(49, 49, 49);</string>
      </property>
      <property name="text">
       <string>Planned Route</string>
@@ -510,9 +581,9 @@ color: rgb(0, 0, 0);</string>
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>490</y>
+      <y>510</y>
       <width>241</width>
-      <height>71</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
@@ -604,10 +675,10 @@ QPushButton#visit_store_button: clicked {
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-alternate-background-color: rgb(225, 225, 225);
-selection-background-color: rgb(159, 11, 25);
-selection-color: rgb(0, 0, 0);</string>
+color: rgb(49, 49, 49);
+alternate-background-color: rgb(240, 240, 240);
+selection-color: rgb(49, 49, 49);
+selection-background-color: rgb(118, 158, 81);</string>
      </property>
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -684,11 +755,10 @@ selection-color: rgb(0, 0, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-alternate-background-color: rgb(225, 225, 225);
-selection-background-color: rgb(159, 11, 25);
-selection-color: rgb(0, 0, 0);
-</string>
+color: rgb(49, 49, 49);
+alternate-background-color: rgb(240, 240, 240);
+selection-color: rgb(49, 49, 49);
+selection-background-color: rgb(118, 158, 81);</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -1099,7 +1169,7 @@ QPushButton#visit_store_button: clicked {
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: none;
-color: rgb(0, 0, 0);</string>
+color: rgb(49, 49, 49);</string>
       </property>
       <property name="text">
        <string>Location</string>
@@ -1125,7 +1195,7 @@ color: rgb(0, 0, 0);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: none;
-color: rgb(0, 0, 0);</string>
+color: rgb(49, 49, 49);</string>
       </property>
       <property name="text">
        <string>Distance to next </string>
