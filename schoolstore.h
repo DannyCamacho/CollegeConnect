@@ -21,8 +21,11 @@ private slots:
     void on_school_store_tableView_clicked(const QModelIndex &index);
     void on_add_to_cart_pushButton_clicked();
 
+    void on_shopping_cart_pushButton_clicked();
+
 signals:
     void leaveSchoolStore();
+    void moveToShoppingCart();
 
 private:
     Ui::SchoolStore *ui;

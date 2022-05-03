@@ -93,3 +93,9 @@ void SchoolStore::getCollegeName(const QString &collegeName) {
     this->collegeName = collegeName;
     schoolStoreTableViewUpdate();
 }
+
+
+void SchoolStore::on_shopping_cart_pushButton_clicked() {
+    souvenirItem = "";
+    emit moveToShoppingCart();
+}

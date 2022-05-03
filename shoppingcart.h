@@ -21,6 +21,10 @@ private slots:
     void on_remove_item_pushButton_clicked();
     void on_update_pushButton_clicked();
     void on_pushButton_6_clicked();
+    void updateShoppingCart();
+
+signals:
+    void moveToSchoolStore();
 
 private:
     Ui::ShoppingCart *ui;

@@ -8,10 +8,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     populateWindow();
     adminMenu = new AdminMenu(this);
     schoolStore = new SchoolStore(this);
+    shoppingCart = new ShoppingCart(this);
     ui->main_stackedWidget->insertWidget(1, adminMenu);
     ui->main_stackedWidget->insertWidget(2, schoolStore);
+    ui->main_stackedWidget->insertWidget(3, shoppingCart);
     connect(adminMenu, SIGNAL(adminLogout()), this, SLOT(returnToMainWindow()));
     connect(schoolStore, SIGNAL(leaveSchoolStore()), this, SLOT(returnToMainWindow()));
+    connect(schoolStore, SIGNAL(moveToShoppingCart()), this, SLOT(moveToShoppingCart()));
+    connect(shoppingCart, SIGNAL(moveToSchoolStore()), this, SLOT(moveToSchoolStore()));
 }
 
 MainWindow::~MainWindow() {
@@ -19,6 +23,7 @@ MainWindow::~MainWindow() {
     delete schoolModel;
     delete adminMenu;
     delete schoolStore;
+    delete shoppingCart;
 }
 
 void MainWindow::populateWindow() {
@@ -117,6 +122,16 @@ void MainWindow::on_visit_store_button_clicked() {
     if (collegeName == "") return;
 
     ui->menuBar->setVisible(false);
+    ui->main_stackedWidget->setCurrentIndex(2);
+    emit updateSchoolStore(collegeName);
+}
+
+void MainWindow::moveToShoppingCart() {
+    ui->main_stackedWidget->setCurrentIndex(3);
+    emit updateShoppingCart();
+}
+
+void MainWindow::moveToSchoolStore() {
     ui->main_stackedWidget->setCurrentIndex(2);
     emit updateSchoolStore(collegeName);
 }
