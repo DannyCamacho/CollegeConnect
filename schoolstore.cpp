@@ -84,6 +84,7 @@ void SchoolStore::on_add_to_cart_pushButton_clicked() {
      if (query.next()) ui->cart_quantity_display->setText(query.value(0).toString());
 }
 
+
 /* ==== SchoolStore::getCollegeName =================================
     Method used to catch signal emitted from MainWindow, used to
     update the collegeName used to determine which school souvenirs
@@ -95,6 +96,11 @@ void SchoolStore::getCollegeName(const QString &collegeName) {
 }
 
 
+/* ==== SchoolStore::on_shopping_cart_pushButton_clicked ============
+    Method used to send signal to MainWindow to switch to shopping
+    cart. Resets souvenirItem to avoid unintentional adding of items
+    when returning to school store.
+================================================================== */
 void SchoolStore::on_shopping_cart_pushButton_clicked() {
     souvenirItem = "";
     emit moveToShoppingCart();
