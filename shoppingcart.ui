@@ -638,7 +638,7 @@ color: rgb(0, 0, 0);</string>
      <string>Return</string>
     </property>
     <property name="icon">
-     <iconset resource="../../../../../SaddlebackEats-main/UIGraphics.qrc">
+     <iconset>
       <normaloff>:/rec/resources/return-icon-removebg.png</normaloff>:/rec/resources/return-icon-removebg.png</iconset>
     </property>
     <property name="autoDefault">
@@ -652,7 +652,6 @@ color: rgb(0, 0, 0);</string>
  </widget>
  <resources>
   <include location="resources/resources.qrc"/>
-  <include location="../../../../../SaddlebackEats-main/UIGraphics.qrc"/>
  </resources>
  <connections/>
 </ui>

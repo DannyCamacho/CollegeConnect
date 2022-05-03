@@ -28,10 +28,10 @@ selection-background-color: rgb(118, 158, 81);</string>
    <widget class="QFrame" name="shop_functions_frame">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>560</x>
       <y>160</y>
-      <width>271</width>
-      <height>161</height>
+      <width>301</width>
+      <height>211</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -48,7 +48,7 @@ color: rgb(0, 0, 0);</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>20</y>
+       <y>10</y>
        <width>55</width>
        <height>51</height>
       </rect>
@@ -103,9 +103,9 @@ selection-background-color: rgb(118, 158, 81);</string>
     <widget class="QPushButton" name="add_to_cart_pushButton">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>20</y>
-       <width>176</width>
+       <x>20</x>
+       <y>70</y>
+       <width>211</width>
        <height>51</height>
       </rect>
      </property>
@@ -153,8 +153,8 @@ QPushButton#add_to_cart_pushButton: clicked {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>90</y>
-       <width>181</width>
+       <y>140</y>
+       <width>211</width>
        <height>51</height>
       </rect>
      </property>
@@ -204,8 +204,8 @@ QPushButton#shopping_cart_pushButton: clicked {
     <widget class="QFrame" name="bubble_frame">
      <property name="geometry">
       <rect>
-       <x>200</x>
-       <y>95</y>
+       <x>230</x>
+       <y>140</y>
        <width>51</width>
        <height>41</height>
       </rect>
@@ -271,9 +271,9 @@ image: url(:/rec/resources/bubble-icon-removebg.png);</string>
    <widget class="QFrame" name="bottom_right_frame">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>340</y>
-      <width>271</width>
+      <x>560</x>
+      <y>390</y>
+      <width>301</width>
       <height>90</height>
      </rect>
     </property>
@@ -292,13 +292,13 @@ color: rgb(0, 0, 0);</string>
       <rect>
        <x>20</x>
        <y>25</y>
-       <width>231</width>
+       <width>251</width>
        <height>41</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>176</width>
+       <width>146</width>
        <height>0</height>
       </size>
      </property>
@@ -312,6 +312,7 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -348,7 +349,7 @@ QPushButton#initial_list_pushButton: clicked {
      <rect>
       <x>30</x>
       <y>160</y>
-      <width>491</width>
+      <width>421</width>
       <height>381</height>
      </rect>
     </property>
@@ -363,7 +364,7 @@ QPushButton#initial_list_pushButton: clicked {
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>491</width>
+       <width>421</width>
        <height>381</height>
       </rect>
      </property>
@@ -376,7 +377,7 @@ QPushButton#initial_list_pushButton: clicked {
      <property name="font">
       <font>
        <family>Mongolian Baiti</family>
-       <pointsize>12</pointsize>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="focusPolicy">
@@ -460,7 +461,7 @@ selection-background-color: rgb(118, 158, 81);</string>
      <rect>
       <x>30</x>
       <y>110</y>
-      <width>491</width>
+      <width>421</width>
       <height>41</height>
      </rect>
     </property>
@@ -475,7 +476,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <rect>
        <x>0</x>
        <y>5</y>
-       <width>491</width>
+       <width>421</width>
        <height>31</height>
       </rect>
      </property>

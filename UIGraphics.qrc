@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/rec">
+        <file>resources/resturantImage1.png</file>
+        <file>resources/plusSign.png</file>
+        <file>resources/removeSign.png</file>
+        <file>resources/SE_logo.png</file>
+        <file>resources/SE_1-removebg.png</file>
+        <file>resources/menu_icon-removebg.png</file>
+        <file>resources/addToCart-removebg-.png</file>
+        <file>resources/SE_logo_mini.png</file>
+        <file>resources/shopping-cart-icon-removebg.png</file>
+        <file>resources/shopping-cart-icon-SE-color-removebg.png</file>
+        <file>resources/bubble-icon-removebg.png</file>
+        <file>resources/return-icon-removebg.png</file>
+        <file>resources/dominos_ad.png</file>
+    </qresource>
+</RCC>
