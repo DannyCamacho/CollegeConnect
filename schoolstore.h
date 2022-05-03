@@ -13,6 +13,9 @@ public:
     ~SchoolStore();
     void schoolStoreTableViewUpdate();
 
+public slots:
+    void getCollegeName(const QString &collegeName);
+
 private slots:
     void on_initial_list_pushButton_clicked();
     void on_school_store_tableView_clicked(const QModelIndex &index);

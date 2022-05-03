@@ -12,7 +12,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->main_stackedWidget->insertWidget(2, schoolStore);
     connect(adminMenu, SIGNAL(adminLogout()), this, SLOT(returnToMainWindow()));
     connect(schoolStore, SIGNAL(leaveSchoolStore()), this, SLOT(returnToMainWindow()));
-
 }
 
 MainWindow::~MainWindow() {
@@ -121,4 +120,3 @@ void MainWindow::on_visit_store_button_clicked() {
     ui->main_stackedWidget->setCurrentIndex(2);
     emit updateSchoolStore(collegeName);
 }
-

@@ -158,7 +158,6 @@ void AdminMenu::on_actionImport_University_triggered() {
     schoolTableViewUpdate();
 }
 
-
 void AdminMenu::on_actionImport_Souveners_triggered() {
     QString filename = QFileDialog::getOpenFileName(this, "Select Souvenir Import File");
     fileName = filename.toStdString();

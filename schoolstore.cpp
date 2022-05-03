@@ -11,7 +11,7 @@ SchoolStore::SchoolStore(QWidget *parent) : QMainWindow(parent), ui(new Ui::Scho
     ui->setupUi(this);
     schoolStoreModel = new QSqlQueryModel;
     schoolStoreTableViewUpdate();
-    connect(parent, SIGNAL(leaveSchoolStore()), this, SLOT(returnToMainWindow()));
+    connect(parent, SIGNAL(updateSchoolStore(QString)), this, SLOT(getCollegeName(QString)));
 }
 
 /* ==== SchoolStore::Destructor ====================================
@@ -40,7 +40,6 @@ void SchoolStore::schoolStoreTableViewUpdate() {
 void SchoolStore::on_initial_list_pushButton_clicked() {
     emit leaveSchoolStore();
 }
-
 
 
 /* ==== SchoolStore::on_school_store_tableView_clicked =======================
@@ -87,4 +86,5 @@ void SchoolStore::on_add_to_cart_pushButton_clicked() {
 
 void SchoolStore::getCollegeName(const QString &collegeName) {
     this->collegeName = collegeName;
+    schoolStoreTableViewUpdate();
 }
