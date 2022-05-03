@@ -11,8 +11,8 @@ SchoolStore::SchoolStore(QWidget *parent) : QMainWindow(parent), ui(new Ui::Scho
     ui->setupUi(this);
     schoolStoreModel = new QSqlQueryModel;
     schoolStoreTableViewUpdate();
+    connect(parent, SIGNAL(leaveSchoolStore()), this, SLOT(returnToMainWindow()));
 }
-
 
 /* ==== SchoolStore::Destructor ====================================
     Destructor used to delete SQLQueryModels schoolStoreModel and
@@ -28,8 +28,7 @@ SchoolStore::~SchoolStore() {
     Updates the school_store tableview.
 ================================================================== */
 void SchoolStore::schoolStoreTableViewUpdate() {
-
-    schoolStoreModel->setQuery("SELECT * FROM schoolStore");
+    schoolStoreModel->setQuery("SELECT item, price FROM souvenir WHERE collegeName =\"" + collegeName + "\"");
     ui->school_store_tableView->setModel(schoolStoreModel);
 }
 
@@ -49,8 +48,7 @@ void SchoolStore::on_initial_list_pushButton_clicked() {
     school_store tableview. index is the selected row of the tableview, with
     0 being the name of the item and 1 being the price.
 ================================================================== */
-void SchoolStore::on_school_store_tableView_clicked(const QModelIndex &index)
-{
+void SchoolStore::on_school_store_tableView_clicked(const QModelIndex &index) {
     souvenirItem = index.siblingAtColumn(0).data().toString();
     souvenirPrice = index.siblingAtColumn(1).data().toString();
 }
@@ -64,13 +62,10 @@ void SchoolStore::on_school_store_tableView_clicked(const QModelIndex &index)
     with the quantity, price, and college name is added to the cart
     or updated if an entry already existed.
 ================================================================== */
-void SchoolStore::on_add_to_cart_pushButton_clicked()
-{
-    if (souvenirItem == "")
-        return;
+void SchoolStore::on_add_to_cart_pushButton_clicked() {
+    if (souvenirItem == "") return;
 
     int quantity = ui->quantity_spinBox->text().toInt();
-
 
     QString collegeName;
     QSqlQuery query("SELECT collegeName FROM souvenir WHERE item=\"" + souvenirItem + "\" AND price =\"" + souvenirPrice + "\"");
@@ -90,3 +85,6 @@ void SchoolStore::on_add_to_cart_pushButton_clicked()
      if (query.next()) ui->cart_quantity_display->setText(query.value(0).toString());
 }
 
+void SchoolStore::getCollegeName(const QString &collegeName) {
+    this->collegeName = collegeName;
+}

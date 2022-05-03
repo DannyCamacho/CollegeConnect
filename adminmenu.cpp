@@ -10,6 +10,8 @@ AdminMenu::AdminMenu(QWidget *parent) : QMainWindow(parent), ui(new Ui::AdminMen
 
 AdminMenu::~AdminMenu() {
     delete ui;
+    delete schoolModel;
+    delete souvenirModel;
 }
 
 void AdminMenu::schoolTableViewUpdate() {

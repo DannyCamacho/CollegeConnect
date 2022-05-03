@@ -15,9 +15,7 @@ public:
 
 private slots:
     void on_initial_list_pushButton_clicked();
-
     void on_school_store_tableView_clicked(const QModelIndex &index);
-
     void on_add_to_cart_pushButton_clicked();
 
 signals:
@@ -26,6 +24,7 @@ signals:
 private:
     Ui::SchoolStore *ui;
     QSqlQueryModel* schoolStoreModel;
+    QString collegeName;
     QString souvenirItem;
     QString souvenirPrice;
 };

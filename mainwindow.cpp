@@ -5,7 +5,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     order = "collegeName ASC";
     schoolModel = new QSqlQueryModel;
-    schoolDetailModel = new QSqlQueryModel;
     populateWindow();
     adminMenu = new AdminMenu(this);
     schoolStore = new SchoolStore(this);
@@ -18,6 +17,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow() {
     delete ui;
+    delete schoolModel;
+    delete adminMenu;
+    delete schoolStore;
 }
 
 void MainWindow::populateWindow() {
@@ -50,6 +52,7 @@ void  MainWindow::schoolTableUpdate() {
 
 void MainWindow::on_select_state_currentTextChanged(const QString &arg1) {
     schoolTableUpdate();
+    collegeName = "";
 }
 
 void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
@@ -104,6 +107,7 @@ void MainWindow::returnToMainWindow() {
     ui->main_stackedWidget->setCurrentIndex(0);
     populateWindow();
     schoolTableUpdate();
+    collegeName = "";
 }
 
 void MainWindow::on_actionQuit_triggered() {
@@ -113,11 +117,8 @@ void MainWindow::on_actionQuit_triggered() {
 void MainWindow::on_visit_store_button_clicked() {
     if (collegeName == "") return;
 
-    QSqlQuery query;
-    query.exec("SELECT item, price FROM souvenir WHERE collegeName=\"" + collegeName + "\"");
-
     ui->menuBar->setVisible(false);
     ui->main_stackedWidget->setCurrentIndex(2);
-
+    emit updateSchoolStore(collegeName);
 }
 
