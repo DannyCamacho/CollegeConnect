@@ -2,7 +2,6 @@
 #include "ui_schoolStore.h"
 #include "mainwindow.h"
 
-
 /* ==== SchoolStore::Constructor ===================================
     Constructor used to initialize SQLQueryModels schoolStoreModel and
     and update the schoolStore tableview.
@@ -14,6 +13,7 @@ SchoolStore::SchoolStore(QWidget *parent) : QMainWindow(parent), ui(new Ui::Scho
     connect(parent, SIGNAL(updateSchoolStore(QString)), this, SLOT(getCollegeName(QString)));
 }
 
+
 /* ==== SchoolStore::Destructor ====================================
     Destructor used to delete SQLQueryModels schoolStoreModel and
     and the MainWindow UI.
@@ -24,7 +24,7 @@ SchoolStore::~SchoolStore() {
 }
 
 
-/* ==== SchoolStore::schoolStoreTableViewUpdate ===========================
+/* ==== SchoolStore::schoolStoreTableViewUpdate =====================
     Updates the school_store tableview.
 ================================================================== */
 void SchoolStore::schoolStoreTableViewUpdate() {
@@ -33,7 +33,7 @@ void SchoolStore::schoolStoreTableViewUpdate() {
 }
 
 
-/* ==== SchoolStore::on_initial_list_pushButton_clicked =======================
+/* ==== SchoolStore::on_initial_list_pushButton_clicked =============
     Proceed back to initial list: hides and deletes SchoolStore UI and
     heads back to main window.
 ================================================================== */
@@ -42,7 +42,7 @@ void SchoolStore::on_initial_list_pushButton_clicked() {
 }
 
 
-/* ==== SchoolStore::on_school_store_tableView_clicked =======================
+/* ==== SchoolStore::on_school_store_tableView_clicked ==============
     Updates souvenirItem and souvenirPrice when a menu item is selected from
     school_store tableview. index is the selected row of the tableview, with
     0 being the name of the item and 1 being the price.
@@ -53,10 +53,10 @@ void SchoolStore::on_school_store_tableView_clicked(const QModelIndex &index) {
 }
 
 
-/* ==== SchoolStore::on_add_to_cart_pushButton_clicked =========================
-    Add_To_cart Button: Adds selected souvenir item and quantity to cart database.
-    When an item is not selected, the method is returned, the
-    quantity is determined by the spinBox. If the resulting quantity
+/* ==== SchoolStore::on_add_to_cart_pushButton_clicked ==============
+    Add_To_cart Button: Adds selected souvenir item and quantity to
+    cart database. When an item is not selected, the method is returned,
+    the quantity is determined by the spinBox. If the resulting quantity
     is greater than 100, the method is returned, else the souvenir item
     with the quantity, price, and college name is added to the cart
     or updated if an entry already existed.
@@ -84,6 +84,11 @@ void SchoolStore::on_add_to_cart_pushButton_clicked() {
      if (query.next()) ui->cart_quantity_display->setText(query.value(0).toString());
 }
 
+/* ==== SchoolStore::getCollegeName =================================
+    Method used to catch signal emitted from MainWindow, used to
+    update the collegeName used to determine which school souvenirs
+    to display.
+================================================================== */
 void SchoolStore::getCollegeName(const QString &collegeName) {
     this->collegeName = collegeName;
     schoolStoreTableViewUpdate();
