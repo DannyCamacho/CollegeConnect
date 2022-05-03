@@ -45,10 +45,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     .gitignore \
     Distances.csv \
-    New Distances.csv \
-    New Distances.csv \
-    New Souvenirs.csv \
-    New Souvenirs.csv \
+    NewSouvenirs.csv \
+    NewUniversities.csv \
     Souvenirs.csv \
     resources/CC_logo.png \
     resources/CC_logo_mini-removebg.png \

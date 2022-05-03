@@ -5,6 +5,8 @@
 #include "map.h"
 #include "adminmenu.h"
 #include "login.h"
+#include "schoolstore.h"
+#include "shoppingcart.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,6 +23,8 @@ public:
 
 public slots:
     void receiveMessage(const QString &msg);
+    void moveToShoppingCart();
+    void moveToSchoolStore();
 
 private slots:
     void on_select_state_currentTextChanged(const QString &arg1);
@@ -32,13 +36,20 @@ private slots:
     void on_actionLogin_triggered();
     void returnToMainWindow();
     void on_actionQuit_triggered();
+    void on_visit_store_button_clicked();
+
+signals:
+    void updateSchoolStore(QString collegeName);
+    void updateShoppingCart();
 
 private:
     Ui::MainWindow *ui;
     AdminMenu* adminMenu;
+    SchoolStore* schoolStore;
+    ShoppingCart* shoppingCart;
     QSqlQueryModel* schoolModel;
-    QSqlQueryModel* schoolDetailModel;
     Database database;
+    QString collegeName;
     QString order;
     DoubleHashMap collegeMap;
 };
