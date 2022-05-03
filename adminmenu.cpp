@@ -10,6 +10,8 @@ AdminMenu::AdminMenu(QWidget *parent) : QMainWindow(parent), ui(new Ui::AdminMen
 
 AdminMenu::~AdminMenu() {
     delete ui;
+    delete schoolModel;
+    delete souvenirModel;
 }
 
 void AdminMenu::schoolTableViewUpdate() {
@@ -143,7 +145,7 @@ void AdminMenu::on_actionLogout_triggered(){
 }
 
 void AdminMenu::on_actionImport_University_triggered() {
-    QString filename = QFileDialog::getOpenFileName(this, "Select Import File");
+    QString filename = QFileDialog::getOpenFileName(this, "Select University Import File");
     fileName = filename.toStdString();
     QFile file(filename);
 
@@ -156,9 +158,8 @@ void AdminMenu::on_actionImport_University_triggered() {
     schoolTableViewUpdate();
 }
 
-
 void AdminMenu::on_actionImport_Souveners_triggered() {
-    QString filename = QFileDialog::getOpenFileName(this, "Select Import File");
+    QString filename = QFileDialog::getOpenFileName(this, "Select Souvenir Import File");
     fileName = filename.toStdString();
     QFile file(filename);
 

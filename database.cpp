@@ -18,7 +18,7 @@ void Database::connect() {
     if(QSqlDatabase::isDriverAvailable(DRIVER)) {
         QSqlDatabase db = QSqlDatabase::addDatabase(DRIVER);
         db.setDatabaseName(":memory:");
-        //db.setDatabaseName("C:\\Users\\thyva\\OneDrive\\Desktop\\db\\College.sqlite");
+        //db.setDatabaseName("C:\\Users\\vyngu\\OneDrive\\Desktop\\dbCollege.sqlite");
         if(!db.open()) qWarning() << "MainWindow::DatabaseConnect - ERROR: " << db.lastError().text();
     } else qWarning() << "MainWindow::DatabaseConnect - ERROR: no driver " << DRIVER << " available";
 }
@@ -27,6 +27,7 @@ void Database::init() {
     QSqlQuery query("CREATE TABLE college (collegeName TEXT, collegeNum INTEGER, state TEXT, undergrads INTEGER);");
     query.exec("CREATE TABLE edge (collegeName TEXT, endingCollege TEXT, distance INTEGER);");
     query.exec("CREATE TABLE souvenir (collegeName TEXT, collegeNum INTEGER, item TEXT, price INTEGER);");
+    query.exec("CREATE TABLE cart (collegeName TEXT, souvenirItem TEXT, souvenirPrice INTEGER, quantity INTEGER);");
 }
 
 void Database::populateColleges(std::string fileName) {

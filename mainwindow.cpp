@@ -5,15 +5,20 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     order = "collegeName ASC";
     schoolModel = new QSqlQueryModel;
-    schoolDetailModel = new QSqlQueryModel;
     populateWindow();
     adminMenu = new AdminMenu(this);
+    schoolStore = new SchoolStore(this);
     ui->main_stackedWidget->insertWidget(1, adminMenu);
+    ui->main_stackedWidget->insertWidget(2, schoolStore);
     connect(adminMenu, SIGNAL(adminLogout()), this, SLOT(returnToMainWindow()));
+    connect(schoolStore, SIGNAL(leaveSchoolStore()), this, SLOT(returnToMainWindow()));
 }
 
 MainWindow::~MainWindow() {
     delete ui;
+    delete schoolModel;
+    delete adminMenu;
+    delete schoolStore;
 }
 
 void MainWindow::populateWindow() {
@@ -33,8 +38,8 @@ void MainWindow::populateWindow() {
 
     schoolModel->setQuery("SELECT collegeName, state FROM college ORDER BY " + order);
     ui->school_list_tableView->setModel(schoolModel);
-    ui->toggle_name_order_descending->setVisible(false);
-    ui->toggle_state_order_descending->setVisible(false);
+    ui->toggle_name_order_ascending->setVisible(false);
+    ui->toggle_state_order_ascending->setVisible(false);
     ui->select_state->setCurrentText("All States");
 }
 
@@ -46,6 +51,7 @@ void  MainWindow::schoolTableUpdate() {
 
 void MainWindow::on_select_state_currentTextChanged(const QString &arg1) {
     schoolTableUpdate();
+    collegeName = "";
 }
 
 void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
@@ -54,6 +60,7 @@ void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
     ui->college_name_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).collegeName));
     ui->state_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).state));
     ui->undergrad_label->setText(QString::number(collegeMap.at(query.value(0).toInt()).numsOfGrad));
+    collegeName = index.siblingAtColumn(0).data().toString();
 }
 
 void MainWindow::on_toggle_name_order_ascending_clicked() {
@@ -99,8 +106,17 @@ void MainWindow::returnToMainWindow() {
     ui->main_stackedWidget->setCurrentIndex(0);
     populateWindow();
     schoolTableUpdate();
+    collegeName = "";
 }
 
 void MainWindow::on_actionQuit_triggered() {
     QApplication::quit();
+}
+
+void MainWindow::on_visit_store_button_clicked() {
+    if (collegeName == "") return;
+
+    ui->menuBar->setVisible(false);
+    ui->main_stackedWidget->setCurrentIndex(2);
+    emit updateSchoolStore(collegeName);
 }
