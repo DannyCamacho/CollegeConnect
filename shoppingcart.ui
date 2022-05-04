@@ -104,7 +104,6 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -187,7 +186,6 @@ selection-background-color: rgb(118, 158, 81);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -333,7 +331,6 @@ selection-background-color: rgb(118, 158, 81);</string>
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -380,7 +377,6 @@ QPushButton#empty_cart_pushButton: clicked {
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -433,7 +429,6 @@ QPushButton#remove_item_pushButton: clicked {
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -472,7 +467,6 @@ padding: 6px;</string>
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>10</pointsize>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -568,6 +562,9 @@ selection-background-color: rgb(118, 158, 81);</string>
      <property name="showGrid">
       <bool>false</bool>
      </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
      <property name="cornerButtonEnabled">
       <bool>false</bool>
      </property>
@@ -581,16 +578,19 @@ selection-background-color: rgb(118, 158, 81);</string>
       <number>75</number>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>135</number>
+      <number>100</number>
      </attribute>
      <attribute name="horizontalHeaderStretchLastSection">
-      <bool>true</bool>
+      <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderCascadingSectionResizes">
       <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>50</number>
      </attribute>
      <attribute name="verticalHeaderStretchLastSection">
       <bool>false</bool>
@@ -626,7 +626,6 @@ selection-background-color: rgb(118, 158, 81);</string>
      <font>
       <family>Bahnschrift</family>
       <pointsize>12</pointsize>
-      <weight>50</weight>
       <bold>false</bold>
      </font>
     </property>
