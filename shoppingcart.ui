@@ -578,7 +578,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <number>75</number>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>100</number>
+      <number>135</number>
      </attribute>
      <attribute name="horizontalHeaderStretchLastSection">
       <bool>false</bool>
