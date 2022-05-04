@@ -69,9 +69,9 @@ selection-background-color: rgb(118, 158, 81);</string>
    <widget class="QFrame" name="total_frame">
     <property name="geometry">
      <rect>
-      <x>550</x>
+      <x>520</x>
       <y>140</y>
-      <width>321</width>
+      <width>351</width>
       <height>361</height>
      </rect>
     </property>
@@ -90,20 +90,26 @@ color: rgb(0, 0, 0);</string>
       <rect>
        <x>10</x>
        <y>310</y>
-       <width>301</width>
-       <height>30</height>
+       <width>331</width>
+       <height>41</height>
       </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>30</height>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Mongolian Baiti</family>
-       <pointsize>14</pointsize>
+       <pointsize>16</pointsize>
        <bold>false</bold>
       </font>
      </property>
@@ -138,7 +144,7 @@ QPushButton#route_pushButton: clicked {
     <widget class="QLabel" name="total_amount">
      <property name="geometry">
       <rect>
-       <x>230</x>
+       <x>260</x>
        <y>270</y>
        <width>81</width>
        <height>31</height>
@@ -172,7 +178,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <rect>
        <x>10</x>
        <y>270</y>
-       <width>211</width>
+       <width>241</width>
        <height>31</height>
       </rect>
      </property>
@@ -208,7 +214,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>301</width>
+       <width>331</width>
        <height>251</height>
       </rect>
      </property>
@@ -223,7 +229,7 @@ selection-background-color: rgb(118, 158, 81);</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>301</width>
+        <width>331</width>
         <height>251</height>
        </rect>
       </property>
@@ -274,10 +280,13 @@ selection-background-color: rgb(118, 158, 81);</string>
        <number>50</number>
       </attribute>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>235</number>
+       <number>250</number>
       </attribute>
       <attribute name="verticalHeaderVisible">
        <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>40</number>
       </attribute>
      </widget>
     </widget>
@@ -330,7 +339,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <property name="font">
        <font>
         <family>Mongolian Baiti</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <bold>false</bold>
        </font>
       </property>
@@ -376,7 +385,7 @@ QPushButton#empty_cart_pushButton: clicked {
       <property name="font">
        <font>
         <family>Mongolian Baiti</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <bold>false</bold>
        </font>
       </property>
@@ -428,15 +437,16 @@ QPushButton#remove_item_pushButton: clicked {
       <property name="font">
        <font>
         <family>Mongolian Baiti</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(49, 49, 49);
-background-color:  rgb(255, 255, 255);
-border-color:rgb(118, 158, 81);
-padding: 6px;</string>
+background-color: rgb(255, 255, 255);
+alternate-background-color: rgb(225, 225, 225);
+selection-color: rgb(49, 49, 49);
+selection-background-color: rgb(225, 225, 225);</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -466,7 +476,7 @@ padding: 6px;</string>
       <property name="font">
        <font>
         <family>Mongolian Baiti</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <bold>false</bold>
        </font>
       </property>
