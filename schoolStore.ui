@@ -31,7 +31,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <x>560</x>
       <y>160</y>
       <width>301</width>
-      <height>211</height>
+      <height>161</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -48,7 +48,7 @@ color: rgb(0, 0, 0);</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>10</y>
+       <y>20</y>
        <width>55</width>
        <height>51</height>
       </rect>
@@ -56,7 +56,7 @@ color: rgb(0, 0, 0);</string>
      <property name="font">
       <font>
        <family>Mongolian Baiti</family>
-       <pointsize>12</pointsize>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="focusPolicy">
@@ -67,7 +67,7 @@ color: rgb(0, 0, 0);</string>
 background-color: rgb(255, 255, 255);
 alternate-background-color: rgb(225, 225, 225);
 selection-color: rgb(49, 49, 49);
-selection-background-color: rgb(118, 158, 81);</string>
+selection-background-color: rgb(225, 225, 225);</string>
      </property>
      <property name="frame">
       <bool>true</bool>
@@ -103,8 +103,8 @@ selection-background-color: rgb(118, 158, 81);</string>
     <widget class="QPushButton" name="add_to_cart_pushButton">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>70</y>
+       <x>80</x>
+       <y>20</y>
        <width>211</width>
        <height>51</height>
       </rect>
@@ -153,7 +153,7 @@ QPushButton#add_to_cart_pushButton: clicked {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>140</y>
+       <y>90</y>
        <width>211</width>
        <height>51</height>
       </rect>
@@ -205,7 +205,7 @@ QPushButton#shopping_cart_pushButton: clicked {
      <property name="geometry">
       <rect>
        <x>230</x>
-       <y>140</y>
+       <y>90</y>
        <width>51</width>
        <height>41</height>
       </rect>
@@ -237,7 +237,7 @@ image: url(:/rec/resources/bubble-icon-removebg.png);</string>
       <property name="font">
        <font>
         <family>Mongolian Baiti</family>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -272,7 +272,7 @@ image: url(:/rec/resources/bubble-icon-removebg.png);</string>
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>390</y>
+      <y>340</y>
       <width>301</width>
       <height>90</height>
      </rect>
@@ -298,7 +298,7 @@ color: rgb(0, 0, 0);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>146</width>
+       <width>176</width>
        <height>0</height>
       </size>
      </property>
@@ -312,7 +312,6 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -350,7 +349,7 @@ QPushButton#initial_list_pushButton: clicked {
       <x>30</x>
       <y>160</y>
       <width>421</width>
-      <height>381</height>
+      <height>341</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -365,7 +364,7 @@ QPushButton#initial_list_pushButton: clicked {
        <x>0</x>
        <y>0</y>
        <width>421</width>
-       <height>381</height>
+       <height>341</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -430,10 +429,13 @@ selection-background-color: rgb(118, 158, 81);</string>
       <number>55</number>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>200</number>
+      <number>350</number>
      </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>40</number>
      </attribute>
      <attribute name="verticalHeaderHighlightSections">
       <bool>true</bool>
@@ -483,7 +485,7 @@ selection-background-color: rgb(118, 158, 81);</string>
      <property name="font">
       <font>
        <family>Mongolian Baiti</family>
-       <pointsize>16</pointsize>
+       <pointsize>18</pointsize>
       </font>
      </property>
      <property name="styleSheet">
