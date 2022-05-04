@@ -65,5 +65,4 @@ DISTFILES += \
     resources/up-arrow-icon.png
 
 RESOURCES += \
-    UIGraphics.qrc \
     resources/resources.qrc
