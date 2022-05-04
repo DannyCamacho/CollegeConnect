@@ -26,7 +26,7 @@
      <rect>
       <x>30</x>
       <y>100</y>
-      <width>491</width>
+      <width>531</width>
       <height>41</height>
      </rect>
     </property>
@@ -41,7 +41,7 @@
       <rect>
        <x>0</x>
        <y>5</y>
-       <width>241</width>
+       <width>281</width>
        <height>31</height>
       </rect>
      </property>
@@ -64,9 +64,9 @@
     <widget class="QLabel" name="items_label">
      <property name="geometry">
       <rect>
-       <x>246</x>
+       <x>280</x>
        <y>5</y>
-       <width>241</width>
+       <width>251</width>
        <height>31</height>
       </rect>
      </property>
@@ -252,7 +252,6 @@ padding: 6px;
          <font>
           <family>Mongolian Baiti</family>
           <pointsize>11</pointsize>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -299,7 +298,6 @@ QPushButton#plan_route_button: pressed {
          <font>
           <family>Mongolian Baiti</family>
           <pointsize>11</pointsize>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -340,7 +338,6 @@ QPushButton#plan_route_button: pressed {
          <font>
           <family>Mongolian Baiti</family>
           <pointsize>11</pointsize>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -371,7 +368,7 @@ QPushButton#plan_route_button: pressed {
      <rect>
       <x>30</x>
       <y>150</y>
-      <width>491</width>
+      <width>531</width>
       <height>381</height>
      </rect>
     </property>
@@ -386,7 +383,7 @@ QPushButton#plan_route_button: pressed {
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>241</width>
+       <width>281</width>
        <height>381</height>
       </rect>
      </property>
@@ -399,7 +396,7 @@ QPushButton#plan_route_button: pressed {
      <property name="font">
       <font>
        <family>Mongolian Baiti</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="focusPolicy">
@@ -454,8 +451,14 @@ selection-background-color: rgb(118, 158, 81);</string>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>200</number>
      </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>40</number>
      </attribute>
      <attribute name="verticalHeaderHighlightSections">
       <bool>true</bool>
@@ -464,16 +467,16 @@ selection-background-color: rgb(118, 158, 81);</string>
     <widget class="QTableView" name="items_tableView">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>280</x>
        <y>0</y>
-       <width>241</width>
+       <width>251</width>
        <height>381</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Mongolian Baiti</family>
-       <pointsize>11</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="focusPolicy">
@@ -524,6 +527,9 @@ selection-background-color: rgb(118, 158, 81);</string>
      </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>40</number>
      </attribute>
     </widget>
    </widget>

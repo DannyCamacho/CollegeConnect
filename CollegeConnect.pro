@@ -16,7 +16,8 @@ SOURCES += \
     mainwindow.cpp \
     map.cpp \
     schoolstore.cpp \
-    shoppingcart.cpp
+    shoppingcart.cpp \
+    tripplanner.cpp
 
 HEADERS += \
     adminmenu.h \
@@ -25,14 +26,16 @@ HEADERS += \
     mainwindow.h \
     map.h \
     schoolstore.h \
-    shoppingcart.h
+    shoppingcart.h \
+    tripplanner.h
 
 FORMS += \
     adminmenu.ui \
     login.ui \
     mainwindow.ui \
     schoolStore.ui \
-    shoppingcart.ui
+    shoppingcart.ui \
+    tripplanner.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
