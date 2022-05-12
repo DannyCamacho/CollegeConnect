@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>tripplanner</class>
- <widget class="QMainWindow" name="tripplanner">
+ <class>TripPlanner</class>
+ <widget class="QMainWindow" name="TripPlanner">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -181,7 +181,7 @@ QPushButton#visit_store_button: clicked {
       <widget class="QPushButton" name="irvine_pushButton">
        <property name="minimumSize">
         <size>
-         <width>176</width>
+         <width>146</width>
          <height>90</height>
         </size>
        </property>
@@ -195,6 +195,7 @@ QPushButton#visit_store_button: clicked {
         <font>
          <family>Bahnschrift</family>
          <pointsize>11</pointsize>
+         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -239,7 +240,7 @@ QPushButton#visit_store_button: clicked {
       <widget class="QPushButton" name="arizona_pushButton">
        <property name="minimumSize">
         <size>
-         <width>176</width>
+         <width>146</width>
          <height>90</height>
         </size>
        </property>
@@ -253,6 +254,7 @@ QPushButton#visit_store_button: clicked {
         <font>
          <family>Bahnschrift</family>
          <pointsize>11</pointsize>
+         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -291,7 +293,7 @@ QPushButton#visit_store_button: clicked {
       <widget class="QPushButton" name="michigan_pushButton">
        <property name="minimumSize">
         <size>
-         <width>176</width>
+         <width>146</width>
          <height>90</height>
         </size>
        </property>
@@ -305,6 +307,7 @@ QPushButton#visit_store_button: clicked {
         <font>
          <family>Bahnschrift</family>
          <pointsize>11</pointsize>
+         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -402,7 +405,7 @@ color: rgb(0, 0, 0);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>176</width>
+       <width>146</width>
        <height>18</height>
       </size>
      </property>
@@ -410,6 +413,7 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>12</pointsize>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -449,7 +453,7 @@ QPushButton#visit_store_button: clicked {
      </property>
      <property name="minimumSize">
       <size>
-       <width>176</width>
+       <width>146</width>
        <height>18</height>
       </size>
      </property>
@@ -457,6 +461,7 @@ QPushButton#visit_store_button: clicked {
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>12</pointsize>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -620,6 +625,7 @@ color: rgb(0, 0, 0);</string>
         <font>
          <family>Mongolian Baiti</family>
          <pointsize>14</pointsize>
+         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>

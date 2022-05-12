@@ -20,8 +20,8 @@ private slots:
     void on_initial_list_pushButton_clicked();
     void on_school_store_tableView_clicked(const QModelIndex &index);
     void on_add_to_cart_pushButton_clicked();
-
     void on_shopping_cart_pushButton_clicked();
+    void updateQuantity();
 
 signals:
     void leaveSchoolStore();

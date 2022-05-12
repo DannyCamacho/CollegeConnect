@@ -78,12 +78,17 @@ void SchoolStore::on_add_to_cart_pushButton_clicked() {
          if (quantity > 100) return;
          stringQuery = "UPDATE cart SET collegeName =\"" + collegeName + "\",souvenirItem =\"" + souvenirItem + "\", souvenirPrice =\"" + souvenirPrice + "\", quantity =\"" + QString::number(quantity) + "\" WHERE collegeName =\"" + collegeName + "\" AND souvenirItem =\"" + souvenirItem + "\";";
      }
-
      query.exec(stringQuery);
-     query.exec("SELECT SUM(X.TOTAL) FROM (SELECT quantity as TOTAL FROM cart) X;");
-     if (query.next()) ui->cart_quantity_display->setText(query.value(0).toString());
+     updateQuantity();
 }
 
+/* ==== SchoolStore::updateQuantity =================================
+    Method used update quantity of items within the cart.
+================================================================== */
+void SchoolStore::updateQuantity() {
+    QSqlQuery query("SELECT SUM(X.TOTAL) FROM (SELECT quantity as TOTAL FROM cart) X;");
+    if (query.next()) ui->cart_quantity_display->setText(query.value(0).toInt() == 0 ? "0" : query.value(0).toString());
+}
 
 /* ==== SchoolStore::getCollegeName =================================
     Method used to catch signal emitted from MainWindow, used to
@@ -93,6 +98,7 @@ void SchoolStore::on_add_to_cart_pushButton_clicked() {
 void SchoolStore::getCollegeName(const QString &collegeName) {
     this->collegeName = collegeName;
     schoolStoreTableViewUpdate();
+    updateQuantity();
 }
 
 

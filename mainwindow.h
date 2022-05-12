@@ -7,6 +7,7 @@
 #include "login.h"
 #include "schoolstore.h"
 #include "shoppingcart.h"
+#include "tripplanner.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -38,6 +39,8 @@ private slots:
     void on_actionQuit_triggered();
     void on_visit_store_button_clicked();
 
+    void on_plan_route_button_clicked();
+
 signals:
     void updateSchoolStore(QString collegeName);
     void updateShoppingCart();
@@ -47,6 +50,7 @@ private:
     AdminMenu* adminMenu;
     SchoolStore* schoolStore;
     ShoppingCart* shoppingCart;
+    TripPlanner* tripPlanner;
     QSqlQueryModel* schoolModel;
     Database database;
     QString collegeName;

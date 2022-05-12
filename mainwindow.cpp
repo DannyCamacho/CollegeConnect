@@ -9,9 +9,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     adminMenu = new AdminMenu(this);
     schoolStore = new SchoolStore(this);
     shoppingCart = new ShoppingCart(this);
+    tripPlanner = new TripPlanner(this);
     ui->main_stackedWidget->insertWidget(1, adminMenu);
     ui->main_stackedWidget->insertWidget(2, schoolStore);
     ui->main_stackedWidget->insertWidget(3, shoppingCart);
+    ui->main_stackedWidget->insertWidget(4, tripPlanner);
     connect(adminMenu, SIGNAL(adminLogout()), this, SLOT(returnToMainWindow()));
     connect(schoolStore, SIGNAL(leaveSchoolStore()), this, SLOT(returnToMainWindow()));
     connect(schoolStore, SIGNAL(moveToShoppingCart()), this, SLOT(moveToShoppingCart()));
@@ -134,4 +136,9 @@ void MainWindow::moveToShoppingCart() {
 void MainWindow::moveToSchoolStore() {
     ui->main_stackedWidget->setCurrentIndex(2);
     emit updateSchoolStore(collegeName);
+}
+
+void MainWindow::on_plan_route_button_clicked() {
+    ui->menuBar->setVisible(false);
+    ui->main_stackedWidget->setCurrentIndex(4);
 }
