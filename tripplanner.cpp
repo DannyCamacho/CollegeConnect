@@ -31,6 +31,7 @@ void TripPlanner::populateWindow() {
     query.exec("SELECT * FROM edge");
     while (query.next()) d[collegeMap[query.value(0).toString()]][collegeMap[query.value(1).toString()]] = query.value(2).toDouble();
     tableViewUpdate();
+    updateQuantity();
 }
 
 void TripPlanner::updateTrip() {
