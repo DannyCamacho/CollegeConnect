@@ -28,6 +28,8 @@ void Database::init() {
     query.exec("CREATE TABLE edge (collegeName TEXT, endingCollege TEXT, distance INTEGER);");
     query.exec("CREATE TABLE souvenir (collegeName TEXT, collegeNum INTEGER, item TEXT, price INTEGER);");
     query.exec("CREATE TABLE cart (collegeName TEXT, souvenirItem TEXT, souvenirPrice INTEGER, quantity INTEGER);");
+    query.exec("CREATE TABLE tripSelected (restName TEXT, restNum INTEGER);");
+    query.exec("CREATE TABLE tripRoute (restName TEXT, restNum INTEGER, routeOrder INTEGER, distToNext INTEGER);");
 }
 
 void Database::populateColleges(std::string fileName) {

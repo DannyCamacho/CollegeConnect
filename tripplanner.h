@@ -20,6 +20,17 @@ signals:
 private slots:
     void populateWindow();
     void updateQuantity();
+    void updateTrip();
+    void calculateTrip(int start);
+    void tableViewUpdate();
+    void on_available_routes_tableView_clicked(const QModelIndex &index);
+    void on_selected_route_tableView_clicked(const QModelIndex &index);
+    void on_add_pushButton_clicked();
+    void on_remove_pushButton_clicked();
+    void on_starting_location_dropdown_currentTextChanged(const QString &arg1);
+    void on_irvine_pushButton_clicked();
+    void on_arizona_pushButton_clicked();
+    void on_michigan_pushButton_clicked();
 
 private:
     Ui::TripPlanner *ui;
@@ -27,7 +38,7 @@ private:
     QSqlQueryModel* selectedModel;
     std::vector<int> order;
     QString name;
-    bool isAvailable[20];
+    bool isSelected[20];
     double d[20][20];
     int start;
 };
