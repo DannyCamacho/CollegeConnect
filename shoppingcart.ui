@@ -14,7 +14,7 @@
    <string>Shopping Cart</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources/resources.qrc">
+   <iconset>
     <normaloff>:/CC_logo_mini-removebg.png</normaloff>:/CC_logo_mini-removebg.png</iconset>
   </property>
   <property name="styleSheet">
@@ -96,7 +96,7 @@ color: rgb(0, 0, 0);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>0</width>
+       <width>146</width>
        <height>0</height>
       </size>
      </property>
@@ -110,6 +110,7 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>16</pointsize>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -129,7 +130,7 @@ QPushButton#route_pushButton: clicked {
 }</string>
      </property>
      <property name="text">
-      <string>Proceed to Route</string>
+      <string>Proceed to Trip Planner</string>
      </property>
      <property name="autoDefault">
       <bool>true</bool>
@@ -192,6 +193,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -340,6 +342,7 @@ selection-background-color: rgb(118, 158, 81);</string>
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>11</pointsize>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -386,6 +389,7 @@ QPushButton#empty_cart_pushButton: clicked {
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>11</pointsize>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -438,6 +442,7 @@ QPushButton#remove_item_pushButton: clicked {
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>11</pointsize>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -477,6 +482,7 @@ selection-background-color: rgb(225, 225, 225);</string>
        <font>
         <family>Mongolian Baiti</family>
         <pointsize>11</pointsize>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -626,9 +632,9 @@ selection-background-color: rgb(118, 158, 81);</string>
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>770</x>
+      <x>710</x>
       <y>30</y>
-      <width>91</width>
+      <width>151</width>
       <height>31</height>
      </rect>
     </property>
@@ -636,6 +642,7 @@ selection-background-color: rgb(118, 158, 81);</string>
      <font>
       <family>Bahnschrift</family>
       <pointsize>12</pointsize>
+      <weight>50</weight>
       <bold>false</bold>
      </font>
     </property>
@@ -644,7 +651,7 @@ selection-background-color: rgb(118, 158, 81);</string>
 color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
-     <string>Return</string>
+     <string>Return to Store</string>
     </property>
     <property name="icon">
      <iconset>
@@ -659,8 +666,6 @@ color: rgb(0, 0, 0);</string>
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="resources/resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

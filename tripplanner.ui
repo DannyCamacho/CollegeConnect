@@ -21,9 +21,9 @@
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>390</y>
+      <y>350</y>
       <width>241</width>
-      <height>61</height>
+      <height>101</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -40,7 +40,7 @@ color: rgb(0, 0, 0);</string>
      <property name="geometry">
       <rect>
        <x>185</x>
-       <y>10</y>
+       <y>50</y>
        <width>51</width>
        <height>41</height>
       </rect>
@@ -111,7 +111,7 @@ color: rgb(49, 49, 49);</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>10</y>
+       <y>50</y>
        <width>176</width>
        <height>41</height>
       </rect>
@@ -160,14 +160,50 @@ QPushButton#visit_store_button: clicked {
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QPushButton" name="school_store_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+
+QPushButton#visit_store_button: clicked {
+	background-color: rgb(118, 158, 81);
+    border-style: inset;
+}</string>
+     </property>
+     <property name="text">
+      <string>School Store</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="start_at_frame">
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>70</y>
+      <y>90</y>
       <width>241</width>
-      <height>311</height>
+      <height>251</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -178,11 +214,24 @@ QPushButton#visit_store_button: clicked {
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
+      <widget class="QLabel" name="label">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>15</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>College Connect Sponsered by:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="irvine_pushButton">
        <property name="minimumSize">
         <size>
          <width>146</width>
-         <height>90</height>
+         <height>65</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -241,7 +290,7 @@ QPushButton#visit_store_button: clicked {
        <property name="minimumSize">
         <size>
          <width>146</width>
-         <height>90</height>
+         <height>65</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -294,7 +343,7 @@ QPushButton#visit_store_button: clicked {
        <property name="minimumSize">
         <size>
          <width>146</width>
-         <height>90</height>
+         <height>65</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -349,7 +398,7 @@ QPushButton#visit_store_button: clicked {
      <rect>
       <x>30</x>
       <y>520</y>
-      <width>501</width>
+      <width>541</width>
       <height>51</height>
      </rect>
     </property>
@@ -366,8 +415,8 @@ color: rgb(0, 0, 0);</string>
     <widget class="Line" name="line">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>1</y>
+       <x>250</x>
+       <y>0</y>
        <width>40</width>
        <height>51</height>
       </rect>
@@ -397,9 +446,9 @@ color: rgb(0, 0, 0);</string>
     <widget class="QPushButton" name="remove_pushButton">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>8</y>
-       <width>233</width>
+       <x>282</x>
+       <y>10</y>
+       <width>251</width>
        <height>31</height>
       </rect>
      </property>
@@ -446,8 +495,8 @@ QPushButton#visit_store_button: clicked {
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>8</y>
-       <width>231</width>
+       <y>10</y>
+       <width>251</width>
        <height>31</height>
       </rect>
      </property>
@@ -645,7 +694,7 @@ QPushButton#visit_store_button: clicked {
 }</string>
        </property>
        <property name="text">
-        <string>Place Order</string>
+        <string>View Graphs</string>
        </property>
       </widget>
      </item>
@@ -656,7 +705,7 @@ QPushButton#visit_store_button: clicked {
      <rect>
       <x>30</x>
       <y>170</y>
-      <width>501</width>
+      <width>541</width>
       <height>351</height>
      </rect>
     </property>
@@ -671,7 +720,7 @@ QPushButton#visit_store_button: clicked {
       <rect>
        <x>0</x>
        <y>30</y>
-       <width>251</width>
+       <width>271</width>
        <height>321</height>
       </rect>
      </property>
@@ -755,9 +804,9 @@ selection-background-color: rgb(118, 158, 81);</string>
     <widget class="QTableView" name="selected_route_tableView">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>270</x>
        <y>30</y>
-       <width>251</width>
+       <width>271</width>
        <height>321</height>
       </rect>
      </property>
@@ -828,7 +877,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>251</width>
+       <width>271</width>
        <height>31</height>
       </rect>
      </property>
@@ -1151,9 +1200,9 @@ QPushButton#visit_store_button: clicked {
     <widget class="QFrame" name="selected_route_title">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>270</x>
        <y>0</y>
-       <width>251</width>
+       <width>271</width>
        <height>31</height>
       </rect>
      </property>
@@ -1178,7 +1227,7 @@ color: rgb(0, 0, 0);</string>
        <rect>
         <x>10</x>
         <y>0</y>
-        <width>111</width>
+        <width>121</width>
         <height>31</height>
        </rect>
       </property>
@@ -1202,7 +1251,7 @@ color: rgb(49, 49, 49);</string>
      <widget class="QLabel" name="distance_next_label">
       <property name="geometry">
        <rect>
-        <x>120</x>
+        <x>130</x>
         <y>0</y>
         <width>131</width>
         <height>31</height>

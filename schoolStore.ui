@@ -14,7 +14,7 @@
    <string>School Store</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources/resources.qrc">
+   <iconset>
     <normaloff>:/CC_logo_mini-removebg.png</normaloff>:/CC_logo_mini-removebg.png</iconset>
   </property>
   <property name="styleSheet">
@@ -185,7 +185,7 @@ QPushButton#shopping_cart_pushButton: clicked {
       <string>Shopping Cart </string>
      </property>
      <property name="icon">
-      <iconset resource="resources/resources.qrc">
+      <iconset>
        <normaloff>:/school_store_logo-removebg.png</normaloff>:/school_store_logo-removebg.png</iconset>
      </property>
      <property name="iconSize">
@@ -298,7 +298,7 @@ color: rgb(0, 0, 0);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>176</width>
+       <width>146</width>
        <height>0</height>
       </size>
      </property>
@@ -312,6 +312,7 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -330,7 +331,7 @@ QPushButton#initial_list_pushButton: clicked {
 }</string>
      </property>
      <property name="text">
-      <string>Visit Initial List</string>
+      <string>Return Home</string>
      </property>
      <property name="autoDefault">
       <bool>true</bool>
@@ -501,8 +502,6 @@ selection-background-color: rgb(118, 158, 81);</string>
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="resources/resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
