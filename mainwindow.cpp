@@ -26,6 +26,7 @@ MainWindow::~MainWindow() {
     delete adminMenu;
     delete schoolStore;
     delete shoppingCart;
+    delete tripPlanner;
 }
 
 void MainWindow::populateWindow() {
@@ -141,4 +142,5 @@ void MainWindow::moveToSchoolStore() {
 void MainWindow::on_plan_route_button_clicked() {
     ui->menuBar->setVisible(false);
     ui->main_stackedWidget->setCurrentIndex(4);
+    emit updateTripPlanner();
 }

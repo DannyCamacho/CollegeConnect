@@ -6,8 +6,7 @@ TripPlanner::TripPlanner(QWidget *parent) : QMainWindow(parent), ui(new Ui::Trip
     availableModel = new QSqlQueryModel;
     selectedModel = new QSqlQueryModel;
     start = 0;
-    populateWindow();
-    tableViewUpdate();
+    connect(parent, SIGNAL(updateTripPlanner()), this, SLOT(populateWindow()));
 }
 
 TripPlanner::~TripPlanner() {
@@ -31,6 +30,7 @@ void TripPlanner::populateWindow() {
 
     query.exec("SELECT * FROM edge");
     while (query.next()) d[collegeMap[query.value(0).toString()]][collegeMap[query.value(1).toString()]] = query.value(2).toDouble();
+    tableViewUpdate();
 }
 
 void TripPlanner::updateTrip() {

@@ -38,12 +38,12 @@ private slots:
     void returnToMainWindow();
     void on_actionQuit_triggered();
     void on_visit_store_button_clicked();
-
     void on_plan_route_button_clicked();
 
 signals:
     void updateSchoolStore(QString collegeName);
     void updateShoppingCart();
+    void updateTripPlanner();
 
 private:
     Ui::MainWindow *ui;
