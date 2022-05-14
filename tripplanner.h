@@ -32,6 +32,8 @@ private slots:
     void on_arizona_pushButton_clicked();
     void on_michigan_pushButton_clicked();
 
+    void on_view_auto_select_pushButton_clicked();
+
 private:
     Ui::TripPlanner *ui;
     QSqlQueryModel* availableModel;
@@ -41,6 +43,7 @@ private:
     bool isSelected[20];
     double d[20][20];
     int start;
+    int spinBoxMax;
 };
 
 #endif // TRIPPLANNER_H

@@ -6,6 +6,7 @@ TripPlanner::TripPlanner(QWidget *parent) : QMainWindow(parent), ui(new Ui::Trip
     availableModel = new QSqlQueryModel;
     selectedModel = new QSqlQueryModel;
     start = 0;
+    spinBoxMax = 0;
     connect(parent, SIGNAL(updateTripPlanner()), this, SLOT(populateWindow()));
 }
 
@@ -20,10 +21,11 @@ void TripPlanner::populateWindow() {
     ui->starting_location_dropdown->clear();
     QSqlQuery query("SELECT collegeName, collegeNum FROM college");
     while (query.next()) {
+        ++spinBoxMax;
         ui->starting_location_dropdown->addItem(query.value(0).toString());
         collegeMap[query.value(0).toString()] = query.value(1).toInt();
     }
-
+    ui->spinBox->setMaximum(spinBoxMax);
     for (int i = 0; i < 20; ++i)
         for (int j = 0; j < 20; ++j)
             d[i][j] = 0.0;
@@ -171,4 +173,10 @@ void TripPlanner::on_arizona_pushButton_clicked() {
 void TripPlanner::on_michigan_pushButton_clicked() {
     ui->starting_location_dropdown->setCurrentText("University of  Michigan");
     on_starting_location_dropdown_currentTextChanged("University of  Michigan");
+}
+
+void TripPlanner::on_view_auto_select_pushButton_clicked() {
+    for (int i = 0; i < 20; ++i) isSelected[i] = i < spinBoxMax ? true : false;
+    calculateTrip(start);
+    QSqlQuery query("DELETE FROM tripRoute ORDER BY DESC routeOrder LIMIT " + QString::number(spinBoxMax - ui->spinBox->value()) + ";");
 }
