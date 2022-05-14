@@ -257,7 +257,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <number>28</number>
      </attribute>
     </widget>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="graph_title_label">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -276,7 +276,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="discovery_title_label">
      <property name="geometry">
       <rect>
        <x>390</x>
@@ -295,7 +295,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="back_title_label">
      <property name="geometry">
       <rect>
        <x>390</x>
