@@ -25,7 +25,7 @@ void TripPlanner::populateWindow() {
         ui->starting_location_dropdown->addItem(query.value(0).toString());
         collegeMap[query.value(0).toString()] = query.value(1).toInt();
     }
-    ui->spinBox->setMaximum(spinBoxMax);
+    ui->spinBox->setRange(1, spinBoxMax);
     for (int i = 0; i < 20; ++i)
         for (int j = 0; j < 20; ++j)
             d[i][j] = 0.0;
@@ -40,6 +40,7 @@ void TripPlanner::updateTrip() {
     for (int i = 0; i < 20; ++i) isSelected[i] = false;
     QSqlQuery query("SELECT collegeNum FROM tripSelected");
     while (query.next()) isSelected[query.value(0).toInt()] = true;
+    order.clear();
     calculateTrip(start);
 }
 
@@ -176,7 +177,12 @@ void TripPlanner::on_michigan_pushButton_clicked() {
 }
 
 void TripPlanner::on_view_auto_select_pushButton_clicked() {
-    for (int i = 0; i < 20; ++i) isSelected[i] = i < spinBoxMax ? true : false;
-    calculateTrip(start);
-    QSqlQuery query("DELETE FROM tripRoute ORDER BY DESC routeOrder LIMIT " + QString::number(spinBoxMax - ui->spinBox->value()) + ";");
+    QSqlQuery query("DROP TABLE tripSelected;");
+    query.exec("CREATE TABLE tripSelected (collegeName TEXT, collegeNum INTEGER);");
+    query.exec("INSERT INTO tripSelected (collegeName, collegeNum) SELECT collegeName, collegeNum FROM college;");
+    query.exec("DROP TABLE tripRoute;");
+    query.exec("CREATE TABLE tripRoute (collegeName TEXT, collegeNum INTEGER, routeOrder INTEGER, distToNext INTEGER);");
+    updateTrip();
+    query.exec("DELETE FROM tripRoute WHERE routeOrder > " + QString::number(ui->spinBox->value() + 1) + ";");
+    tableViewUpdate();
 }
