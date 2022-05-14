@@ -29,13 +29,13 @@
     <property name="frameShadow">
      <enum>QFrame::Plain</enum>
     </property>
-    <widget class="QTableView" name="available_routes_tableView">
+    <widget class="QTableView" name="graph_result_tableView">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
+       <y>30</y>
        <width>391</width>
-       <height>411</height>
+       <height>381</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -115,13 +115,13 @@ selection-background-color: rgb(118, 158, 81);</string>
       <bool>true</bool>
      </attribute>
     </widget>
-    <widget class="QTableView" name="selected_route_tableView_2">
+    <widget class="QTableView" name="back_edges_tableView">
      <property name="geometry">
       <rect>
        <x>390</x>
-       <y>210</y>
+       <y>240</y>
        <width>291</width>
-       <height>201</height>
+       <height>171</height>
       </rect>
      </property>
      <property name="font">
@@ -186,13 +186,13 @@ selection-background-color: rgb(118, 158, 81);</string>
       <number>28</number>
      </attribute>
     </widget>
-    <widget class="QTableView" name="selected_route_tableView">
+    <widget class="QTableView" name="discovery_edges_tableView">
      <property name="geometry">
       <rect>
        <x>390</x>
-       <y>0</y>
+       <y>30</y>
        <width>291</width>
-       <height>211</height>
+       <height>181</height>
       </rect>
      </property>
      <property name="font">
@@ -256,6 +256,63 @@ selection-background-color: rgb(118, 158, 81);</string>
      <attribute name="verticalHeaderDefaultSectionSize">
       <number>28</number>
      </attribute>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>391</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="text">
+      <string>Graph Result</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>0</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="text">
+      <string>Discovery Edges</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>210</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="text">
+      <string>Back Edges</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
    </widget>
    <widget class="QFrame" name="place_order_frame">
@@ -398,7 +455,7 @@ color: rgb(0, 0, 0);</string>
      <string/>
     </property>
    </widget>
-   <widget class="QComboBox" name="starting_location_dropdown">
+   <widget class="QComboBox" name="choose_college_dropdown">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -723,7 +780,7 @@ QPushButton#visit_store_button: clicked {
      <number>0</number>
     </property>
    </widget>
-   <widget class="QComboBox" name="starting_location_dropdown_2">
+   <widget class="QComboBox" name="choose_graph_dropdown">
     <property name="geometry">
      <rect>
       <x>30</x>
