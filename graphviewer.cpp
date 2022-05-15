@@ -55,7 +55,9 @@ void GraphViewer::on_choose_graph_dropdown_currentTextChanged(const QString &arg
         tableViewUpdate();
     } else {
         ui->choose_college_dropdown->setVisible(1);
-        ui->choose_college_dropdown->setCurrentText("Select College");
+        if (ui->choose_college_dropdown->currentText() != "") {
+            on_choose_college_dropdown_currentTextChanged(ui->choose_college_dropdown->currentText());
+        }
     }
 }
 
