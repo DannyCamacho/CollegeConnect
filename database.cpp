@@ -335,7 +335,6 @@ void AdjacencyMatrix::BFS(int src) {
     visited[src] = true;
     queue.push({ src, 0 });
 
-    std::cout << "\n\nBFS:\n";
     while (!queue.empty()) {
         src = queue.front().first;
         std::string collegeName = collegesIdx[src];
@@ -356,7 +355,6 @@ void AdjacencyMatrix::BFS(int src) {
             tempQueue.pop();
         }
     }
-    std::cout << "Total Distance: " << total << std::endl;
 }
 
 /* ==== AdjacencyMatrix DFS() =======================================
@@ -366,11 +364,8 @@ void AdjacencyMatrix::BFS(int src) {
 ================================================================== */
 void AdjacencyMatrix::DFS(int src) {
     std::vector<bool> visited(size, false);
-    std::cout << "\n\nDFS:\n";
-    int total = DFS(src, 0, visited);
-    std::cout << "\nTotal Distance: " << total << std::endl;
+    src = DFS(src, visited);
     QSqlQuery query("INSERT INTO path(collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[src]) + + "\", \"" + QString::number(0) + "\");");
-
 }
 
 /* ==== AdjacencyMatrix DFS() =======================================
@@ -378,25 +373,22 @@ void AdjacencyMatrix::DFS(int src) {
     through the DFS algorithm. The distance from each starting city
     is added to the running total and the total is returned to caller.
 ================================================================== */
-int AdjacencyMatrix::DFS(int src, double total, std::vector<bool>& visited) {
+int AdjacencyMatrix::DFS(int src, std::vector<bool>& visited) {
     std::priority_queue<pi, std::vector<pi>, std::greater<pi> > tempQueue;
     visited[src] = true;
 
-    for (int i = 0; i < size; ++i) {
-        if (!visited[i] && distances[src][i]) {
+    for (int i = 0; i < size; ++i)
+        if (!visited[i] && distances[src][i])
             tempQueue.push({ distances[src][i], i });
-        }
-    }
 
     while (!tempQueue.empty()) {
         if (!visited[tempQueue.top().second]) {
             QSqlQuery query("INSERT INTO path(collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[src]) + + "\", \"" + QString::number(tempQueue.top().first) + "\");");
             query.exec("INSERT INTO discoveryEdges(collegeName, endingCollege, distance) VALUES (\"" + QString::fromStdString(collegesIdx[src]) + + "\", \"" + QString::fromStdString(collegesIdx[tempQueue.top().second]) + "\", \"" + QString::number(tempQueue.top().first) + "\");");
-            src = DFS(tempQueue.top().second, distances[src][tempQueue.top().second], visited);
+            src = DFS(tempQueue.top().second, visited);
         }
         tempQueue.pop();
     }
-
     return src;
 }
 
@@ -422,19 +414,17 @@ void AdjacencyMatrix::dijkstra(int src) {
                 path[i].clear();
                 for (int k = 0; k < path[u].size(); k++) path[i].push_back(path[u][k]);
                 path[i].push_back({ collegesIdx[u], distances[u][i] });
-                discoveryEdge.push_back({ collegesIdx[u], collegesIdx[i], distances[u][i] });
-                std::cout << collegesIdx[u] << " " << collegesIdx[i] << " " << distances[u][i] << "\n";
+                QSqlQuery query("INSERT INTO discoveryEdges (collegeName, endingCollege, distance) VALUES (\"" + QString::fromStdString(collegesIdx[u]) + + "\", \"" + QString::fromStdString(collegesIdx[i]) + + "\", \"" + QString::number(distances[u][i]) + "\");");
             }
         }
     }
 
-    //std::cout << "Dijkstra Shortest Distances for Vertex " << collegesIdx[src] << ":\n";
     for (int i = 0; i < size; ++i) {
-        //std::cout << "[" << collegesIdx[i] << "] ";
-        //for (College city : path[i]) std::cout << city.name << "(" << city.dist << ") -> ";
-        //std::cout << collegesIdx[i] << ": " << dist[i] << std::endl;
-        QSqlQuery query("INSERT INTO path (collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[i]) + + "\", \"" + QString::number(dist[i]) + "\");");
-        query.exec("INSERT INTO discoveryEdges (collegeName, endingCollege, distance) VALUES (\"" + QString::fromStdString(collegesIdx[src]) + + "\", \"" + QString::fromStdString(collegesIdx[i]) + + "\", \"" + QString::number(dist[i]) + "\");");
+        std::string dijkstraPath;
+        for (int j = 1; j < path[i].size(); ++j)
+            dijkstraPath += path[i][j].name + " -> ";
+        dijkstraPath += collegesIdx[i];
+        QSqlQuery query("INSERT INTO path (collegeName, distToNext) VALUES (\"" + QString::fromStdString(dijkstraPath) + + "\", \"" + QString::number(dist[i]) + "\");");
     }
 }
 
@@ -465,14 +455,10 @@ void AdjacencyMatrix::mst() {
         }
     }
 
-    //std::cout << "\nMST:\n";
     for (int i = 1; i < size; ++i) {
-        QSqlQuery query("INSERT INTO path (collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[parent[i]]) + + "\", \"" + QString::number(distances[i][parent[i]]) + "\");");
+        QSqlQuery query("INSERT INTO path (collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[parent[i]] + " -> " + collegesIdx[i]) + + "\", \"" + QString::number(distances[i][parent[i]]) + "\");");
         query.exec("INSERT INTO discoveryEdges (collegeName, endingCollege, distance) VALUES (\"" + QString::fromStdString(collegesIdx[parent[i]]) + + "\", \"" + QString::fromStdString(collegesIdx[i]) + + "\", \"" + QString::number(distances[i][parent[i]]) + "\");");
-//        std::cout << collegesIdx[parent[i]] << " - " << collegesIdx[i] << " \t" << distances[i][parent[i]] << " \n";
-//        total += distances[i][parent[i]];
     }
-    //std::cout << "Total Distance: " << total;
 }
 
 /* ==== AdjacencyMatrix minKey() ====================================
@@ -481,7 +467,7 @@ void AdjacencyMatrix::mst() {
 ================================================================== */
 int AdjacencyMatrix::minKey(std::vector<double> key, std::vector<bool> set) {
     double min = INT_MAX;
-    int minIdx = -1;
+    int minIdx = 0;
 
     for (int i = 0; i < size; ++i) {
         if (!set[i] && key[i] < min) {

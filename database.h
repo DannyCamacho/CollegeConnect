@@ -59,7 +59,7 @@ public:
     int getStartingIndex(std::string college);
     void BFS(int src);
     void DFS(int src);
-    int DFS(int src, double total, std::vector<bool>& visited);
+    int DFS(int src, std::vector<bool>& visited);
     void dijkstra(int src);
     void mst();
     int minKey(std::vector <double> key, std::vector <bool> set);
