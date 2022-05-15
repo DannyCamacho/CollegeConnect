@@ -8,6 +8,8 @@ TripPlanner::TripPlanner(QWidget *parent) : QMainWindow(parent), ui(new Ui::Trip
     start = 0;
     spinBoxMax = 0;
     connect(parent, SIGNAL(updateTripPlanner()), this, SLOT(populateWindow()));
+    connect(this, SIGNAL(moveToSchoolStore(QString)), parent, SLOT(moveToSchoolStoreFromTrip(QString)));
+    connect(this, SIGNAL(moveToShoppingCart()), parent, SLOT(moveToShoppingCart()));
 }
 
 TripPlanner::~TripPlanner() {
@@ -190,4 +192,15 @@ void TripPlanner::on_view_auto_select_pushButton_clicked() {
 
 void TripPlanner::on_pushButton_2_clicked() {
     emit moveToGraphViewer();
+}
+
+void TripPlanner::on_school_store_pushButton_clicked() {
+    if (name == "") return;
+
+    emit moveToSchoolStore(name);
+}
+
+
+void TripPlanner::on_shopping_cart_pushButton_clicked() {
+    emit moveToShoppingCart();
 }

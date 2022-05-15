@@ -1,15 +1,15 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
-#include <iostream>
-#include <fstream>
-#include <string>
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
 #include <QAbstractProxyModel>
 #include <QSqlDriver>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <iostream>
+#include <fstream>
+#include <string>
 #include <queue>
 #include <algorithm>
 #include <map>
@@ -30,7 +30,7 @@ private:
 };
 
 /* ==== City Struct =================================================
-    Struct consisting of a name and a distance for the Dijkstra algo.
+    Struct consisting of a name and a distance for AdjacencyMatrix.
 ================================================================== */
 struct College {
     std::string name;
@@ -39,8 +39,8 @@ struct College {
 
 /* ==== Edge Struct =================================================
     Struct consisting of 2 city names and the distance between, used
-    to build the discovery edge and back edge vectors for both
-    AdjacencyList and AdjacencyMatrix.
+    to build the discovery edge and back edge vectors for the
+    AdjacencyMatrix.
 ================================================================== */
 struct Edge {
     std::string city1;
@@ -49,7 +49,7 @@ struct Edge {
 };
 
 /* ==== AdjacencyMatrix Class =======================================
-    Class used to build the AdjacencyMatrix with a Dijkstra algo.
+    Class used to build the AdjacencyMatrix with graph algorithms.
 ================================================================== */
 class AdjacencyMatrix {
 public:
@@ -68,7 +68,6 @@ private:
     std::vector<std::vector<double>> distances;
     std::map<std::string, int> colleges;
     std::map<int, std::string> collegesIdx;
-    std::vector<Edge> discoveryEdge;
 };
 
 /* ==== Horizontal_proxy_model Class ================================

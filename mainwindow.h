@@ -28,6 +28,7 @@ public slots:
     void moveToShoppingCart();
     void moveToSchoolStore();
     void moveToGraphViewer();
+    void moveToSchoolStoreFromTrip(const QString name);
 
 private slots:
     void on_select_state_currentTextChanged(const QString &arg1);
