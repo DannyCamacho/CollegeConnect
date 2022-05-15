@@ -16,6 +16,7 @@ public:
 signals:
     void moveToMainWindow();
     void moveToShoppingCart();
+    void moveToGraphViewer();
 
 private slots:
     void populateWindow();
@@ -31,8 +32,8 @@ private slots:
     void on_irvine_pushButton_clicked();
     void on_arizona_pushButton_clicked();
     void on_michigan_pushButton_clicked();
-
     void on_view_auto_select_pushButton_clicked();
+    void on_pushButton_2_clicked();
 
 private:
     Ui::TripPlanner *ui;

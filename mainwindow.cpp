@@ -10,14 +10,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     schoolStore = new SchoolStore(this);
     shoppingCart = new ShoppingCart(this);
     tripPlanner = new TripPlanner(this);
+    graphViewer = new GraphViewer(this);
     ui->main_stackedWidget->insertWidget(1, adminMenu);
     ui->main_stackedWidget->insertWidget(2, schoolStore);
     ui->main_stackedWidget->insertWidget(3, shoppingCart);
     ui->main_stackedWidget->insertWidget(4, tripPlanner);
+    ui->main_stackedWidget->insertWidget(5, graphViewer);
     connect(adminMenu, SIGNAL(adminLogout()), this, SLOT(returnToMainWindow()));
     connect(schoolStore, SIGNAL(leaveSchoolStore()), this, SLOT(returnToMainWindow()));
     connect(schoolStore, SIGNAL(moveToShoppingCart()), this, SLOT(moveToShoppingCart()));
     connect(shoppingCart, SIGNAL(moveToSchoolStore()), this, SLOT(moveToSchoolStore()));
+    connect(tripPlanner, SIGNAL(moveToGraphViewer()), this, SLOT(moveToGraphViewer()));
 }
 
 MainWindow::~MainWindow() {
@@ -27,6 +30,7 @@ MainWindow::~MainWindow() {
     delete schoolStore;
     delete shoppingCart;
     delete tripPlanner;
+    delete graphViewer;
 }
 
 void MainWindow::populateWindow() {
@@ -143,4 +147,9 @@ void MainWindow::on_plan_route_button_clicked() {
     ui->menuBar->setVisible(false);
     ui->main_stackedWidget->setCurrentIndex(4);
     emit updateTripPlanner();
+}
+
+void MainWindow::moveToGraphViewer() {
+    ui->main_stackedWidget->setCurrentIndex(5);
+    emit updateGraphViewer();
 }

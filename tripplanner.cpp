@@ -25,7 +25,7 @@ void TripPlanner::populateWindow() {
         ui->starting_location_dropdown->addItem(query.value(0).toString());
         collegeMap[query.value(0).toString()] = query.value(1).toInt();
     }
-    ui->spinBox->setRange(1, spinBoxMax);
+    ui->spinBox->setRange(1, spinBoxMax - 1);
     for (int i = 0; i < 20; ++i)
         for (int j = 0; j < 20; ++j)
             d[i][j] = 0.0;
@@ -185,4 +185,8 @@ void TripPlanner::on_view_auto_select_pushButton_clicked() {
     updateTrip();
     query.exec("DELETE FROM tripRoute WHERE routeOrder > " + QString::number(ui->spinBox->value() + 1) + ";");
     tableViewUpdate();
+}
+
+void TripPlanner::on_pushButton_2_clicked() {
+    emit moveToGraphViewer();
 }

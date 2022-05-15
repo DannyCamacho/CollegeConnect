@@ -8,6 +8,7 @@
 #include "schoolstore.h"
 #include "shoppingcart.h"
 #include "tripplanner.h"
+#include "graphviewer.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,6 +27,7 @@ public slots:
     void receiveMessage(const QString &msg);
     void moveToShoppingCart();
     void moveToSchoolStore();
+    void moveToGraphViewer();
 
 private slots:
     void on_select_state_currentTextChanged(const QString &arg1);
@@ -44,6 +46,7 @@ signals:
     void updateSchoolStore(QString collegeName);
     void updateShoppingCart();
     void updateTripPlanner();
+    void updateGraphViewer();
 
 private:
     Ui::MainWindow *ui;
@@ -51,6 +54,7 @@ private:
     SchoolStore* schoolStore;
     ShoppingCart* shoppingCart;
     TripPlanner* tripPlanner;
+    GraphViewer* graphViewer;
     QSqlQueryModel* schoolModel;
     Database database;
     QString collegeName;
