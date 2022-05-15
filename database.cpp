@@ -290,7 +290,7 @@ void Database::importSouvenirs(std::string fileName) {
     Constructor used to initialize size and create a 2D vector to
     store the distance matrix.
 ================================================================== */
-AdjacencyMatrix::AdjacencyMatrix(int size) : size(size), distances(size, std::vector<int>(size)) {}
+AdjacencyMatrix::AdjacencyMatrix(int size) : size(size), distances(size, std::vector<double>(size)) {}
 
 /* ==== AdjacencyMatrix setSize() ===================================
     void-returning method used to set the size of the adjacency matrix.
@@ -302,7 +302,7 @@ void AdjacencyMatrix::setSize(int size) { this->size = size; }
     first checks if each city exists in the matrix, if a city does not
     exist then it is created and added to the matrix.
 ================================================================== */
-void AdjacencyMatrix::add(std::string city1, std::string city2, int dist) {
+void AdjacencyMatrix::add(std::string city1, std::string city2, double dist) {
     int i = 0;
     int j = 0;
 
@@ -327,7 +327,7 @@ int AdjacencyMatrix::getStartingIndex(std::string college) { return colleges[col
     to the running total and the total displayed to screen.
 ================================================================== */
 void AdjacencyMatrix::BFS(int src) {
-    int total = 0;
+    double total = 0;
     std::queue<std::pair<int, int>> queue;
     std::vector<bool> visited(12, false);
     std::priority_queue<pi, std::vector<pi>, std::greater<pi> > tempQueue;
@@ -351,12 +351,10 @@ void AdjacencyMatrix::BFS(int src) {
         }
         while (!tempQueue.empty()) {
             queue.push({ tempQueue.top().second, tempQueue.top().first });
+            QSqlQuery query("INSERT INTO path(collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[tempQueue.top().second]) + + "\", \"" + QString::number(tempQueue.top().first) + "\");");
             total += tempQueue.top().first;
             tempQueue.pop();
         }
-        double tempDist = 0;
-        if (!queue.empty()) tempDist = queue.front().second;
-        QSqlQuery query("INSERT INTO path(collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegeName) + + "\", \"" + QString::number(tempDist) + "\");");
     }
     std::cout << "Total Distance: " << total << std::endl;
 }
@@ -371,7 +369,8 @@ void AdjacencyMatrix::DFS(int src) {
     std::cout << "\n\nDFS:\n";
     int total = DFS(src, 0, visited);
     std::cout << "\nTotal Distance: " << total << std::endl;
-    QSqlQuery query("INSERT INTO path(collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[total]) + + "\", \"" + QString::number(0) + "\");");
+    QSqlQuery query("INSERT INTO path(collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[src]) + + "\", \"" + QString::number(0) + "\");");
+
 }
 
 /* ==== AdjacencyMatrix DFS() =======================================
@@ -379,7 +378,7 @@ void AdjacencyMatrix::DFS(int src) {
     through the DFS algorithm. The distance from each starting city
     is added to the running total and the total is returned to caller.
 ================================================================== */
-int AdjacencyMatrix::DFS(int src, int total, std::vector<bool>& visited) {
+int AdjacencyMatrix::DFS(int src, double total, std::vector<bool>& visited) {
     std::priority_queue<pi, std::vector<pi>, std::greater<pi> > tempQueue;
     visited[src] = true;
 
@@ -407,7 +406,7 @@ int AdjacencyMatrix::DFS(int src, int total, std::vector<bool>& visited) {
     determined and the totals are displayed to screen.
 ================================================================== */
 void AdjacencyMatrix::dijkstra(int src) {
-    std::vector<int> dist(size, INT_MAX);
+    std::vector<double> dist(size, INT_MAX);
     std::vector<bool> sptSet(size, false);
     std::vector<std::vector<College>> path(size, std::vector<College>());
 
@@ -424,15 +423,16 @@ void AdjacencyMatrix::dijkstra(int src) {
                 for (int k = 0; k < path[u].size(); k++) path[i].push_back(path[u][k]);
                 path[i].push_back({ collegesIdx[u], distances[u][i] });
                 discoveryEdge.push_back({ collegesIdx[u], collegesIdx[i], distances[u][i] });
+                std::cout << collegesIdx[u] << " " << collegesIdx[i] << " " << distances[u][i] << "\n";
             }
         }
     }
 
-    std::cout << "Dijkstra Shortest Distances for Vertex " << collegesIdx[src] << ":\n";
+    //std::cout << "Dijkstra Shortest Distances for Vertex " << collegesIdx[src] << ":\n";
     for (int i = 0; i < size; ++i) {
-        std::cout << "[" << collegesIdx[i] << "] ";
-        for (College city : path[i]) std::cout << city.name << "(" << city.dist << ") -> ";
-        std::cout << collegesIdx[i] << ": " << dist[i] << std::endl;
+        //std::cout << "[" << collegesIdx[i] << "] ";
+        //for (College city : path[i]) std::cout << city.name << "(" << city.dist << ") -> ";
+        //std::cout << collegesIdx[i] << ": " << dist[i] << std::endl;
         QSqlQuery query("INSERT INTO path (collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[i]) + + "\", \"" + QString::number(dist[i]) + "\");");
         query.exec("INSERT INTO discoveryEdges (collegeName, endingCollege, distance) VALUES (\"" + QString::fromStdString(collegesIdx[src]) + + "\", \"" + QString::fromStdString(collegesIdx[i]) + + "\", \"" + QString::number(dist[i]) + "\");");
     }
@@ -445,9 +445,9 @@ void AdjacencyMatrix::dijkstra(int src) {
 ================================================================== */
 void AdjacencyMatrix::mst() {
     std::vector<int> parent(size, 0);
-    std::vector<int> key(size, INT_MAX);
+    std::vector<double> key(size, INT_MAX);
     std::vector<bool> mstSet(size, false);
-    int total = 0;
+    double total = 0;
 
     key[0] = 0;
     parent[0] = -1;
@@ -479,9 +479,9 @@ void AdjacencyMatrix::mst() {
     int-returning method used by both the dijkstra and mst algorithms
     respectively. Used to determine the next minimum index.
 ================================================================== */
-int AdjacencyMatrix::minKey(std::vector<int> key, std::vector<bool> set) {
-    int min = INT_MAX;
-    int minIdx = 0;
+int AdjacencyMatrix::minKey(std::vector<double> key, std::vector<bool> set) {
+    double min = INT_MAX;
+    int minIdx = -1;
 
     for (int i = 0; i < size; ++i) {
         if (!set[i] && key[i] < min) {

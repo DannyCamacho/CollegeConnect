@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <map>
 
-typedef std::pair<int, int> pi;
+typedef std::pair<double, int> pi;
 
 class Database {
 public:
@@ -34,7 +34,7 @@ private:
 ================================================================== */
 struct College {
     std::string name;
-    int dist = 0;
+    double dist = 0;
 };
 
 /* ==== Edge Struct =================================================
@@ -45,7 +45,7 @@ struct College {
 struct Edge {
     std::string city1;
     std::string city2;
-    int dist = 0;
+    double dist = 0;
 };
 
 /* ==== AdjacencyMatrix Class =======================================
@@ -54,18 +54,18 @@ struct Edge {
 class AdjacencyMatrix {
 public:
     AdjacencyMatrix(int size);
-    void add(std::string city1, std::string city2, int dist);
+    void add(std::string city1, std::string city2, double dist);
     void setSize(int size);
     int getStartingIndex(std::string college);
     void BFS(int src);
     void DFS(int src);
-    int DFS(int src, int total, std::vector<bool>& visited);
+    int DFS(int src, double total, std::vector<bool>& visited);
     void dijkstra(int src);
     void mst();
-    int minKey(std::vector <int> key, std::vector <bool> set);
+    int minKey(std::vector <double> key, std::vector <bool> set);
 private:
     int size;
-    std::vector<std::vector<int>> distances;
+    std::vector<std::vector<double>> distances;
     std::map<std::string, int> colleges;
     std::map<int, std::string> collegesIdx;
     std::vector<Edge> discoveryEdge;

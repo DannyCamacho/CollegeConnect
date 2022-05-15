@@ -44,15 +44,19 @@ void GraphViewer::on_choose_graph_dropdown_currentTextChanged(const QString &arg
     query.exec("CREATE TABLE path(collegeName TEXT, routeOrder INTEGER UNIQUE PRIMARY KEY, distToNext INTEGER);");
     query.exec("CREATE TABLE discoveryEdges(collegeName TEXT, endingCollege TEXT, distance INTEGER);");
     query.exec("CREATE TABLE backEdges(collegeName TEXT, endingCollege TEXT, distance INTEGER);");
+    path->setQuery("SELECT collegeName, distToNext FROM path ORDER BY routeOrder");
+    ui->graph_result_tableView->setModel(path);
+    ui->back_edges_tableView->setModel(path);
+    ui->discovery_edges_tableView->setModel(path);
 
     if (arg1 == "MST") {
         ui->choose_college_dropdown->setVisible(0);
         adjMatrix.mst();
+        tableViewUpdate();
     } else {
         ui->choose_college_dropdown->setVisible(1);
         ui->choose_college_dropdown->setCurrentText("Select College");
     }
-    tableViewUpdate();
 }
 
 void GraphViewer::on_choose_college_dropdown_currentTextChanged(const QString &arg1) {
@@ -77,12 +81,12 @@ void GraphViewer::on_choose_college_dropdown_currentTextChanged(const QString &a
 void GraphViewer::tableViewUpdate() {
     path->setQuery("SELECT collegeName, distToNext FROM path ORDER BY routeOrder");
     ui->graph_result_tableView->setModel(path);
-    backEdges->setQuery("INSERT INTO backEdges(collegeName, endingCollege, distance) SELECT (collegeName, endingCollege, distance) FROM edges;");
-    //backEdges->setQuery("DELETE FROM backEdges WHERE EXISTS (SELECT collegeName, endingCollege, distance FROM discoveryEdges WHERE backEdges.collegeName = discoveryEdges.collegeName, backEdges.endingCollege = discoveryEdges.endingCollege, backEdges.distance = discoveryEdges.distance);");
-    //backEdges->setQuery("DELETE FROM backEdges WHERE EXISTS (SELECT collegeName, endingCollege, distance FROM discoveryEdges WHERE backEdges.collegeName = discoveryEdges.endingCollege, backEdges.endingCollege = discoveryEdges.collegeName, backEdges.distance = discoveryEdges.distance);");
+    backEdges->setQuery("INSERT INTO backEdges (collegeName, endingCollege, distance) SELECT collegeName, endingCollege, distance FROM edge;");
+    backEdges->setQuery("DELETE FROM backEdges WHERE EXISTS (SELECT collegeName, endingCollege FROM discoveryEdges WHERE backEdges.collegeName = discoveryEdges.collegeName AND backEdges.endingCollege = discoveryEdges.endingCollege);");
+    backEdges->setQuery("DELETE FROM backEdges WHERE EXISTS (SELECT collegeName, endingCollege FROM discoveryEdges WHERE backEdges.collegeName = discoveryEdges.endingCollege AND backEdges.endingCollege = discoveryEdges.collegeName);");
     backEdges->setQuery("SELECT collegeName, endingCollege, distance FROM backEdges");
     ui->back_edges_tableView->setModel(backEdges);
-    discoverEdges->setQuery("SELECT collegeName, endingCollege, distance FROM discoverEdges");
+    discoverEdges->setQuery("SELECT collegeName, endingCollege, distance FROM discoveryEdges");
     ui->discovery_edges_tableView->setModel(discoverEdges);
 
     QSqlQuery query("SELECT SUM(X.TOTAL) FROM (SELECT distToNext as TOTAL FROM path) X;");
