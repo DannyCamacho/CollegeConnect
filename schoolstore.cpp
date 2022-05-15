@@ -97,6 +97,7 @@ void SchoolStore::updateQuantity() {
 ================================================================== */
 void SchoolStore::getCollegeName(const QString &collegeName) {
     this->collegeName = collegeName;
+    ui->shopping_cart_logo->setText(collegeName + " Store");
     schoolStoreTableViewUpdate();
     updateQuantity();
 }

@@ -134,6 +134,7 @@ void MainWindow::on_visit_store_button_clicked() {
 }
 
 void MainWindow::moveToShoppingCart() {
+    if (collegeName == "") collegeName = "Saddleback College";
     ui->main_stackedWidget->setCurrentIndex(3);
     emit updateShoppingCart();
 }
@@ -152,4 +153,9 @@ void MainWindow::on_plan_route_button_clicked() {
 void MainWindow::moveToGraphViewer() {
     ui->main_stackedWidget->setCurrentIndex(5);
     emit updateGraphViewer();
+}
+
+void MainWindow::moveToSchoolStoreFromTrip(const QString name) {
+    collegeName = name;
+    moveToSchoolStore();
 }

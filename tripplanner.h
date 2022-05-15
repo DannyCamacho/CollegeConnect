@@ -15,8 +15,9 @@ public:
 
 signals:
     void moveToMainWindow();
-    void moveToShoppingCart();
     void moveToGraphViewer();
+    void moveToSchoolStore(QString name);
+    void moveToShoppingCart();
 
 private slots:
     void populateWindow();
@@ -34,6 +35,9 @@ private slots:
     void on_michigan_pushButton_clicked();
     void on_view_auto_select_pushButton_clicked();
     void on_pushButton_2_clicked();
+    void on_school_store_pushButton_clicked();
+
+    void on_shopping_cart_pushButton_clicked();
 
 private:
     Ui::TripPlanner *ui;

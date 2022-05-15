@@ -327,7 +327,6 @@ int AdjacencyMatrix::getStartingIndex(std::string college) { return colleges[col
     to the running total and the total displayed to screen.
 ================================================================== */
 void AdjacencyMatrix::BFS(int src) {
-    double total = 0;
     std::queue<std::pair<int, int>> queue;
     std::vector<bool> visited(12, false);
     std::priority_queue<pi, std::vector<pi>, std::greater<pi> > tempQueue;
@@ -339,19 +338,19 @@ void AdjacencyMatrix::BFS(int src) {
         src = queue.front().first;
         std::string collegeName = collegesIdx[src];
         queue.pop();
+
         for (int i = 0; i < 12; ++i) {
             if (!visited[i] && distances[src][i]) {
                 visited[i] = true;
                 tempQueue.push({ distances[src][i], i });
-                discoveryEdge.push_back({ collegesIdx[src], collegesIdx[i], distances[src][i] });
                 QSqlQuery query("INSERT INTO discoveryEdges(collegeName, endingCollege, distance) VALUES (\"" + QString::fromStdString(collegesIdx[src]) + + "\", \"" + QString::fromStdString(collegesIdx[i]) + + "\", \"" + QString::number(distances[src][i]) + "\");");
 
             }
         }
+
         while (!tempQueue.empty()) {
             queue.push({ tempQueue.top().second, tempQueue.top().first });
             QSqlQuery query("INSERT INTO path(collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[tempQueue.top().second]) + + "\", \"" + QString::number(tempQueue.top().first) + "\");");
-            total += tempQueue.top().first;
             tempQueue.pop();
         }
     }
@@ -437,7 +436,6 @@ void AdjacencyMatrix::mst() {
     std::vector<int> parent(size, 0);
     std::vector<double> key(size, INT_MAX);
     std::vector<bool> mstSet(size, false);
-    double total = 0;
 
     key[0] = 0;
     parent[0] = -1;
@@ -450,7 +448,6 @@ void AdjacencyMatrix::mst() {
             if (distances[u][i] && !mstSet[i] && distances[u][i] < key[i]) {
                 parent[i] = u;
                 key[i] = distances[u][i];
-                discoveryEdge.push_back({ collegesIdx[u], collegesIdx[i], distances[u][i] });
             }
         }
     }
