@@ -184,6 +184,7 @@ void TripPlanner::on_view_auto_select_pushButton_clicked() {
     query.exec("CREATE TABLE tripRoute (collegeName TEXT, collegeNum INTEGER, routeOrder INTEGER, distToNext INTEGER);");
     updateTrip();
     query.exec("DELETE FROM tripRoute WHERE routeOrder > " + QString::number(ui->spinBox->value() + 1) + ";");
+    query.exec("UPDATE tripRoute SET distToNext=0 WHERE routeOrder = " + QString::number(ui->spinBox->value() + 1) + ";");
     tableViewUpdate();
 }
 
