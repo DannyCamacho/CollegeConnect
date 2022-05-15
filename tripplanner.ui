@@ -212,31 +212,37 @@ QPushButton#visit_store_button: clicked {
     <property name="frameShadow">
      <enum>QFrame::Plain</enum>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="1">
-      <widget class="QPushButton" name="arizona_pushButton">
-       <property name="minimumSize">
-        <size>
-         <width>146</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Bahnschrift</family>
-         <pointsize>11</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">image: url(:/university_of_arizona_logo.png);
+    <widget class="QPushButton" name="michigan_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>361</x>
+       <y>5</y>
+       <width>175</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift</family>
+       <pointsize>11</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/university_of_michigan_logo.png);
 
 color: rgb(49, 49, 49);
 background-color:  rgb(255, 255, 255);
@@ -251,45 +257,51 @@ QPushButton#visit_store_button: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="autoDefault">
-        <bool>true</bool>
-       </property>
-       <property name="default">
-        <bool>true</bool>
-       </property>
-       <property name="flat">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QPushButton" name="michigan_pushButton">
-       <property name="minimumSize">
-        <size>
-         <width>146</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Bahnschrift</family>
-         <pointsize>11</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">image: url(:/university_of_michigan_logo.png);
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="irvine_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>5</y>
+       <width>175</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift</family>
+       <pointsize>11</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/uci_logo.png);
 
 color: rgb(49, 49, 49);
 background-color:  rgb(255, 255, 255);
@@ -304,45 +316,57 @@ QPushButton#visit_store_button: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="autoDefault">
-        <bool>true</bool>
-       </property>
-       <property name="default">
-        <bool>true</bool>
-       </property>
-       <property name="flat">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QPushButton" name="irvine_pushButton">
-       <property name="minimumSize">
-        <size>
-         <width>146</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Bahnschrift</family>
-         <pointsize>11</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">image: url(:/uci_logo.png);
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>300</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="arizona_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>183</x>
+       <y>5</y>
+       <width>175</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bahnschrift</family>
+       <pointsize>11</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/university_of_arizona_logo.png);
 
 color: rgb(49, 49, 49);
 background-color:  rgb(255, 255, 255);
@@ -357,28 +381,20 @@ QPushButton#visit_store_button: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
 }</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>300</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="autoDefault">
-        <bool>true</bool>
-       </property>
-       <property name="default">
-        <bool>true</bool>
-       </property>
-       <property name="flat">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="button_frame">
     <property name="geometry">
@@ -731,7 +747,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <number>50</number>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>200</number>
+      <number>150</number>
      </attribute>
      <attribute name="horizontalHeaderStretchLastSection">
       <bool>true</bool>
@@ -740,7 +756,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderDefaultSectionSize">
-      <number>28</number>
+      <number>40</number>
      </attribute>
      <attribute name="verticalHeaderHighlightSections">
       <bool>true</bool>
@@ -808,13 +824,13 @@ selection-background-color: rgb(118, 158, 81);</string>
       <number>50</number>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>210</number>
+      <number>225</number>
      </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderDefaultSectionSize">
-      <number>28</number>
+      <number>40</number>
      </attribute>
     </widget>
     <widget class="QComboBox" name="starting_location_dropdown">
@@ -1240,17 +1256,26 @@ color: rgb(49, 49, 49);</string>
    <widget class="QLabel" name="sponsered_label">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>410</x>
       <y>80</y>
-      <width>151</width>
-      <height>12</height>
+      <width>161</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="maximumSize">
      <size>
       <width>16777215</width>
-      <height>12</height>
+      <height>16777215</height>
      </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Mongolian Baiti</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(108, 108, 108);</string>
     </property>
     <property name="text">
      <string>College Connect Sponsered by:</string>
@@ -1265,11 +1290,15 @@ color: rgb(49, 49, 49);</string>
       <height>111</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+    </property>
     <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+     <enum>QFrame::Box</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+     <enum>QFrame::Plain</enum>
     </property>
     <widget class="QLabel" name="auto_select_label">
      <property name="geometry">
@@ -1279,6 +1308,12 @@ color: rgb(49, 49, 49);</string>
        <width>239</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(49, 49, 49);</string>

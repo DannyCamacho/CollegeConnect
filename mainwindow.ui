@@ -155,9 +155,10 @@ border-color:rgb(118, 158, 81);
 min-width: 10em;
 padding: 6px;
 
-QPushButton#plan_route_button: pressed {
+QPushButton#plan_route_button: clicked {
 	background-color: rgb(118, 158, 81);
     border-style: inset;
+	border-color: rgb(49, 49, 49);
 }</string>
        </property>
        <property name="text">
