@@ -421,7 +421,7 @@ void AdjacencyMatrix::dijkstra(int src) {
     for (int i = 0; i < size; ++i) {
         std::string dijkstraPath;
         for (int j = 1; j < path[i].size(); ++j)
-            dijkstraPath += path[i][j].name + " -> ";
+            dijkstraPath += path[i][j].name + " 🡲 ";
         dijkstraPath += collegesIdx[i];
         QSqlQuery query("INSERT INTO path (collegeName, distToNext) VALUES (\"" + QString::fromStdString(dijkstraPath) + + "\", \"" + QString::number(dist[i]) + "\");");
     }
@@ -453,7 +453,7 @@ void AdjacencyMatrix::mst() {
     }
 
     for (int i = 1; i < size; ++i) {
-        QSqlQuery query("INSERT INTO path (collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[parent[i]] + " -> " + collegesIdx[i]) + + "\", \"" + QString::number(distances[i][parent[i]]) + "\");");
+        QSqlQuery query("INSERT INTO path (collegeName, distToNext) VALUES (\"" + QString::fromStdString(collegesIdx[parent[i]] + " 🡲 " + collegesIdx[i]) + + "\", \"" + QString::number(distances[i][parent[i]]) + "\");");
         query.exec("INSERT INTO discoveryEdges (collegeName, endingCollege, distance) VALUES (\"" + QString::fromStdString(collegesIdx[parent[i]]) + + "\", \"" + QString::fromStdString(collegesIdx[i]) + + "\", \"" + QString::number(distances[i][parent[i]]) + "\");");
     }
 }
