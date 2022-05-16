@@ -19,6 +19,7 @@ TripPlanner::~TripPlanner() {
 }
 
 void TripPlanner::populateWindow() {
+    spinBoxMax = 0;
     std::map<QString, int> collegeMap;
     ui->starting_location_dropdown->clear();
     QSqlQuery query("SELECT collegeName, collegeNum FROM college");
