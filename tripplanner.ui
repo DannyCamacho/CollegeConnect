@@ -173,7 +173,6 @@ QPushButton#visit_store_button: clicked {
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -217,13 +216,13 @@ QPushButton#visit_store_button: clicked {
       <rect>
        <x>361</x>
        <y>5</y>
-       <width>175</width>
+       <width>176</width>
        <height>60</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>146</width>
+       <width>176</width>
        <height>0</height>
       </size>
      </property>
@@ -237,7 +236,6 @@ QPushButton#visit_store_button: clicked {
       <font>
        <family>Bahnschrift</family>
        <pointsize>11</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -276,13 +274,13 @@ QPushButton#visit_store_button: clicked {
       <rect>
        <x>5</x>
        <y>5</y>
-       <width>175</width>
+       <width>176</width>
        <height>60</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>146</width>
+       <width>176</width>
        <height>0</height>
       </size>
      </property>
@@ -296,7 +294,6 @@ QPushButton#visit_store_button: clicked {
       <font>
        <family>Bahnschrift</family>
        <pointsize>11</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -341,13 +338,13 @@ QPushButton#visit_store_button: clicked {
       <rect>
        <x>183</x>
        <y>5</y>
-       <width>175</width>
+       <width>176</width>
        <height>60</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>146</width>
+       <width>176</width>
        <height>0</height>
       </size>
      </property>
@@ -361,7 +358,6 @@ QPushButton#visit_store_button: clicked {
       <font>
        <family>Bahnschrift</family>
        <pointsize>11</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -457,7 +453,7 @@ color: rgb(0, 0, 0);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>146</width>
+       <width>176</width>
        <height>18</height>
       </size>
      </property>
@@ -465,7 +461,6 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>12</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -505,7 +500,7 @@ QPushButton#visit_store_button: clicked {
      </property>
      <property name="minimumSize">
       <size>
-       <width>146</width>
+       <width>176</width>
        <height>18</height>
       </size>
      </property>
@@ -513,7 +508,6 @@ QPushButton#visit_store_button: clicked {
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>12</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -635,7 +629,6 @@ color: rgb(0, 0, 0);</string>
         <font>
          <family>Mongolian Baiti</family>
          <pointsize>14</pointsize>
-         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -665,7 +658,6 @@ QPushButton#visit_store_button: clicked {
         <font>
          <family>Mongolian Baiti</family>
          <pointsize>14</pointsize>
-         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -1349,7 +1341,7 @@ color: rgb(0, 0, 0);</string>
       <string notr="true">color: rgb(49, 49, 49);</string>
      </property>
      <property name="text">
-      <string>Auto-Select Shortest Route</string>
+      <string>Auto-Select Closest Colleges</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -1401,7 +1393,7 @@ selection-background-color: rgb(225, 225, 225);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>146</width>
+       <width>176</width>
        <height>0</height>
       </size>
      </property>
@@ -1409,7 +1401,6 @@ selection-background-color: rgb(225, 225, 225);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>12</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
