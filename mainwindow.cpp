@@ -20,9 +20,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(schoolStore, SIGNAL(leaveSchoolStore()), this, SLOT(returnToMainWindow()));
     connect(schoolStore, SIGNAL(moveToShoppingCart()), this, SLOT(moveToShoppingCart()));
     connect(shoppingCart, SIGNAL(moveToSchoolStore()), this, SLOT(moveToSchoolStore()));
-    connect(shoppingCart, SIGNAL(moveToTripPlanner()), this, SLOT(moveToTripPlanner()));
+    connect(shoppingCart, SIGNAL(moveToTripPlanner()), this, SLOT(on_plan_route_button_clicked()));
     connect(tripPlanner, SIGNAL(moveToGraphViewer()), this, SLOT(moveToGraphViewer()));
-    connect(graphViewer, SIGNAL(moveToTripPlanner()), this, SLOT(moveToTripPlanner()));
+    connect(graphViewer, SIGNAL(moveToTripPlanner()), this, SLOT(on_plan_route_button_clicked()));
 
 }
 
@@ -151,11 +151,6 @@ void MainWindow::on_plan_route_button_clicked() {
     ui->menuBar->setVisible(false);
     ui->main_stackedWidget->setCurrentIndex(4);
     emit updateTripPlanner();
-}
-
-void MainWindow::moveToTripPlanner() {
-    ui->main_stackedWidget->setCurrentIndex(4);
-    emit updateTripPlannerQuantity();
 }
 
 void MainWindow::moveToGraphViewer() {

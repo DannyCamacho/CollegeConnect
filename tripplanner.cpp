@@ -8,7 +8,6 @@ TripPlanner::TripPlanner(QWidget *parent) : QMainWindow(parent), ui(new Ui::Trip
     start = 4;
     spinBoxMax = 0;
     connect(parent, SIGNAL(updateTripPlanner()), this, SLOT(populateWindow()));
-    connect(parent, SIGNAL(updateTripPlannerQuantity()), this, SLOT(updateQuantity()));
     connect(this, SIGNAL(moveToSchoolStore(QString)), parent, SLOT(moveToSchoolStoreFromTrip(QString)));
     connect(this, SIGNAL(moveToShoppingCart()), parent, SLOT(moveToShoppingCart()));
 }
