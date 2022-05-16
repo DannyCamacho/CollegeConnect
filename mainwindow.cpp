@@ -22,8 +22,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(shoppingCart, SIGNAL(moveToSchoolStore()), this, SLOT(moveToSchoolStore()));
     connect(shoppingCart, SIGNAL(moveToTripPlanner()), this, SLOT(on_plan_route_button_clicked()));
     connect(tripPlanner, SIGNAL(moveToGraphViewer()), this, SLOT(moveToGraphViewer()));
+    connect(tripPlanner, SIGNAL(moveToMainWindow()), this, SLOT(returnToMainWindow()));
     connect(graphViewer, SIGNAL(moveToTripPlanner()), this, SLOT(on_plan_route_button_clicked()));
-
 }
 
 MainWindow::~MainWindow() {

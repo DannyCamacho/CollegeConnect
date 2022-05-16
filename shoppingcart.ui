@@ -14,7 +14,7 @@
    <string>Shopping Cart</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="resources/resources.qrc">
     <normaloff>:/CC_logo_mini-removebg.png</normaloff>:/CC_logo_mini-removebg.png</iconset>
   </property>
   <property name="styleSheet">
@@ -72,7 +72,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <x>520</x>
       <y>140</y>
       <width>351</width>
-      <height>361</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -89,7 +89,7 @@ color: rgb(0, 0, 0);</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>310</y>
+       <y>300</y>
        <width>331</width>
        <height>41</height>
       </rect>
@@ -146,7 +146,7 @@ QPushButton#route_pushButton: clicked {
      <property name="geometry">
       <rect>
        <x>260</x>
-       <y>270</y>
+       <y>260</y>
        <width>81</width>
        <height>31</height>
       </rect>
@@ -178,7 +178,7 @@ selection-background-color: rgb(118, 158, 81);</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>270</y>
+       <y>260</y>
        <width>241</width>
        <height>31</height>
       </rect>
@@ -291,6 +291,63 @@ selection-background-color: rgb(118, 158, 81);</string>
        <number>40</number>
       </attribute>
      </widget>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>350</y>
+       <width>331</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>146</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>16</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+
+QPushButton#route_pushButton: clicked {
+	background-color: rgb(118, 158, 81);
+    border-style: inset;
+}</string>
+     </property>
+     <property name="text">
+      <string>Return to School Store</string>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
     </widget>
    </widget>
    <widget class="QFrame" name="cart_frame">
@@ -629,43 +686,10 @@ selection-background-color: rgb(118, 158, 81);</string>
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
-    <property name="geometry">
-     <rect>
-      <x>710</x>
-      <y>30</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Bahnschrift</family>
-      <pointsize>12</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(225, 225, 225);
-color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>Return to Store</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>:/rec/resources/return-icon-removebg.png</normaloff>:/rec/resources/return-icon-removebg.png</iconset>
-    </property>
-    <property name="autoDefault">
-     <bool>true</bool>
-    </property>
-    <property name="default">
-     <bool>true</bool>
-    </property>
-   </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

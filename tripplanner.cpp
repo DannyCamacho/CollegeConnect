@@ -201,7 +201,11 @@ void TripPlanner::on_school_store_pushButton_clicked() {
     emit moveToSchoolStore(name);
 }
 
-
 void TripPlanner::on_shopping_cart_pushButton_clicked() {
     emit moveToShoppingCart();
 }
+
+void TripPlanner::on_return_home_pushButton_clicked() {
+    emit moveToMainWindow();
+}
+
