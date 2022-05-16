@@ -846,7 +846,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <number>50</number>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>225</number>
+      <number>215</number>
      </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
