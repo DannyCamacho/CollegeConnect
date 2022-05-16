@@ -28,6 +28,7 @@ public slots:
     void moveToShoppingCart();
     void moveToSchoolStore();
     void moveToGraphViewer();
+    void moveToTripPlanner();
     void moveToSchoolStoreFromTrip(const QString name);
 
 private slots:
@@ -48,6 +49,7 @@ signals:
     void updateShoppingCart();
     void updateTripPlanner();
     void updateGraphViewer();
+    void updateTripPlannerQuantity();
 
 private:
     Ui::MainWindow *ui;

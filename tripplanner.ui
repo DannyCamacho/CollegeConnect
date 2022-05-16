@@ -223,7 +223,7 @@ QPushButton#visit_store_button: clicked {
      </property>
      <property name="minimumSize">
       <size>
-       <width>0</width>
+       <width>146</width>
        <height>0</height>
       </size>
      </property>
@@ -282,7 +282,7 @@ QPushButton#visit_store_button: clicked {
      </property>
      <property name="minimumSize">
       <size>
-       <width>0</width>
+       <width>146</width>
        <height>0</height>
       </size>
      </property>
@@ -347,7 +347,7 @@ QPushButton#visit_store_button: clicked {
      </property>
      <property name="minimumSize">
       <size>
-       <width>0</width>
+       <width>146</width>
        <height>0</height>
       </size>
      </property>
@@ -1319,7 +1319,7 @@ color: rgb(0, 0, 0);</string>
       <string notr="true">color: rgb(49, 49, 49);</string>
      </property>
      <property name="text">
-      <string>Auto-Select Closest Colleges</string>
+      <string>Auto-Select Shortest Route</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
