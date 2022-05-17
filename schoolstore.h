@@ -22,10 +22,12 @@ private slots:
     void on_add_to_cart_pushButton_clicked();
     void on_shopping_cart_pushButton_clicked();
     void updateQuantity();
+    void on_plan_route_button_clicked();
 
 signals:
     void leaveSchoolStore();
     void moveToShoppingCart();
+    void moveToTripPlanner();
 
 private:
     Ui::SchoolStore *ui;

@@ -95,6 +95,7 @@ void GraphViewer::tableViewUpdate() {
     QSqlQuery query("SELECT SUM(X.TOTAL) FROM (SELECT distToNext as TOTAL FROM path) X;");
     if (query.next()) ui->distance_label->setText(QString::number(query.value(0).toDouble(), 'f', 2));
     if (ui->distance_label->text() == "") ui->distance_label->setText("0.00");
+    if (ui->choose_graph_dropdown->currentText() == "Dijkstra") ui->distance_label->setText(" N/A");
 }
 
 void GraphViewer::on_trip_planner_pushButton_clicked() {

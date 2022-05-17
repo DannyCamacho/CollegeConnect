@@ -7,9 +7,11 @@ TripPlanner::TripPlanner(QWidget *parent) : QMainWindow(parent), ui(new Ui::Trip
     selectedModel = new QSqlQueryModel;
     start = 4;
     spinBoxMax = 0;
+    ui->starting_location_dropdown_2->addItem("Efficient Route");
+    ui->starting_location_dropdown_2->addItem("Custom Route");
+    ui->starting_location_dropdown_2->setCurrentText("Efficient Route");
     connect(parent, SIGNAL(updateTripPlanner()), this, SLOT(populateWindow()));
     connect(this, SIGNAL(moveToSchoolStore(QString)), parent, SLOT(moveToSchoolStoreFromTrip(QString)));
-    connect(this, SIGNAL(moveToShoppingCart()), parent, SLOT(moveToShoppingCart()));
 }
 
 TripPlanner::~TripPlanner() {
@@ -37,15 +39,29 @@ void TripPlanner::populateWindow() {
     while (query.next()) d[collegeMap[query.value(0).toString()]][collegeMap[query.value(1).toString()]] = query.value(2).toDouble();
     dijkstra(spinBoxMax + 1);
     tableViewUpdate();
-    updateQuantity();
 }
 
 void TripPlanner::updateTrip() {
-    for (int i = 0; i < 20; ++i) isSelected[i] = false;
-    QSqlQuery query("SELECT collegeNum FROM tripSelected");
-    while (query.next()) isSelected[query.value(0).toInt()] = true;
-    order.clear();
-    calculateTrip(start);
+    if (ui->starting_location_dropdown_2->currentText() == "Custom Route") {
+        QSqlQuery query("INSERT INTO tripRoute (collegeName, collegeNum) SELECT collegeName, collegeNum FROM tripSelected;");
+        query.exec("SELECT * FROM tripRoute");
+        query.next();
+        QString prevName = query.value(0).toString();
+        int prevNum = query.value(1).toInt();
+        while (query.next()) {
+            int i = query.value(1).toInt();
+            QSqlQuery query2("UPDATE tripRoute SET distToNext =\"" + QString::number(d[prevNum][i]) + "\" WHERE collegeName =\"" + prevName + "\";");
+            prevName = query.value(0).toString();
+            prevNum = i;
+        }
+        query.exec("UPDATE tripRoute SET distToNext = 0 WHERE collegeName =\"" + prevName + "\";");
+    } else {
+        for (int i = 0; i < 20; ++i) isSelected[i] = false;
+        QSqlQuery query("SELECT collegeNum FROM tripSelected");
+        while (query.next()) isSelected[query.value(0).toInt()] = true;
+        order.clear();
+        calculateTrip(start);
+    }
 }
 
 void TripPlanner::calculateTrip(int start) {
@@ -85,11 +101,6 @@ void TripPlanner::tableViewUpdate() {
     QSqlQuery query("SELECT SUM(X.TOTAL) FROM (SELECT distToNext as TOTAL FROM tripRoute) X;");
     if (query.next()) ui->distance_label->setText(QString::number(query.value(0).toDouble(), 'f', 2));
     if (ui->distance_label->text() == "") ui->distance_label->setText("0.00");
-}
-
-void TripPlanner::updateQuantity() {
-    QSqlQuery query("SELECT SUM(X.TOTAL) FROM (SELECT quantity as TOTAL FROM cart) X;");
-    if (query.next()) ui->cart_quantity_display->setText(query.value(0).toInt() == 0 ? "0" : query.value(0).toString());
 }
 
 void TripPlanner::on_available_routes_tableView_clicked(const QModelIndex &index) {
@@ -138,6 +149,10 @@ void TripPlanner::on_remove_pushButton_clicked() {
        return;
     }
 
+    query.exec("SELECT collegeNum FROM tripRoute WHERE collegeName =\"" + name + "\";");
+    query.next();
+    if (query.value(0).toInt() == start) return;
+
     query.exec("DROP TABLE tripSelected;");
     query.exec("CREATE TABLE tripSelected (collegeName TEXT, collegeNum INTEGER);");
     query.exec("INSERT INTO tripSelected (collegeName, collegeNum) SELECT collegeName, collegeNum FROM tripRoute;");
@@ -156,10 +171,13 @@ void TripPlanner::on_starting_location_dropdown_currentTextChanged(const QString
 
     query.exec("DROP TABLE tripSelected;");
     query.exec("CREATE TABLE tripSelected (collegeName TEXT, collegeNum INTEGER);");
-    query.exec("INSERT INTO tripSelected (collegeName, collegeNum) SELECT collegeName, collegeNum FROM tripRoute;");
 
     query.exec("DROP TABLE tripRoute;");
     query.exec("CREATE TABLE tripRoute (collegeName TEXT, collegeNum INTEGER, routeOrder INTEGER, distToNext INTEGER);");
+
+    if (ui->starting_location_dropdown_2->currentText() == "Custom Route") {
+        QSqlQuery query("INSERT INTO tripSelected (collegeName, collegeNum) VALUES (\"" + arg1 + "\", \"" + QString::number(start) + "\");");
+    }
 
     updateTrip();
     tableViewUpdate();
@@ -200,10 +218,6 @@ void TripPlanner::on_school_store_pushButton_clicked() {
     if (name == "") return;
 
     emit moveToSchoolStore(name);
-}
-
-void TripPlanner::on_shopping_cart_pushButton_clicked() {
-    emit moveToShoppingCart();
 }
 
 void TripPlanner::on_return_home_pushButton_clicked() {
@@ -248,4 +262,9 @@ int TripPlanner::minKey(std::vector<double> key, std::vector<bool> set, int size
         }
     }
     return minIdx;
+}
+
+void TripPlanner::on_starting_location_dropdown_2_currentTextChanged(const QString &arg1) {
+    ui->populate_frame->setDisabled(arg1 == "Custom Route" ? true : false);
+    updateTrip();
 }

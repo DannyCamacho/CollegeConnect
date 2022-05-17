@@ -17,11 +17,9 @@ signals:
     void moveToMainWindow();
     void moveToGraphViewer();
     void moveToSchoolStore(QString name);
-    void moveToShoppingCart();
 
 private slots:
     void populateWindow();
-    void updateQuantity();
     void updateTrip();
     void calculateTrip(int start);
     void tableViewUpdate();
@@ -36,10 +34,11 @@ private slots:
     void on_view_auto_select_pushButton_clicked();
     void on_pushButton_2_clicked();
     void on_school_store_pushButton_clicked();
-    void on_shopping_cart_pushButton_clicked();
     void on_return_home_pushButton_clicked();
     void dijkstra(int size);
     int minKey(std::vector<double> key, std::vector<bool> set, int size);
+
+    void on_starting_location_dropdown_2_currentTextChanged(const QString &arg1);
 
 private:
     Ui::TripPlanner *ui;
