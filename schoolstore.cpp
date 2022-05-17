@@ -116,4 +116,3 @@ void SchoolStore::on_shopping_cart_pushButton_clicked() {
 void SchoolStore::on_plan_route_button_clicked() {
     emit moveToTripPlanner();
 }
-

@@ -1,7 +1,16 @@
 #include "database.h"
 
+/* ==== Database isInitialized ======================================
+    variable used to determine whether the database has been previously
+    connected.
+================================================================== */
 bool Database::isInitialized = false;
 
+/* ==== Database Constructor ========================================
+    Constructor used to connect, initialize tables, populate inital
+    colleges and souvenirs, and set isInitialized to true. Additional
+    instances will not be reinialized.
+================================================================== */
 Database::Database() {
     if (!isInitialized) {
         connect();
@@ -12,6 +21,11 @@ Database::Database() {
     }
 }
 
+/* ==== Database connect() ==========================================
+    void-returning method used to create and connect to a SQLite
+    database. Warning messages are printed to the console if issues
+    arise.
+================================================================== */
 void Database::connect() {
     const QString DRIVER("QSQLITE");
 
@@ -23,6 +37,10 @@ void Database::connect() {
     } else qWarning() << "MainWindow::DatabaseConnect - ERROR: no driver " << DRIVER << " available";
 }
 
+/* ==== Database init() =============================================
+    void-returning method used to initialize the tables used throughout
+    the program.
+================================================================== */
 void Database::init() {
     QSqlQuery query("CREATE TABLE college (collegeName TEXT, collegeNum INTEGER, state TEXT, undergrads INTEGER);");
     query.exec("CREATE TABLE edge (collegeName TEXT, endingCollege TEXT, distance INTEGER);");
@@ -32,6 +50,10 @@ void Database::init() {
     query.exec("CREATE TABLE tripRoute (restName TEXT, restNum INTEGER, routeOrder INTEGER, distToNext INTEGER);");
 }
 
+/* ==== Database populateColleges() =================================
+    void-returning method used to populate the initial colleges from
+    the selected file.
+================================================================== */
 void Database::populateColleges(std::string fileName) {
     QSqlQuery query;
     std::ifstream infile;
@@ -118,6 +140,10 @@ void Database::populateColleges(std::string fileName) {
     } infile.close();
 }
 
+/* ==== Database populateSouvenirs() ================================
+    void-returning method used to populate the initial souvenirs from
+    the selected file.
+================================================================== */
 void Database::populateSouvenirs(std::string fileName) {
     QSqlQuery query;
     std::ifstream infile;
@@ -158,6 +184,10 @@ void Database::populateSouvenirs(std::string fileName) {
     } infile.close();
 }
 
+/* ==== Database importColleges() ===================================
+    void-returning method used to import colleges from the selected
+    file.
+================================================================== */
 void Database::importColleges(std::string fileName) {
     QSqlQuery query;
     std::ifstream infile;
@@ -256,6 +286,10 @@ void Database::importColleges(std::string fileName) {
     } infile.close();
 }
 
+/* ==== Database importSouvenirs() ==================================
+    void-returning method used to import souvenirs from the selected
+    file.
+================================================================== */
 void Database::importSouvenirs(std::string fileName) {
     QSqlQuery query;
     std::ifstream infile;

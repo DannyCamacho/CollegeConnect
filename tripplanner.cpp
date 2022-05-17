@@ -1,12 +1,16 @@
 #include "tripplanner.h"
 #include "ui_tripplanner.h"
 
+/* ==== TripPlanner Constructor =====================================
+    Constructor used to initialized necessary variables, populate the
+    route dropdown, and connect the widget change buttons to the main
+    window.
+================================================================== */
 TripPlanner::TripPlanner(QWidget *parent) : QMainWindow(parent), ui(new Ui::TripPlanner) {
     ui->setupUi(this);
     availableModel = new QSqlQueryModel;
     selectedModel = new QSqlQueryModel;
     start = 4;
-    spinBoxMax = 0;
     ui->starting_location_dropdown_2->addItem("Efficient Route");
     ui->starting_location_dropdown_2->addItem("Custom Route");
     ui->starting_location_dropdown_2->setCurrentText("Efficient Route");
@@ -14,12 +18,20 @@ TripPlanner::TripPlanner(QWidget *parent) : QMainWindow(parent), ui(new Ui::Trip
     connect(this, SIGNAL(moveToSchoolStore(QString)), parent, SLOT(moveToSchoolStoreFromTrip(QString)));
 }
 
+/* ==== TripPlanner Destructor ======================================
+    Destructor used to delete heap allocated memory.
+================================================================== */
 TripPlanner::~TripPlanner() {
     delete ui;
     delete availableModel;
     delete selectedModel;
 }
 
+/* ==== TripPlanner populateWindow() ================================
+    void-returning method used to populate the window, uses the main
+    college table to determine the college dropdown and uses the edge
+    table to populate the distance array.
+================================================================== */
 void TripPlanner::populateWindow() {
     spinBoxMax = 0;
     std::map<QString, int> collegeMap;
@@ -41,6 +53,10 @@ void TripPlanner::populateWindow() {
     tableViewUpdate();
 }
 
+/* ==== TripPlanner updateTrip() ====================================
+    void-returning method used to prepare the model based off the
+    selected institutions.
+================================================================== */
 void TripPlanner::updateTrip() {
     if (ui->starting_location_dropdown_2->currentText() == "Custom Route") {
         QSqlQuery query("INSERT INTO tripRoute (collegeName, collegeNum) SELECT collegeName, collegeNum FROM tripSelected;");
@@ -64,6 +80,10 @@ void TripPlanner::updateTrip() {
     }
 }
 
+/* ==== TripPlanner tableViewUpdate() ===============================
+    void-returning recursive method used to determine the most efficient
+    route.
+================================================================== */
 void TripPlanner::calculateTrip(int start) {
     if (start == -1) return;
 
@@ -87,6 +107,10 @@ void TripPlanner::calculateTrip(int start) {
     calculateTrip(idx);
 }
 
+/* ==== TripPlanner tableViewUpdate() ===============================
+    void-returning method used to update the tables based off the
+    selected route.
+================================================================== */
 void TripPlanner::tableViewUpdate() {
     selectedModel->setQuery("SELECT collegeName, distToNext FROM tripRoute ORDER BY routeOrder");
     ui->selected_route_tableView->setModel(selectedModel);
@@ -103,16 +127,28 @@ void TripPlanner::tableViewUpdate() {
     if (ui->distance_label->text() == "") ui->distance_label->setText("0.00");
 }
 
+/* ==== TripPlanner on_available_routes_tableView_clicked() =========
+    void-returning method used to update 'name' based off the institution
+    selected on the available table.
+================================================================== */
 void TripPlanner::on_available_routes_tableView_clicked(const QModelIndex &index) {
     ui->selected_route_tableView->clearSelection();
     name = index.siblingAtColumn(0).data().toString();
 }
 
+/* ==== TripPlanner on_selected_route_tableView_clicked() ===========
+    void-returning method used to update 'name' based off the institution
+    selected on the route table.
+================================================================== */
 void TripPlanner::on_selected_route_tableView_clicked(const QModelIndex &index) {
     ui->available_routes_tableView->clearSelection();
     name = index.siblingAtColumn(0).data().toString();
 }
 
+/* ==== TripPlanner on_add_pushButton_clicked() =====================
+    void-returning method used to add an institution to the route
+    table.
+================================================================== */
 void TripPlanner::on_add_pushButton_clicked() {
     QSqlQuery query("SELECT collegeName FROM tripSelected WHERE collegeName =\"" + name + "\";");
 
@@ -139,6 +175,10 @@ void TripPlanner::on_add_pushButton_clicked() {
     tableViewUpdate();
 }
 
+/* ==== TripPlanner on_remove_pushButton_clicked() =================
+    void-returning method used to remove an institution from the route
+    table.
+================================================================== */
 void TripPlanner::on_remove_pushButton_clicked() {
     QSqlQuery query("SELECT collegeName FROM tripRoute WHERE collegeName =\"" + name + "\";");
 
@@ -165,6 +205,10 @@ void TripPlanner::on_remove_pushButton_clicked() {
     tableViewUpdate();
 }
 
+/* ==== TripPlanner on_starting_location_dropdown_currentTextChanged() ==
+    void-returning method used to set the starting college to the
+    selected institution from the dropdown.
+================================================================== */
 void TripPlanner::on_starting_location_dropdown_currentTextChanged(const QString &arg1) {
     QSqlQuery query("SELECT collegeNum FROM college WHERE collegeName =\"" + arg1 + "\";");
     if (query.next()) start = query.value(0).toInt();
@@ -183,21 +227,37 @@ void TripPlanner::on_starting_location_dropdown_currentTextChanged(const QString
     tableViewUpdate();
 }
 
+/* ==== TripPlanner on_irvine_pushButton_clicked() ==================
+    void-returning method used to set the starting college to University
+    of California, Irvine (UCI).
+================================================================== */
 void TripPlanner::on_irvine_pushButton_clicked() {
     ui->starting_location_dropdown->setCurrentText("University of California, Irvine (UCI)");
     on_starting_location_dropdown_currentTextChanged("University of California, Irvine (UCI)");
 }
 
+/* ==== TripPlanner on_arizona_pushButton_clicked() =================
+    void-returning method used to set the starting college to Arizona
+    State University.
+================================================================== */
 void TripPlanner::on_arizona_pushButton_clicked() {
     ui->starting_location_dropdown->setCurrentText("Arizona State University");
     on_starting_location_dropdown_currentTextChanged("Arizona State University");
 }
 
+/* ==== TripPlanner on_michigan_pushButton_clicked() ================
+    void-returning method used to set the starting college to University
+    of Michigan.
+================================================================== */
 void TripPlanner::on_michigan_pushButton_clicked() {
     ui->starting_location_dropdown->setCurrentText("University of  Michigan");
     on_starting_location_dropdown_currentTextChanged("University of  Michigan");
 }
 
+/* ==== TripPlanner on_view_auto_select_pushButton_clicked() ========
+    void-returning method used to select the closest colleges based
+    on the spinBox.
+================================================================== */
 void TripPlanner::on_view_auto_select_pushButton_clicked() {
     QSqlQuery query("DROP TABLE tripSelected;");
     query.exec("CREATE TABLE tripSelected (collegeName TEXT, collegeNum INTEGER);");
@@ -210,16 +270,26 @@ void TripPlanner::on_view_auto_select_pushButton_clicked() {
     tableViewUpdate();
 }
 
+/* ==== TripPlanner on_school_store_pushButton_clicked() ============
+    void-returning method used to move to the graph viewer.
+================================================================== */
 void TripPlanner::on_pushButton_2_clicked() {
     emit moveToGraphViewer();
 }
 
+/* ==== TripPlanner on_school_store_pushButton_clicked() ============
+    void-returning method used to move to the school store when a
+    school is selected. If no school is selected the method is returned.
+================================================================== */
 void TripPlanner::on_school_store_pushButton_clicked() {
     if (name == "") return;
 
     emit moveToSchoolStore(name);
 }
 
+/* ==== TripPlanner on_return_home_pushButton_clicked() =============
+    void-returning method used to return to the main window.
+================================================================== */
 void TripPlanner::on_return_home_pushButton_clicked() {
     emit moveToMainWindow();
 }
@@ -264,6 +334,11 @@ int TripPlanner::minKey(std::vector<double> key, std::vector<bool> set, int size
     return minIdx;
 }
 
+/* ==== TripPlanner on_starting_location_dropdown_2_currentTextChanged() ==
+    void-returning method called when the route dropdown is changed,
+    disables the closest college route frame when Custom Route is
+    selected.
+================================================================== */
 void TripPlanner::on_starting_location_dropdown_2_currentTextChanged(const QString &arg1) {
     ui->populate_frame->setDisabled(arg1 == "Custom Route" ? true : false);
     updateTrip();

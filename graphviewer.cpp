@@ -1,6 +1,10 @@
 #include "graphviewer.h"
 #include "ui_graphviewer.h"
 
+/* ==== GraphViewer Constructor =====================================
+    Constructor used to initialized necessary variables and connect
+    the widget change buttons to the main window.
+================================================================== */
 GraphViewer::GraphViewer(QWidget *parent) : QMainWindow(parent), ui(new Ui::GraphViewer), adjMatrix(20) {
     ui->setupUi(this);
     path = new QSqlQueryModel;
@@ -9,6 +13,9 @@ GraphViewer::GraphViewer(QWidget *parent) : QMainWindow(parent), ui(new Ui::Grap
     connect(parent, SIGNAL(updateTripPlanner()), this, SLOT(populateWindow()));
 }
 
+/* ==== GraphViewer Destructor ======================================
+    Destructor used to delete heap allocated memory.
+================================================================== */
 GraphViewer::~GraphViewer() {
     delete ui;
     delete path;
@@ -16,6 +23,10 @@ GraphViewer::~GraphViewer() {
     delete backEdges;
 }
 
+/* ==== GraphViewer on_choose_graph_dropdown_currentTextChanged() ===
+    void-returning method used to populate the window and initialize
+    the distances for the ajacencyMatrix.
+================================================================== */
 void GraphViewer::populateWindow() {
     ui->choose_college_dropdown->setVisible(0);
     ui->choose_graph_dropdown->clear();
@@ -38,6 +49,10 @@ void GraphViewer::populateWindow() {
     }
 }
 
+/* ==== GraphViewer on_choose_graph_dropdown_currentTextChanged() ===
+    void-returning method used to update the graph when a new graph
+    is chosen in the graph dropdown.
+================================================================== */
 void GraphViewer::on_choose_graph_dropdown_currentTextChanged(const QString &arg1) {
     QSqlQuery query("DROP TABLE path;");
     query.exec("DROP TABLE discoveryEdges;");
@@ -62,6 +77,10 @@ void GraphViewer::on_choose_graph_dropdown_currentTextChanged(const QString &arg
     }
 }
 
+/* ==== GraphViewer on_choose_college_dropdown_currentTextChanged() ==
+    void-returning method used to update the graph when a new college
+    is chosen in the college dropdown.
+================================================================== */
 void GraphViewer::on_choose_college_dropdown_currentTextChanged(const QString &arg1) {
     QSqlQuery query("DROP TABLE path;");
     query.exec("DROP TABLE discoveryEdges;");
@@ -81,6 +100,10 @@ void GraphViewer::on_choose_college_dropdown_currentTextChanged(const QString &a
    tableViewUpdate();
 }
 
+/* ==== GraphViewer tableViewUpdate() ===============================
+    void-returning method used to update the tableview based off the
+    selected graph and college.
+================================================================== */
 void GraphViewer::tableViewUpdate() {
     path->setQuery("SELECT collegeName, distToNext FROM path ORDER BY routeOrder");
     ui->graph_result_tableView->setModel(path);
@@ -98,7 +121,9 @@ void GraphViewer::tableViewUpdate() {
     if (ui->choose_graph_dropdown->currentText() == "Dijkstra") ui->distance_label->setText(" N/A");
 }
 
+/* ==== GraphViewer on_trip_planner_pushButton_clicked() ============
+    void-returning method used to move to the trip planner
+================================================================== */
 void GraphViewer::on_trip_planner_pushButton_clicked() {
     emit moveToTripPlanner();
 }
-
