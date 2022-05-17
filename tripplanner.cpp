@@ -217,7 +217,7 @@ void TripPlanner::on_return_home_pushButton_clicked() {
 ================================================================== */
 void TripPlanner::dijkstra(int size) {
     for (int j = 0; j < size; ++j) {
-        std::vector<int> dist(size, INT_MAX);
+        std::vector<double> dist(size, INT_MAX);
         std::vector<bool> sptSet(size, false);
         std::vector<std::vector<College>> path(12, std::vector<College>());
         dist[j] = 0;
@@ -237,7 +237,7 @@ void TripPlanner::dijkstra(int size) {
     int-returning method used by both the dijkstra and mst algorithms
     respectively. Used to determine the next minimum index.
 ================================================================== */
-int TripPlanner::minKey(std::vector<int> key, std::vector<bool> set, int size) {
+int TripPlanner::minKey(std::vector<double> key, std::vector<bool> set, int size) {
     int min = INT_MAX;
     int minIdx = 0;
 
