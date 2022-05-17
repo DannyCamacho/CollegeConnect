@@ -72,7 +72,7 @@ selection-background-color: rgb(118, 158, 81);</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>200</y>
+         <y>230</y>
          <width>331</width>
          <height>71</height>
         </rect>
@@ -131,7 +131,7 @@ QPushButton#visit_store_button: clicked {
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>290</y>
+         <y>310</y>
          <width>331</width>
          <height>71</height>
         </rect>
@@ -190,7 +190,7 @@ QPushButton#plan_route_button: clicked {
          <x>0</x>
          <y>0</y>
          <width>371</width>
-         <height>181</height>
+         <height>211</height>
         </rect>
        </property>
        <property name="frameShape">
@@ -272,6 +272,32 @@ padding: 6px;
           </property>
           <property name="text">
            <string>Number of Undergraduates</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="distance_label">
+          <property name="font">
+           <font>
+            <family>Mongolian Baiti</family>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+</string>
+          </property>
+          <property name="text">
+           <string>Distance From Saddleback</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>

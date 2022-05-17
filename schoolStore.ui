@@ -28,15 +28,212 @@ selection-background-color: rgb(118, 158, 81);</string>
    <widget class="QFrame" name="shop_functions_frame">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>160</y>
+      <x>550</x>
+      <y>249</y>
       <width>301</width>
-      <height>161</height>
+      <height>151</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <widget class="QPushButton" name="shopping_cart_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>85</y>
+       <width>211</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+
+QPushButton#shopping_cart_pushButton: clicked {
+	background-color: rgb(118, 158, 81);
+    border-style: inset;
+}</string>
+     </property>
+     <property name="text">
+      <string>Shopping Cart </string>
+     </property>
+     <property name="icon">
+      <iconset resource="resources/resources.qrc">
+       <normaloff>:/school_store_logo-removebg.png</normaloff>:/school_store_logo-removebg.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QFrame" name="bubble_frame">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>85</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: none;
+image: url(:/rec/resources/bubble-icon-removebg.png);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <widget class="QLabel" name="cart_quantity_display">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-2</y>
+        <width>51</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Mongolian Baiti</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: none;
+color: rgb(49, 49, 49);</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="bubble_photo">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>51</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/bubble-removebg.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="initial_list_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>261</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>146</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+
+QPushButton#initial_list_pushButton: clicked {
+	background-color: rgb(118, 158, 81);
+    border-style: inset;
+}</string>
+     </property>
+     <property name="text">
+      <string>Return Home</string>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="bottom_right_frame">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>160</y>
+      <width>301</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(49, 49, 49);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Panel</enum>
@@ -105,7 +302,7 @@ selection-background-color: rgb(225, 225, 225);</string>
       <rect>
        <x>80</x>
        <y>20</y>
-       <width>211</width>
+       <width>201</width>
        <height>51</height>
       </rect>
      </property>
@@ -116,7 +313,8 @@ selection-background-color: rgb(225, 225, 225);</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:  rgb(255, 255, 255);
+      <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
 border-style: outset;
 border-width: 2px;
 border-radius: 10px;
@@ -147,199 +345,6 @@ QPushButton#add_to_cart_pushButton: clicked {
      </property>
      <property name="default">
       <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="shopping_cart_pushButton">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>90</y>
-       <width>211</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Mongolian Baiti</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::RightToLeft</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color:  rgb(255, 255, 255);
-border-style: outset;
-border-width: 2px;
-border-radius: 10px;
-border-color:rgb(118, 158, 81);
-min-width: 10em;
-padding: 6px;
-
-QPushButton#shopping_cart_pushButton: clicked {
-	background-color: rgb(118, 158, 81);
-    border-style: inset;
-}</string>
-     </property>
-     <property name="text">
-      <string>Shopping Cart </string>
-     </property>
-     <property name="icon">
-      <iconset resource="resources/resources.qrc">
-       <normaloff>:/school_store_logo-removebg.png</normaloff>:/school_store_logo-removebg.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>30</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="autoDefault">
-      <bool>true</bool>
-     </property>
-     <property name="default">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QFrame" name="bubble_frame">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>90</y>
-       <width>51</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Mongolian Baiti</family>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background: none;
-image: url(:/rec/resources/bubble-icon-removebg.png);</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
-     </property>
-     <widget class="QLabel" name="cart_quantity_display">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>-2</y>
-        <width>51</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Mongolian Baiti</family>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background: none;</string>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="bubble_photo">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>51</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">image: url(:/bubble-removebg.png);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </widget>
-   </widget>
-   <widget class="QFrame" name="bottom_right_frame">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>340</y>
-      <width>301</width>
-      <height>90</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Panel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <widget class="QPushButton" name="initial_list_pushButton">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>25</y>
-       <width>251</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>176</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <family>Mongolian Baiti</family>
-       <pointsize>14</pointsize>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color:  rgb(255, 255, 255);
-border-style: outset;
-border-width: 2px;
-border-radius: 10px;
-border-color:rgb(118, 158, 81);
-min-width: 10em;
-padding: 6px;
-
-QPushButton#initial_list_pushButton: clicked {
-	background-color: rgb(118, 158, 81);
-    border-style: inset;
-}</string>
-     </property>
-     <property name="text">
-      <string>Return Home</string>
-     </property>
-     <property name="autoDefault">
-      <bool>true</bool>
-     </property>
-     <property name="default">
-      <bool>true</bool>
-     </property>
-     <property name="flat">
-      <bool>false</bool>
      </property>
     </widget>
    </widget>
@@ -496,6 +501,83 @@ selection-background-color: rgb(118, 158, 81);</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="bottom_right_frame_2">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>399</y>
+      <width>301</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <widget class="QPushButton" name="plan_route_button">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>261</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+
+QPushButton#plan_route_button: clicked {
+	background-color: rgb(118, 158, 81);
+    border-style: inset;
+	border-color: rgb(49, 49, 49);
+}</string>
+     </property>
+     <property name="text">
+      <string>Plan Route </string>
+     </property>
+     <property name="icon">
+      <iconset resource="resources/resources.qrc">
+       <normaloff>:/plan_route_logo.png</normaloff>:/plan_route_logo.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>45</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
      </property>
     </widget>
    </widget>
