@@ -1027,7 +1027,7 @@ selection-background-color: rgb(118, 158, 81);</string>
      <property name="font">
       <font>
        <family>Mongolian Baiti</family>
-       <pointsize>11</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="focusPolicy">

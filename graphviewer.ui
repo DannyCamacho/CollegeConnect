@@ -279,6 +279,12 @@ selection-background-color: rgb(118, 158, 81);</string>
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(49, 49, 49);
 background-color:  rgb(255, 255, 255);
@@ -308,6 +314,12 @@ padding: 6px;
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(49, 49, 49);
 background-color:  rgb(255, 255, 255);
@@ -336,6 +348,12 @@ padding: 6px;
        <width>481</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(49, 49, 49);
@@ -1088,10 +1106,10 @@ QPushButton#visit_store_button: clicked {
    <widget class="QPushButton" name="trip_planner_pushButton">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>20</y>
-      <width>221</width>
-      <height>36</height>
+      <x>630</x>
+      <y>35</y>
+      <width>241</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -1101,6 +1119,9 @@ QPushButton#visit_store_button: clicked {
       <weight>50</weight>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(49, 49, 49);
@@ -1120,9 +1141,21 @@ QPushButton#visit_store_button: clicked {
     <property name="text">
      <string>Return to Trip Planner</string>
     </property>
+    <property name="icon">
+     <iconset resource="resources/resources.qrc">
+      <normaloff>:/plan_route_logo-removebg.png</normaloff>:/plan_route_logo-removebg.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
+    </property>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
