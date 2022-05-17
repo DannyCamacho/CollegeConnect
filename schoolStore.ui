@@ -48,7 +48,7 @@ color: rgb(0, 0, 0);</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>90</y>
+       <y>85</y>
        <width>211</width>
        <height>51</height>
       </rect>
@@ -63,7 +63,8 @@ color: rgb(0, 0, 0);</string>
       <enum>Qt::RightToLeft</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:  rgb(255, 255, 255);
+      <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
 border-style: outset;
 border-width: 2px;
 border-radius: 10px;
@@ -100,7 +101,7 @@ QPushButton#shopping_cart_pushButton: clicked {
      <property name="geometry">
       <rect>
        <x>230</x>
-       <y>90</y>
+       <y>85</y>
        <width>51</width>
        <height>41</height>
       </rect>
@@ -136,7 +137,8 @@ image: url(:/rec/resources/bubble-icon-removebg.png);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: none;</string>
+       <string notr="true">background: none;
+color: rgb(49, 49, 49);</string>
       </property>
       <property name="text">
        <string>0</string>
@@ -192,7 +194,8 @@ image: url(:/rec/resources/bubble-icon-removebg.png);</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:  rgb(255, 255, 255);
+      <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
 border-style: outset;
 border-width: 2px;
 border-radius: 10px;
@@ -230,7 +233,7 @@ QPushButton#initial_list_pushButton: clicked {
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
+color: rgb(49, 49, 49);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Panel</enum>
@@ -310,7 +313,8 @@ selection-background-color: rgb(225, 225, 225);</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:  rgb(255, 255, 255);
+      <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
 border-style: outset;
 border-width: 2px;
 border-radius: 10px;
@@ -497,6 +501,83 @@ selection-background-color: rgb(118, 158, 81);</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="bottom_right_frame_2">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>399</y>
+      <width>301</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <widget class="QPushButton" name="plan_route_button">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>261</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+
+QPushButton#plan_route_button: clicked {
+	background-color: rgb(118, 158, 81);
+    border-style: inset;
+	border-color: rgb(49, 49, 49);
+}</string>
+     </property>
+     <property name="text">
+      <string>Plan Route </string>
+     </property>
+     <property name="icon">
+      <iconset resource="resources/resources.qrc">
+       <normaloff>:/plan_route_logo.png</normaloff>:/plan_route_logo.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>45</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
      </property>
     </widget>
    </widget>
