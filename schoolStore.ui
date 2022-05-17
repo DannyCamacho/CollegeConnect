@@ -28,10 +28,10 @@ selection-background-color: rgb(118, 158, 81);</string>
    <widget class="QFrame" name="shop_functions_frame">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>160</y>
+      <x>550</x>
+      <y>249</y>
       <width>301</width>
-      <height>161</height>
+      <height>151</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -44,111 +44,6 @@ color: rgb(0, 0, 0);</string>
     <property name="frameShadow">
      <enum>QFrame::Plain</enum>
     </property>
-    <widget class="QSpinBox" name="quantity_spinBox">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>55</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Mongolian Baiti</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::WheelFocus</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(49, 49, 49);
-background-color: rgb(255, 255, 255);
-alternate-background-color: rgb(225, 225, 225);
-selection-color: rgb(49, 49, 49);
-selection-background-color: rgb(225, 225, 225);</string>
-     </property>
-     <property name="frame">
-      <bool>true</bool>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="readOnly">
-      <bool>false</bool>
-     </property>
-     <property name="buttonSymbols">
-      <enum>QAbstractSpinBox::PlusMinus</enum>
-     </property>
-     <property name="correctionMode">
-      <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
-     </property>
-     <property name="keyboardTracking">
-      <bool>true</bool>
-     </property>
-     <property name="showGroupSeparator" stdset="0">
-      <bool>false</bool>
-     </property>
-     <property name="minimum">
-      <number>1</number>
-     </property>
-     <property name="maximum">
-      <number>100</number>
-     </property>
-     <property name="value">
-      <number>1</number>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="add_to_cart_pushButton">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>20</y>
-       <width>211</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Mongolian Baiti</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color:  rgb(255, 255, 255);
-border-style: outset;
-border-width: 2px;
-border-radius: 10px;
-border-color:rgb(118, 158, 81);
-min-width: 10em;
-padding: 6px;
-
-QPushButton#add_to_cart_pushButton: clicked {
-	background-color: rgb(118, 158, 81);
-    border-style: inset;
-}</string>
-     </property>
-     <property name="text">
-      <string>Add to Cart</string>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>:/rec/resources/addToCart-removebg-.png</normaloff>:/rec/resources/addToCart-removebg-.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>30</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="autoDefault">
-      <bool>true</bool>
-     </property>
-     <property name="default">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QPushButton" name="shopping_cart_pushButton">
      <property name="geometry">
       <rect>
@@ -267,38 +162,18 @@ image: url(:/rec/resources/bubble-icon-removebg.png);</string>
       </property>
      </widget>
     </widget>
-   </widget>
-   <widget class="QFrame" name="bottom_right_frame">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>340</y>
-      <width>301</width>
-      <height>90</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Panel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
     <widget class="QPushButton" name="initial_list_pushButton">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>25</y>
-       <width>251</width>
-       <height>41</height>
+       <y>20</y>
+       <width>261</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>176</width>
+       <width>146</width>
        <height>0</height>
       </size>
      </property>
@@ -312,6 +187,7 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -340,6 +216,131 @@ QPushButton#initial_list_pushButton: clicked {
      </property>
      <property name="flat">
       <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="bottom_right_frame">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>160</y>
+      <width>301</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <widget class="QSpinBox" name="quantity_spinBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>55</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::WheelFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(49, 49, 49);
+background-color: rgb(255, 255, 255);
+alternate-background-color: rgb(225, 225, 225);
+selection-color: rgb(49, 49, 49);
+selection-background-color: rgb(225, 225, 225);</string>
+     </property>
+     <property name="frame">
+      <bool>true</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::PlusMinus</enum>
+     </property>
+     <property name="correctionMode">
+      <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+     </property>
+     <property name="keyboardTracking">
+      <bool>true</bool>
+     </property>
+     <property name="showGroupSeparator" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>1</number>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="add_to_cart_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>20</y>
+       <width>201</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Mongolian Baiti</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+
+QPushButton#add_to_cart_pushButton: clicked {
+	background-color: rgb(118, 158, 81);
+    border-style: inset;
+}</string>
+     </property>
+     <property name="text">
+      <string>Add to Cart</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>:/rec/resources/addToCart-removebg-.png</normaloff>:/rec/resources/addToCart-removebg-.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+     <property name="default">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
