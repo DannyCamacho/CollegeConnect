@@ -35,6 +35,7 @@ void TripPlanner::populateWindow() {
 
     query.exec("SELECT * FROM edge");
     while (query.next()) d[collegeMap[query.value(0).toString()]][collegeMap[query.value(1).toString()]] = query.value(2).toDouble();
+    dijkstra(spinBoxMax + 1);
     tableViewUpdate();
     updateQuantity();
 }
@@ -57,9 +58,9 @@ void TripPlanner::calculateTrip(int start) {
     double dist = INT_MAX;
 
     for (int i = 0; i < 20; ++i) {
-        if (isSelected[i] && d[start][i] < dist) {
+        if (isSelected[i] && optimal[start][i] < dist) {
             idx = i;
-            dist = d[start][i];
+            dist = optimal[start][i];
             }
     }
 
@@ -209,3 +210,42 @@ void TripPlanner::on_return_home_pushButton_clicked() {
     emit moveToMainWindow();
 }
 
+/* ==== TripPlanner dijkstra() ======================================
+    void-returning method used to run the adjacency matrix through
+    the Dijkstra algo. The distance and path for each city is
+    determined and the totals are displayed to screen.
+================================================================== */
+void TripPlanner::dijkstra(int size) {
+    for (int j = 0; j < size; ++j) {
+        std::vector<int> dist(size, INT_MAX);
+        std::vector<bool> sptSet(size, false);
+        std::vector<std::vector<College>> path(12, std::vector<College>());
+        dist[j] = 0;
+
+        for (int count = 0; count < size - 1; ++count) {
+            int u = minKey(dist, sptSet, size);
+            sptSet[u] = true;
+
+            for (int i = 0; i < size; ++i)
+                if (!sptSet[i] && d[u][i] && dist[u] != INT_MAX && dist[u] + d[u][i] < dist[i]) dist[i] = dist[u] + d[u][i];
+        }
+        for (int i = 0; i < size; ++i) optimal[j][i] = dist[i];
+    }
+}
+
+/* ==== TripPlanner minKey() ========================================
+    int-returning method used by both the dijkstra and mst algorithms
+    respectively. Used to determine the next minimum index.
+================================================================== */
+int TripPlanner::minKey(std::vector<int> key, std::vector<bool> set, int size) {
+    int min = INT_MAX;
+    int minIdx = 0;
+
+    for (int i = 0; i < size; ++i) {
+        if (!set[i] && key[i] < min) {
+            min = key[i];
+            minIdx = i;
+        }
+    }
+    return minIdx;
+}

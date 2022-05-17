@@ -47,12 +47,12 @@ void Map::insert(Pair pair) {
 void Map::erase(int key) {
     int k = h1(key);
     if (map[k].key == key) {
-        map[k] = { -1, "" , "" , 0};
+        map[k] = { -1, "" , "" , 0, 0.0 };
     } else {
         for (int j = 1; ; ++j) {
             int i = h2(j, key);
             if (map[i].key == key) {
-                map[i] = { -1, "" , "" , 0};
+                map[i] = { -1, "" , "" , 0, 0.0 };
                 return;
             }
         }
@@ -69,7 +69,9 @@ void Map::printMap() {
             std::cout << "ID: " << map[i].key
                       << "\tCollege name: " << map[i].collegeName
                       << "\tState: " << map[i].state
-                      << "\tNo. of undergrats: " << map[i].numsOfGrad << std::endl;
+                      << "\tNo. of undergrats: " << map[i].numsOfGrad
+                      << "\tDistance from Saddleback: " << map[i].distFromSaddleback << std::endl;
+
         }
     }
 }

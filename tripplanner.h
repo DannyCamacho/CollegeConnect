@@ -37,8 +37,9 @@ private slots:
     void on_pushButton_2_clicked();
     void on_school_store_pushButton_clicked();
     void on_shopping_cart_pushButton_clicked();
-
     void on_return_home_pushButton_clicked();
+    void dijkstra(int size);
+    int minKey(std::vector<int> key, std::vector<bool> set, int size);
 
 private:
     Ui::TripPlanner *ui;
@@ -48,6 +49,7 @@ private:
     QString name;
     bool isSelected[20];
     double d[20][20];
+    double optimal[20][20];
     int start;
     int spinBoxMax;
 };

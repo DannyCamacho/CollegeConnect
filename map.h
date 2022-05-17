@@ -12,6 +12,7 @@ struct Pair {
     std::string collegeName;
     std::string state;
     int numsOfGrad;
+    double distFromSaddleback;
 };
 
 /* ==== Map Class ===================================================

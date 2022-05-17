@@ -37,11 +37,17 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::populateWindow() {
-    QSqlQuery query("SELECT * FROM college");
+    double distFromSaddleback[20] = { 0 };
+    int i = 0;
+    QSqlQuery query("SELECT distance FROM edge WHERE collegeName=\"Saddleback College\";");
+    while (query.next()) { if (i == 4) ++i; distFromSaddleback[i++] = query.value(0).toDouble(); }
+
+    query.exec("SELECT * FROM college");
     while (query.next())
         if (collegeMap.at(query.value(1).toInt()).collegeName == "")
             collegeMap.insert({ query.value(1).toInt(), query.value(0).toString().toStdString(),
-                                query.value(2).toString().toStdString(), query.value(3).toInt() });
+                                query.value(2).toString().toStdString(), query.value(3).toInt(),
+                                distFromSaddleback[query.value(1).toInt()] });
 
     query.exec("SELECT SUM(X.TOTAL) FROM (SELECT undergrads as TOTAL FROM college) X;");
     if (query.next()) ui->undergrad_total_display->setText(QString::number(query.value(0).toInt()));
