@@ -17,6 +17,7 @@ GraphViewer::~GraphViewer() {
 }
 
 void GraphViewer::populateWindow() {
+    ui->choose_college_dropdown->setVisible(0);
     ui->choose_graph_dropdown->clear();
     ui->choose_graph_dropdown->addItem("BFS");
     ui->choose_graph_dropdown->addItem("DFS");
@@ -95,3 +96,8 @@ void GraphViewer::tableViewUpdate() {
     if (query.next()) ui->distance_label->setText(QString::number(query.value(0).toDouble(), 'f', 2));
     if (ui->distance_label->text() == "") ui->distance_label->setText("0.00");
 }
+
+void GraphViewer::on_trip_planner_pushButton_clicked() {
+    emit moveToTripPlanner();
+}
+

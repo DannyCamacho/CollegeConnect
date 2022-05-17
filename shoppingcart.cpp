@@ -80,3 +80,8 @@ void ShoppingCart::on_pushButton_6_clicked() {
 void ShoppingCart::updateShoppingCart() {
     cartTableViewUpdate();
 }
+
+void ShoppingCart::on_route_pushButton_clicked() {
+    emit moveToTripPlanner();
+}
+

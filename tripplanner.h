@@ -36,8 +36,9 @@ private slots:
     void on_view_auto_select_pushButton_clicked();
     void on_pushButton_2_clicked();
     void on_school_store_pushButton_clicked();
-
     void on_shopping_cart_pushButton_clicked();
+
+    void on_return_home_pushButton_clicked();
 
 private:
     Ui::TripPlanner *ui;

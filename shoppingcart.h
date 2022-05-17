@@ -22,9 +22,11 @@ private slots:
     void on_update_pushButton_clicked();
     void on_pushButton_6_clicked();
     void updateShoppingCart();
+    void on_route_pushButton_clicked();
 
 signals:
     void moveToSchoolStore();
+    void moveToTripPlanner();
 
 private:
     Ui::ShoppingCart *ui;

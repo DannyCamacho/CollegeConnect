@@ -1085,6 +1085,42 @@ QPushButton#visit_store_button: clicked {
      <number>0</number>
     </property>
    </widget>
+   <widget class="QPushButton" name="trip_planner_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>20</y>
+      <width>221</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Mongolian Baiti</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(49, 49, 49);
+background-color:  rgb(255, 255, 255);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color:rgb(118, 158, 81);
+min-width: 10em;
+padding: 6px;
+
+QPushButton#visit_store_button: clicked {
+	background-color: rgb(118, 158, 81);
+    border-style: inset;
+}</string>
+    </property>
+    <property name="text">
+     <string>Return to Trip Planner</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

@@ -14,7 +14,7 @@
    <string>School Store</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="resources/resources.qrc">
     <normaloff>:/CC_logo_mini-removebg.png</normaloff>:/CC_logo_mini-removebg.png</iconset>
   </property>
   <property name="styleSheet">
@@ -185,7 +185,7 @@ QPushButton#shopping_cart_pushButton: clicked {
       <string>Shopping Cart </string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="resources/resources.qrc">
        <normaloff>:/school_store_logo-removebg.png</normaloff>:/school_store_logo-removebg.png</iconset>
      </property>
      <property name="iconSize">
@@ -298,7 +298,7 @@ color: rgb(0, 0, 0);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>146</width>
+       <width>176</width>
        <height>0</height>
       </size>
      </property>
@@ -312,7 +312,6 @@ color: rgb(0, 0, 0);</string>
       <font>
        <family>Mongolian Baiti</family>
        <pointsize>14</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -349,7 +348,7 @@ QPushButton#initial_list_pushButton: clicked {
      <rect>
       <x>30</x>
       <y>160</y>
-      <width>421</width>
+      <width>461</width>
       <height>341</height>
      </rect>
     </property>
@@ -364,7 +363,7 @@ QPushButton#initial_list_pushButton: clicked {
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>421</width>
+       <width>461</width>
        <height>341</height>
       </rect>
      </property>
@@ -430,7 +429,7 @@ selection-background-color: rgb(118, 158, 81);</string>
       <number>55</number>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>350</number>
+      <number>395</number>
      </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
@@ -464,7 +463,7 @@ selection-background-color: rgb(118, 158, 81);</string>
      <rect>
       <x>30</x>
       <y>110</y>
-      <width>421</width>
+      <width>461</width>
       <height>41</height>
      </rect>
     </property>
@@ -479,14 +478,14 @@ selection-background-color: rgb(118, 158, 81);</string>
       <rect>
        <x>0</x>
        <y>5</y>
-       <width>421</width>
+       <width>461</width>
        <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Mongolian Baiti</family>
-       <pointsize>18</pointsize>
+       <pointsize>16</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -502,6 +501,8 @@ selection-background-color: rgb(118, 158, 81);</string>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
