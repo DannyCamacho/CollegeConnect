@@ -349,7 +349,7 @@ void AdjacencyMatrix::add(std::string city1, std::string city2, double dist) {
     distances[i][j] = distances[j][i] = dist;
 }
 
-/* ==== AdjacencyMatrix minKey() ====================================
+/* ==== AdjacencyMatrix getStartingIndex() ==========================
     int-returning method used to get the starting index using the
     name of an institution.
 ================================================================== */

@@ -23,7 +23,7 @@ GraphViewer::~GraphViewer() {
     delete backEdges;
 }
 
-/* ==== GraphViewer on_choose_graph_dropdown_currentTextChanged() ===
+/* ==== GraphViewer populateWindow() ================================
     void-returning method used to populate the window and initialize
     the distances for the ajacencyMatrix.
 ================================================================== */

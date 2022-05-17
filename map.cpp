@@ -99,16 +99,3 @@ DoubleHashMap::DoubleHashMap(int N) : Map(N) {}
     equation: h'(k) = (h(k) + (j * (13 - (k mod 13)))) mod N.
 ================================================================== */
 int DoubleHashMap::h2(int j, int key) { return (h1(key) + (j * (13 - (key % 13)))) % size; }
-
-/* ==== QuadraticMap Constructor with parameters ====================
-    Constructor used to initialize map to size N and size to N. Uses
-    the base class constructor.
-================================================================== */
-QuadraticMap::QuadraticMap(int N) : Map(N) {}
-
-/* ==== QuadraticMap h1() ===========================================
-    int-returning method used to calulate the element position for
-    map. The position of the Pair is determined by the following
-    equation: h'(k) = (h(k) + j^2) mod N.
-================================================================== */
-int QuadraticMap::h2(int j, int key) { return (h1(key) + j * j) % size; }

@@ -16,7 +16,7 @@ class Login : public QDialog {
 
 public:
 
-    /*! Constructor
+    /*! Login Constructor
      *
      *  Constructor used to connect to the existing MainWindow UI.
      *  @param QWidget parent

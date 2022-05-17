@@ -172,8 +172,8 @@ void MainWindow::receiveMessage(const QString &msg) {
 }
 
 /* ==== MainWindow returnToMainWindow() =============================
-    void-returning method used by other widgets to move to the main
-    window.
+    void-returning method used by other widgets in the QStackedWidget
+    to move to the MainWindow.
 ================================================================== */
 void MainWindow::returnToMainWindow() {
     ui->menuBar->setVisible(true);
