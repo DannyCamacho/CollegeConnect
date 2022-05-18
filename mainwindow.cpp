@@ -106,7 +106,7 @@ void MainWindow::on_school_list_tableView_clicked(const QModelIndex &index) {
     ui->college_name_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).collegeName));
     ui->state_label->setText(QString::fromStdString(collegeMap.at(query.value(0).toInt()).state));
     ui->undergrad_label->setText(QString::number(collegeMap.at(query.value(0).toInt()).numsOfGrad) + " Undergraduates");
-    ui->distance_label->setText(QString::number(collegeMap.at(query.value(0).toInt()).distFromSaddleback) + " Miles From Saddleback College");
+    ui->distance_label->setText(QString::number(collegeMap.at(query.value(0).toInt()).distFromSaddleback) + " Miles from Saddleback College");
     collegeName = index.siblingAtColumn(0).data().toString();
 }
 
