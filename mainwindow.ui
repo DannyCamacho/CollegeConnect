@@ -72,7 +72,7 @@ selection-background-color: rgb(118, 158, 81);</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>230</y>
+         <y>225</y>
          <width>331</width>
          <height>71</height>
         </rect>
@@ -131,7 +131,7 @@ QPushButton#visit_store_button: clicked {
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>310</y>
+         <y>305</y>
          <width>331</width>
          <height>71</height>
         </rect>
