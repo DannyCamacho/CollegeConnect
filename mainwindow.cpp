@@ -24,12 +24,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(adminMenu, SIGNAL(adminLogout()), this, SLOT(returnToMainWindow()));
     connect(schoolStore, SIGNAL(leaveSchoolStore()), this, SLOT(returnToMainWindow()));
     connect(schoolStore, SIGNAL(moveToShoppingCart()), this, SLOT(moveToShoppingCart()));
-    connect(schoolStore, SIGNAL(moveToTripPlanner()), this, SLOT(on_plan_route_button_clicked()));
+    connect(schoolStore, SIGNAL(moveToTripPlanner()), this, SLOT(moveToTripPlanner()));
     connect(shoppingCart, SIGNAL(moveToSchoolStore()), this, SLOT(moveToSchoolStore()));
-    connect(shoppingCart, SIGNAL(moveToTripPlanner()), this, SLOT(on_plan_route_button_clicked()));
+    connect(shoppingCart, SIGNAL(moveToTripPlanner()), this, SLOT(moveToTripPlanner()));
     connect(tripPlanner, SIGNAL(moveToGraphViewer()), this, SLOT(moveToGraphViewer()));
     connect(tripPlanner, SIGNAL(moveToMainWindow()), this, SLOT(returnToMainWindow()));
-    connect(graphViewer, SIGNAL(moveToTripPlanner()), this, SLOT(on_plan_route_button_clicked()));
+    connect(graphViewer, SIGNAL(moveToTripPlanner()), this, SLOT(moveToTripPlanner()));
 }
 
 /* ==== MainWindow Destructor =======================================
@@ -220,8 +220,16 @@ void MainWindow::moveToSchoolStore() {
     emit updateSchoolStore(collegeName);
 }
 
-/* ==== MainWindow on_plan_route_button_clicked() ===================
+/* ==== MainWindow moveToTripPlanner() ==============================
     void-returning method used to move to the trip planner.
+================================================================== */
+void MainWindow::moveToTripPlanner() {
+    ui->main_stackedWidget->setCurrentIndex(4);
+}
+
+/* ==== MainWindow on_plan_route_button_clicked() ===================
+    void-returning method used to move to the trip planner from
+    MainWindow. Reinitializes the distances for changes.
 ================================================================== */
 void MainWindow::on_plan_route_button_clicked() {
     ui->menuBar->setVisible(false);

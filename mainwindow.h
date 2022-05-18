@@ -141,6 +141,13 @@ private slots:
      */
     void on_actionQuit_triggered();
 
+
+    /*! @fn void moveToTripPlanner()
+     *
+     *  void-returning method used to move to the trip planner.
+     */
+    void moveToTripPlanner();
+
     /*! @fn void on_visit_store_button_clicked()
      *
      *  void-returning method used to move to the school store of the selected school. If no school is selected, the method is returned.
@@ -149,7 +156,7 @@ private slots:
 
     /*! @fn void on_plan_route_button_clicked()
      *
-     *  void-returning method used to move to the trip planner.
+     *  void-returning method used to move to the trip planner from MainWindow. Reinitializes the distances for changes.
      */
     void on_plan_route_button_clicked();
 

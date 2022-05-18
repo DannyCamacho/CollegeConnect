@@ -4,7 +4,7 @@
 
 /* ==== SchoolStore::Constructor ===================================
     Constructor used to initialize SQLQueryModels schoolStoreModel and
-    and update the schoolStore tableview.
+    update the schoolStore tableview.
 ================================================================== */
 SchoolStore::SchoolStore(QWidget *parent) : QMainWindow(parent), ui(new Ui::SchoolStore) {
     ui->setupUi(this);
@@ -15,8 +15,7 @@ SchoolStore::SchoolStore(QWidget *parent) : QMainWindow(parent), ui(new Ui::Scho
 
 
 /* ==== SchoolStore::Destructor ====================================
-    Destructor used to delete SQLQueryModels schoolStoreModel and
-    and the MainWindow UI.
+    Destructor used to delete heap allocated memory.
 ================================================================== */
 SchoolStore::~SchoolStore() {
     delete ui;
