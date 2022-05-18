@@ -37,7 +37,7 @@ void GraphViewer::populateWindow() {
 
     int size = 0;
     ui->choose_college_dropdown->clear();
-    QSqlQuery query("SELECT collegeName FROM college");
+    QSqlQuery query("SELECT collegeName FROM college ORDER BY collegeName");
     while (query.next()) {
         ++size;
         ui->choose_college_dropdown->addItem(query.value(0).toString());
